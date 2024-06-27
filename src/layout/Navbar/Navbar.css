@@ -1,0 +1,66 @@
+.header {
+    margin-bottom: 2rem;
+    background: #554b4b;
+    border-radius: 25rem;
+    position: relative;
+    margin: 10px;
+    margin-bottom: 45px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .nav-link {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.25rem;
+    padding: 0.75rem;
+    border-radius: 25rem;
+    width: 25%;
+}
+
+.navbar .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    z-index: 1;
+}
+
+.navbar .nav-link#generarInvitacion:active {
+    background-color: black;
+}
+
+.navbar .nav-link#convertorHorario {
+    background-color: black;
+}
+
+@media (max-width: 768px) {
+
+    .navbar .nav-link#convertorHorario,
+    .navbar .nav-link#generarInvitacion {
+        display: none;
+    }
+
+    .navbar::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 35px;
+        background: #554b4b;
+        position: absolute;
+        margin-top: 80px;
+    }
+    .navbar .logo {
+        margin-top: 15px;
+    }
+    .header {
+        margin: 0px;
+        margin-bottom: 100px;
+    }
+}

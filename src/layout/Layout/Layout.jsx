@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import { Navbar } from '../Navbar/Navbar';
 
 export default function Layout({ children }) {
     return (
         <>
-            <nav className="navbar">navbar</nav>
+            <Navbar> </Navbar>
             <main>{children}</main>
             <footer className="footer">footer</footer>
         </>

@@ -1,5 +1,3 @@
-
-
 function InvitationGenerator() {
     return (
         <main>
