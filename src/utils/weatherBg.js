@@ -1,12 +1,12 @@
 import axios from "axios";
 
-export const getLocation = (setCoords, setLoading, setError) => {
+export const getLocation = (setCoords, setLoadingLocation, setError) => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
         setCoords({ latitude, longitude });
-        setLoading(false);
+        setLoadingLocation(false);
       },
       (error) => {
         setError("Geolocalización no soportada o permiso denegado.");
@@ -15,7 +15,7 @@ export const getLocation = (setCoords, setLoading, setError) => {
     );
   } else {
     setError("Geolocalización no soportada.");
-    setLoading(false);
+    setLoadingLocation(false);
   }
 };
 export const getWeather = async (
@@ -23,7 +23,7 @@ export const getWeather = async (
   lon,
   setPartOfDay,
   setWeather,
-  setLoading,
+  setLoadingWeather,
   setError
 ) => {
   const url = `http://api.weatherapi.com/v1/current.json?key=${
@@ -37,10 +37,10 @@ export const getWeather = async (
     const partOfDayMain = response.data.current.is_day === 1 ? "dia" : "noche";
     setPartOfDay(partOfDayMain);
     setWeather(weatherCode);
-    setLoading(false);
+    setLoadingWeather(false);
   } catch (error) {
     setError("Error al obtener los datos del clima.");
-    setLoading(false);
+    setLoadingWeather(false);
   }
 };
 export const getBackgroundClass = (weather) => {

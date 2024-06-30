@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
 }
-/* Estilos para clima durante el día */
+/* ------------------ Estilos para clima durante el día -------------------------------------------- */
 .dia-Sunny {
   background-color: #ffd700; /* Ejemplo de color dorado para día soleado */
   color: #000; /* Texto en negro */
@@ -244,7 +244,7 @@
   color: #fff; /* Texto en blanco */
 }
 
-/* Estilos para clima durante la noche */
+/*------------------ Estilos para clima durante la noche -------------- */
 .noche-Clear {
   background-color: #191970; /* Ejemplo de color azul medianoche para noche despejada */
   color: #fff; /* Texto en blanco */

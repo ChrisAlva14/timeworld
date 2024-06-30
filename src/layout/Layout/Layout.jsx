@@ -11,11 +11,12 @@ export default function Layout({ children }) {
   const [weather, setWeather] = useState(null);
   const [partOfDay, setPartOfDay] = useState(null);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loadingLocation, setLoadingLocation] = useState(true); // Estado para indicar si se está cargando la ubicación
+  const [loadingWeather, setLoadingWeather] = useState(true); // Estado para indicar si se está cargando el clima
   const [coords, setCoords] = useState({ latitude: null, longitude: null });
   useEffect(() => {
     // Obtener la posición actual del usuario si el navegador lo permite
-    getLocation(setCoords, setLoading, setError);
+    getLocation(setCoords, setLoadingLocation, setError);
     console.log("llamada a la api");
   }, []);
 
@@ -27,7 +28,7 @@ export default function Layout({ children }) {
         coords.longitude,
         setPartOfDay,
         setWeather,
-        setLoading,
+        setLoadingWeather,
         setError
       );
     }
@@ -46,7 +47,7 @@ export default function Layout({ children }) {
     return <div className="error">{error}</div>;
   }
 
-  if (loading) {
+  if (loadingLocation || loadingWeather) {
     return <div className="loading">Cargando...</div>;
   }
   return (
