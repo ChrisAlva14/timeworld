@@ -28,7 +28,7 @@ export const getWeather = async (
 ) => {
   const url = `http://api.weatherapi.com/v1/current.json?key=${
     import.meta.env.VITE_WEATHER_API_KEY
-  }&q=-67.84114899287582,-59.966810584920424`;
+  }&q=${lat},${lon}`;
 
   try {
     const response = await axios.get(url);
