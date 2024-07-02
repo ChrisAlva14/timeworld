@@ -3,484 +3,246 @@
   margin: 0;
   padding: 0;
 }
-/* ------------------ Estilos para clima durante el día -------------------------------------------- */
+
+/*------------------ Estilos para clima durante el día -------------- */
+/* Día - Soleado */
 .dia-Sunny {
-  background-color: #ffd700; /* Ejemplo de color dorado para día soleado */
+  background-image: url("/dia-sunny.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Opcional: fija la imagen de fondo */
   color: #000; /* Texto en negro */
 }
 
-.dia-PartlyCloudy {
-  background-color: #b0c4de; /* Ejemplo de color azul claro para parcialmente nublado */
-  color: #000; /* Texto en negro */
-}
-
-.dia-Cloudy {
-  background-color: #a9a9a9; /* Ejemplo de color gris para nublado */
-  color: #000; /* Texto en negro */
-}
-
+/* Día - Nublado */
+.dia-PartlyCloudy,
+.dia-Cloudy,
 .dia-Overcast {
-  background-color: #778899; /* Ejemplo de color gris pizarra para cubierto */
+  background-image: url("/dia-cloudy.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #000; /* Texto en negro */
 }
 
-.dia-Mist {
-  background-color: #f5f5f5; /* Ejemplo de color blanco humo para niebla */
-  color: #000; /* Texto en negro */
-}
-
-.dia-PatchyRainPossible {
-  background-color: #87ceeb; /* Ejemplo de color azul cielo para posibles lluvias dispersas */
-  color: #000; /* Texto en negro */
-}
-
-.dia-PatchySnowPossible {
-  background-color: #fffacd; /* Ejemplo de color amarillo claro para posibles nevadas dispersas */
-  color: #000; /* Texto en negro */
-}
-
-.dia-PatchySleetPossible {
-  background-color: #d3d3d3; /* Ejemplo de color gris claro para posibles aguanieve dispersa */
-  color: #000; /* Texto en negro */
-}
-
-.dia-PatchyFreezingDrizzlePossible {
-  background-color: #e6e6fa; /* Ejemplo de color lavanda para posibles lloviznas congelantes dispersas */
-  color: #000; /* Texto en negro */
-}
-
-.dia-ThunderyOutbreaksPossible {
-  background-color: #4682b4; /* Ejemplo de color azul acero para posibles tormentas eléctricas */
-  color: #fff; /* Texto en blanco */
-}
-
-.dia-BlowingSnow {
-  background-color: #f0ffff; /* Ejemplo de color azul celeste para nieve soplada */
-  color: #000; /* Texto en negro */
-}
-
-.dia-Blizzard {
-  background-color: #fffafa; /* Ejemplo de color blanco nieve para ventisca */
-  color: #000; /* Texto en negro */
-}
-
-.dia-Fog {
-  background-color: #dcdcdc; /* Ejemplo de color gris claro para niebla */
-  color: #000; /* Texto en negro */
-}
-
+/* Día - Niebla */
+.dia-Mist,
+.dia-Fog,
 .dia-FreezingFog {
-  background-color: #b0e0e6; /* Ejemplo de color azul pólvora para niebla congelante */
+  background-image: url("/mist.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #000; /* Texto en negro */
 }
 
-.dia-PatchyLightDrizzle {
-  background-color: #add8e6; /* Ejemplo de color azul claro para llovizna ligera dispersa */
-  color: #000; /* Texto en negro */
-}
-
-.dia-LightDrizzle {
-  background-color: #87cefa; /* Ejemplo de color azul cielo para llovizna ligera */
-  color: #000; /* Texto en negro */
-}
-
-.dia-FreezingDrizzle {
-  background-color: #afeeee; /* Ejemplo de color azul pálido para llovizna congelante */
-  color: #000; /* Texto en negro */
-}
-
-.dia-HeavyFreezingDrizzle {
-  background-color: #e0ffff; /* Ejemplo de color cian claro para llovizna congelante fuerte */
-  color: #000; /* Texto en negro */
-}
-
-.dia-PatchyLightRain {
-  background-color: #b0c4de; /* Ejemplo de color azul claro para lluvia ligera dispersa */
-  color: #000; /* Texto en negro */
-}
-
-.dia-LightRain {
-  background-color: #00ced1; /* Ejemplo de color turquesa oscuro para lluvia ligera */
-  color: #000; /* Texto en negro */
-}
-
-.dia-ModerateRainAtTimes {
-  background-color: #4682b4; /* Ejemplo de color azul acero para lluvia moderada a veces */
-  color: #fff; /* Texto en blanco */
-}
-
-.dia-ModerateRain {
-  background-color: #1e90ff; /* Ejemplo de color azul delfín para lluvia moderada */
-  color: #fff; /* Texto en blanco */
-}
-
-.dia-HeavyRainAtTimes {
-  background-color: #4169e1; /* Ejemplo de color azul real para lluvia fuerte a veces */
-  color: #fff; /* Texto en blanco */
-}
-
-.dia-HeavyRain {
-  background-color: #00008b; /* Ejemplo de color azul oscuro para lluvia fuerte */
-  color: #fff; /* Texto en blanco */
-}
-
-.dia-LightFreezingRain {
-  background-color: #4682b4; /* Ejemplo de color azul acero para lluvia helada ligera */
-  color: #fff; /* Texto en blanco */
-}
-
-.dia-ModerateOrHeavyFreezingRain {
-  background-color: #5f9ea0; /* Ejemplo de color verde cadete para lluvia helada moderada o fuerte */
-  color: #fff; /* Texto en blanco */
-}
-
-.dia-LightSleet {
-  background-color: #b0e0e6; /* Ejemplo de color azul pólvora para aguanieve ligera */
-  color: #000; /* Texto en negro */
-}
-
-.dia-ModerateOrHeavySleet {
-  background-color: #4682b4; /* Ejemplo de color azul acero para aguanieve moderada o fuerte */
-  color: #fff; /* Texto en blanco */
-}
-
-.dia-PatchyLightSnow {
-  background-color: #dcdcdc; /* Ejemplo de color gris claro para nieve ligera dispersa */
-  color: #000; /* Texto en negro */
-}
-
-.dia-LightSnow {
-  background-color: #f0ffff; /* Ejemplo de color azul celeste para nieve ligera */
-  color: #000; /* Texto en negro */
-}
-
-.dia-PatchyModerateSnow {
-  background-color: #e6e6fa; /* Ejemplo de color lavanda para nieve moderada dispersa */
-  color: #000; /* Texto en negro */
-}
-
-.dia-ModerateSnow {
-  background-color: #b0e0e6; /* Ejemplo de color azul pólvora para nieve moderada */
-  color: #000; /* Texto en negro */
-}
-
-.dia-PatchyHeavySnow {
-  background-color: #778899; /* Ejemplo de color gris pizarra para nieve fuerte dispersa */
-  color: #000; /* Texto en negro */
-}
-
-.dia-HeavySnow {
-  background-color: #4682b4; /* Ejemplo de color azul acero para nieve fuerte */
-  color: #fff; /* Texto en blanco */
-}
-
-.dia-IcePellets {
-  background-color: #afeeee; /* Ejemplo de color azul pálido para granizo */
-  color: #000; /* Texto en negro */
-}
-
+/* Día - Lluvia */
+.dia-PatchyRainPossible,
+.dia-PatchyFreezingDrizzlePossible,
+.dia-PatchyLightDrizzle,
+.dia-LightDrizzle,
+.dia-FreezingDrizzle,
+.dia-HeavyFreezingDrizzle,
+.dia-PatchyLightRain,
+.dia-LightRain,
+.dia-ModerateRainAtTimes,
+.dia-ModerateRain,
+.dia-LightFreezingRain,
+.dia-LightSleet,
 .dia-LightRainShower {
-  background-color: #00ced1; /* Ejemplo de color turquesa oscuro para chubasco ligero */
+  background-image: url("/dia-rainy.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #000; /* Texto en negro */
 }
 
-.dia-ModerateOrHeavyRainShower {
-  background-color: #1e90ff; /* Ejemplo de color azul delfín para chubasco moderado o fuerte */
+.dia-HeavyRainAtTimes,
+.dia-HeavyRain,
+.dia-ModerateOrHeavyFreezingRain {
+  background-image: url("/dia-torrentialRain.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #fff; /* Texto en blanco */
 }
 
+.dia-ModerateOrHeavyRainShower,
 .dia-TorrentialRainShower {
-  background-color: #00008b; /* Ejemplo de color azul oscuro para chubasco torrencial */
+  background-image: url("/dia-torrentialRain.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #fff; /* Texto en blanco */
 }
 
-.dia-LightSleetShowers {
-  background-color: #b0e0e6; /* Ejemplo de color azul pólvora para chubascos ligeros de aguanieve */
+/* Día - Nieve */
+.dia-PatchySnowPossible,
+.dia-PatchySleetPossible,
+.dia-BlowingSnow,
+.dia-Blizzard,
+.dia-ModerateOrHeavySleet {
+  background-image: url("/snow.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #000; /* Texto en negro */
 }
 
-.dia-ModerateOrHeavySleetShowers {
-  background-color: #4682b4; /* Ejemplo de color azul acero para chubascos moderados o fuertes de aguanieve */
-  color: #fff; /* Texto en blanco */
-}
-
+.dia-PatchyLightSnow,
+.dia-PatchyModerateSnow,
+.dia-LightSnow,
+.dia-LightSleetShowers,
 .dia-LightSnowShowers {
-  background-color: #f0ffff; /* Ejemplo de color azul celeste para chubascos ligeros de nieve */
+  background-image: url("/snow.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #000; /* Texto en negro */
 }
 
+.dia-ModerateSnow,
+.dia-PatchyHeavySnow,
+.dia-HeavySnow,
+.dia-IcePellets,
+.dia-ModerateOrHeavySleetShowers,
 .dia-ModerateOrHeavySnowShowers {
-  background-color: #4682b4; /* Ejemplo de color azul acero para chubascos moderados o fuertes de nieve */
-  color: #fff; /* Texto en blanco */
-}
-
-.dia-LightShowersOfIcePellets {
-  background-color: #afeeee; /* Ejemplo de color azul pálido para chubascos ligeros de granizo */
+  background-image: url("/snow.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #000; /* Texto en negro */
 }
 
-.dia-ModerateOrHeavyShowersOfIcePellets {
-  background-color: #5f9ea0; /* Ejemplo de color verde cadete para chubascos moderados o fuertes de granizo */
-  color: #fff; /* Texto en blanco */
-}
-
-.dia-PatchyLightRainWithThunder {
-  background-color: #b0c4de; /* Ejemplo de color azul claro para lluvia ligera dispersa con truenos */
-  color: #000; /* Texto en negro */
-}
-
+/* Día - Tormentas */
+.dia-ThunderyOutbreaksPossible,
+.dia-PatchyLightRainWithThunder,
 .dia-ModerateOrHeavyRainWithThunder {
-  background-color: #4682b4; /* Ejemplo de color azul acero para lluvia moderada o fuerte con truenos */
+  background-image: url("/dia-torrentialRain.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #fff; /* Texto en blanco */
 }
 
-.dia-PatchyLightSnowWithThunder {
-  background-color: #e6e6fa; /* Ejemplo de color lavanda para nieve ligera dispersa con truenos */
-  color: #000; /* Texto en negro */
-}
-
+/* Día - Tormentas de Nieve */
+.dia-PatchyLightSnowWithThunder,
 .dia-ModerateOrHeavySnowWithThunder {
-  background-color: #4682b4; /* Ejemplo de color azul acero para nieve moderada o fuerte con truenos */
+  background-image: url("/snow.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #fff; /* Texto en blanco */
 }
 
 /*------------------ Estilos para clima durante la noche -------------- */
-.noche-Clear {
-  background-color: #191970; /* Ejemplo de color azul medianoche para noche despejada */
+/* Noche - Clear */
+.noche-Sunny {
+  background-image: url("/noche-clear.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Opcional: fija la imagen de fondo */
   color: #fff; /* Texto en blanco */
 }
 
-.noche-PartlyCloudy {
-  background-color: #696969; /* Ejemplo de color gris oscuro para parcialmente nublado */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-Cloudy {
-  background-color: #808080; /* Ejemplo de color gris para nublado */
-  color: #fff; /* Texto en blanco */
-}
-
+/* Noche - Nublado */
+.noche-PartlyCloudy,
+.noche-Cloudy,
 .noche-Overcast {
-  background-color: #2f4f4f; /* Ejemplo de color gris oscuro para cubierto */
+  background-image: url("/night-cloudy.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #fff; /* Texto en blanco */
 }
 
-.noche-Mist {
-  background-color: #778899; /* Ejemplo de color gris pizarra para niebla */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-PatchyRainPossible {
-  background-color: #4682b4; /* Ejemplo de color azul acero para posibles lluvias dispersas */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-PatchySnowPossible {
-  background-color: #b0e0e6; /* Ejemplo de color azul pólvora para posibles nevadas dispersas */
-  color: #000; /* Texto en negro */
-}
-
-.noche-PatchySleetPossible {
-  background-color: #708090; /* Ejemplo de color gris pizarra para posibles aguanieve dispersa */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-PatchyFreezingDrizzlePossible {
-  background-color: #778899; /* Ejemplo de color gris pizarra para posibles lloviznas congelantes dispersas */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-ThunderyOutbreaksPossible {
-  background-color: #2f4f4f; /* Ejemplo de color gris oscuro para posibles tormentas eléctricas */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-BlowingSnow {
-  background-color: #b0c4de; /* Ejemplo de color azul claro para nieve soplada */
-  color: #000; /* Texto en negro */
-}
-
-.noche-Blizzard {
-  background-color: #f0ffff; /* Ejemplo de color azul celeste para ventisca */
-  color: #000; /* Texto en negro */
-}
-
-.noche-Fog {
-  background-color: #696969; /* Ejemplo de color gris oscuro para niebla */
-  color: #fff; /* Texto en blanco */
-}
-
+/* Noche - Niebla */
+.noche-Mist,
+.noche-Fog,
 .noche-FreezingFog {
-  background-color: #778899; /* Ejemplo de color gris pizarra para niebla congelante */
+  background-image: url("/mist.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #fff; /* Texto en blanco */
 }
 
-.noche-PatchyLightDrizzle {
-  background-color: #708090; /* Ejemplo de color gris pizarra para llovizna ligera dispersa */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-LightDrizzle {
-  background-color: #4682b4; /* Ejemplo de color azul acero para llovizna ligera */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-FreezingDrizzle {
-  background-color: #708090; /* Ejemplo de color gris pizarra para llovizna congelante */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-HeavyFreezingDrizzle {
-  background-color: #778899; /* Ejemplo de color gris pizarra para llovizna congelante fuerte */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-PatchyLightRain {
-  background-color: #2f4f4f; /* Ejemplo de color gris oscuro para lluvia ligera dispersa */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-LightRain {
-  background-color: #4682b4; /* Ejemplo de color azul acero para lluvia ligera */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-ModerateRainAtTimes {
-  background-color: #1e90ff; /* Ejemplo de color azul delfín para lluvia moderada a veces */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-ModerateRain {
-  background-color: #00008b; /* Ejemplo de color azul oscuro para lluvia moderada */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-HeavyRainAtTimes {
-  background-color: #191970; /* Ejemplo de color azul medianoche para lluvia fuerte a veces */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-HeavyRain {
-  background-color: #00008b; /* Ejemplo de color azul oscuro para lluvia fuerte */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-LightFreezingRain {
-  background-color: #708090; /* Ejemplo de color gris pizarra para lluvia helada ligera */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-ModerateOrHeavyFreezingRain {
-  background-color: #2f4f4f; /* Ejemplo de color gris oscuro para lluvia helada moderada o fuerte */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-LightSleet {
-  background-color: #b0e0e6; /* Ejemplo de color azul pólvora para aguanieve ligera */
-  color: #000; /* Texto en negro */
-}
-
-.noche-ModerateOrHeavySleet {
-  background-color: #4682b4; /* Ejemplo de color azul acero para aguanieve moderada o fuerte */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-PatchyLightSnow {
-  background-color: #dcdcdc; /* Ejemplo de color gris claro para nieve ligera dispersa */
-  color: #000; /* Texto en negro */
-}
-
-.noche-LightSnow {
-  background-color: #f0ffff; /* Ejemplo de color azul celeste para nieve ligera */
-  color: #000; /* Texto en negro */
-}
-
-.noche-PatchyModerateSnow {
-  background-color: #e6e6fa; /* Ejemplo de color lavanda para nieve moderada dispersa */
-  color: #000; /* Texto en negro */
-}
-
-.noche-ModerateSnow {
-  background-color: #b0e0e6; /* Ejemplo de color azul pólvora para nieve moderada */
-  color: #000; /* Texto en negro */
-}
-
-.noche-PatchyHeavySnow {
-  background-color: #778899; /* Ejemplo de color gris pizarra para nieve fuerte dispersa */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-HeavySnow {
-  background-color: #4682b4; /* Ejemplo de color azul acero para nieve fuerte */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-IcePellets {
-  background-color: #afeeee; /* Ejemplo de color azul pálido para granizo */
-  color: #000; /* Texto en negro */
-}
-
-.noche-LightRainShower {
-  background-color: #00ced1; /* Ejemplo de color turquesa oscuro para chubasco ligero */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-ModerateOrHeavyRainShower {
-  background-color: #1e90ff; /* Ejemplo de color azul delfín para chubasco moderado o fuerte */
-  color: #fff; /* Texto en blanco */
-}
-
+/* Noche - Lluvia */
+.noche-PatchyRainPossible,
+.noche-PatchyFreezingDrizzlePossible,
+.noche-PatchyLightDrizzle,
+.noche-LightDrizzle,
+.noche-FreezingDrizzle,
+.noche-HeavyFreezingDrizzle,
+.noche-PatchyLightRain,
+.noche-LightRain,
+.noche-ModerateRainAtTimes,
+.noche-ModerateRain,
+.noche-HeavyRainAtTimes,
+.noche-HeavyRain,
+.noche-LightFreezingRain,
+.noche-ModerateOrHeavyFreezingRain,
+.noche-LightSleet,
+.noche-ModerateOrHeavySleet,
+.noche-LightRainShower,
+.noche-ModerateOrHeavyRainShower,
 .noche-TorrentialRainShower {
-  background-color: #00008b; /* Ejemplo de color azul oscuro para chubasco torrencial */
+  background-image: url("/noche-rain.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #fff; /* Texto en blanco */
 }
 
-.noche-LightSleetShowers {
-  background-color: #b0e0e6; /* Ejemplo de color azul pólvora para chubascos ligeros de aguanieve */
-  color: #000; /* Texto en negro */
-}
-
-.noche-ModerateOrHeavySleetShowers {
-  background-color: #4682b4; /* Ejemplo de color azul acero para chubascos moderados o fuertes de aguanieve */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-LightSnowShowers {
-  background-color: #f0ffff; /* Ejemplo de color azul celeste para chubascos ligeros de nieve */
-  color: #000; /* Texto en negro */
-}
-
+/* Noche - Nieve */
+.noche-PatchySnowPossible,
+.noche-PatchySleetPossible,
+.noche-BlowingSnow,
+.noche-Blizzard,
+.noche-PatchyLightSnow,
+.noche-LightSnow,
+.noche-PatchyModerateSnow,
+.noche-ModerateSnow,
+.noche-PatchyHeavySnow,
+.noche-HeavySnow,
+.noche-IcePellets,
+.noche-LightSleetShowers,
+.noche-ModerateOrHeavySleetShowers,
+.noche-LightSnowShowers,
 .noche-ModerateOrHeavySnowShowers {
-  background-color: #4682b4; /* Ejemplo de color azul acero para chubascos moderados o fuertes de nieve */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-LightShowersOfIcePellets {
-  background-color: #afeeee; /* Ejemplo de color azul pálido para chubascos ligeros de granizo */
+  background-image: url("/snow.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #000; /* Texto en negro */
 }
 
-.noche-ModerateOrHeavyShowersOfIcePellets {
-  background-color: #5f9ea0; /* Ejemplo de color verde cadete para chubascos moderados o fuertes de granizo */
-  color: #fff; /* Texto en blanco */
-}
-
-.noche-PatchyLightRainWithThunder {
-  background-color: #b0c4de; /* Ejemplo de color azul claro para lluvia ligera dispersa con truenos */
-  color: #000; /* Texto en negro */
-}
-
+/* Noche - Tormentas */
+.noche-ThunderyOutbreaksPossible,
+.noche-PatchyLightRainWithThunder,
 .noche-ModerateOrHeavyRainWithThunder {
-  background-color: #4682b4; /* Ejemplo de color azul acero para lluvia moderada o fuerte con truenos */
+  background-image: url("/dia-torrentialRain.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #fff; /* Texto en blanco */
 }
 
-.noche-PatchyLightSnowWithThunder {
-  background-color: #e6e6fa; /* Ejemplo de color lavanda para nieve ligera dispersa con truenos */
-  color: #000; /* Texto en negro */
-}
-
+/* Noche - Tormentas de Nieve */
+.noche-PatchyLightSnowWithThunder,
 .noche-ModerateOrHeavySnowWithThunder {
-  background-color: #4682b4; /* Ejemplo de color azul acero para nieve moderada o fuerte con truenos */
+  background-image: url("/snow.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #fff; /* Texto en blanco */
+}
+.default-weatherDefault {
+  background-color: aquamarine;
+  color: #000;
+}
+@media (max-width: 768px) {
+  html {
+    background-position: center;
+  }
 }

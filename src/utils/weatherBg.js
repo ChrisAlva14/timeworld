@@ -28,7 +28,7 @@ export const getWeather = async (
 ) => {
   const url = `http://api.weatherapi.com/v1/current.json?key=${
     import.meta.env.VITE_WEATHER_API_KEY
-  }&q=${lat},${lon}`;
+  }&q=-67.84114899287582,-59.966810584920424`;
 
   try {
     const response = await axios.get(url);
@@ -39,7 +39,8 @@ export const getWeather = async (
     setWeather(weatherCode);
     setLoadingWeather(false);
   } catch (error) {
-    setError("Error al obtener los datos del clima.");
+    setPartOfDay("default");
+    setWeather("weatherDefault");
     setLoadingWeather(false);
   }
 };
@@ -142,6 +143,6 @@ export const getBackgroundClass = (weather) => {
     case 1282:
       return "ModerateOrHeavySnowWithThunder";
     default:
-      return "UnknownWeatherCode";
+      return "weatherDefault";
   }
 };
