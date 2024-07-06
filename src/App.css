@@ -33,7 +33,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #000; /* Texto en negro */
+  color: black; /* Texto en negro */
 }
 
 /* Día - Lluvia */
