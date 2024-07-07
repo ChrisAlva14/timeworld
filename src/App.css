@@ -7,7 +7,7 @@
 /*------------------ Estilos para clima durante el día -------------- */
 /* Día - Soleado */
 .dia-Sunny {
-  background-image: url("/dia-sunny.jpg");
+  background-image: url("/fondos_paisajes/paisajes_Día_soleado.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* Opcional: fija la imagen de fondo */
@@ -17,23 +17,14 @@
 /* Día - Nublado */
 .dia-PartlyCloudy,
 .dia-Cloudy,
-.dia-Overcast {
-  background-image: url("/dia-cloudy.jpg");
+.dia-Overcast .dia-Mist,
+.dia-Fog,
+.dia-FreezingFog {
+  background-image: url("/fondos_paisajes/paisajes_Día_nublado.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* Fija la imagen de fondo */
   color: #000; /* Texto en negro */
-}
-
-/* Día - Niebla */
-.dia-Mist,
-.dia-Fog,
-.dia-FreezingFog {
-  background-image: url("/mist.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: black; /* Texto en negro */
 }
 
 /* Día - Lluvia */
@@ -49,31 +40,20 @@
 .dia-ModerateRain,
 .dia-LightFreezingRain,
 .dia-LightSleet,
-.dia-LightRainShower {
-  background-image: url("/dia-rainy.jpg");
+.dia-LightRainShower,
+.dia-HeavyRainAtTimes,
+.dia-HeavyRain,
+.dia-ModerateOrHeavyFreezingRain,
+.dia-ModerateOrHeavyRainShower,
+.dia-TorrentialRainShower,
+.dia-ThunderyOutbreaksPossible,
+.dia-PatchyLightRainWithThunder,
+.dia-ModerateOrHeavyRainWithThunder {
+  background-image: url("/fondos_paisajes/paisajes_Día_lluvioso.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* Fija la imagen de fondo */
   color: #000; /* Texto en negro */
-}
-
-.dia-HeavyRainAtTimes,
-.dia-HeavyRain,
-.dia-ModerateOrHeavyFreezingRain {
-  background-image: url("/dia-torrentialRain.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #fff; /* Texto en blanco */
-}
-
-.dia-ModerateOrHeavyRainShower,
-.dia-TorrentialRainShower {
-  background-image: url("/dia-torrentialRain.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #fff; /* Texto en blanco */
 }
 
 /* Día - Nieve */
@@ -81,89 +61,40 @@
 .dia-PatchySleetPossible,
 .dia-BlowingSnow,
 .dia-Blizzard,
-.dia-ModerateOrHeavySleet {
-  background-image: url("/snow.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #000; /* Texto en negro */
-}
-
+.dia-ModerateOrHeavySleet,
 .dia-PatchyLightSnow,
 .dia-PatchyModerateSnow,
 .dia-LightSnow,
 .dia-LightSleetShowers,
-.dia-LightSnowShowers {
-  background-image: url("/snow.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #000; /* Texto en negro */
-}
-
+.dia-LightSnowShowers,
 .dia-ModerateSnow,
 .dia-PatchyHeavySnow,
 .dia-HeavySnow,
 .dia-IcePellets,
 .dia-ModerateOrHeavySleetShowers,
-.dia-ModerateOrHeavySnowShowers {
-  background-image: url("/snow.jpg");
+.dia-ModerateOrHeavySnowShowers,
+.dia-PatchyLightSnowWithThunder,
+.dia-ModerateOrHeavySnowWithThunder {
+  background-image: url("/fondos_paisajes/paisajes_Día_nieve.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* Fija la imagen de fondo */
   color: #000; /* Texto en negro */
 }
 
-/* Día - Tormentas */
-.dia-ThunderyOutbreaksPossible,
-.dia-PatchyLightRainWithThunder,
-.dia-ModerateOrHeavyRainWithThunder {
-  background-image: url("/dia-torrentialRain.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #fff; /* Texto en blanco */
-}
-
-/* Día - Tormentas de Nieve */
-.dia-PatchyLightSnowWithThunder,
-.dia-ModerateOrHeavySnowWithThunder {
-  background-image: url("/snow.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #fff; /* Texto en blanco */
-}
-
 /*------------------ Estilos para clima durante la noche -------------- */
 /* Noche - Clear */
-.noche-Sunny {
-  background-image: url("/noche-clear.jpg");
+.noche-Sunny,
+.noche-PartlyCloudy,
+.noche-Cloudy,
+.noche-Overcast,
+.noche-Fog,
+.noche-FreezingFog,
+.noche-Mist {
+  background-image: url("/fondos_paisajes/paisajes_Noche_despejada.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* Opcional: fija la imagen de fondo */
-  color: #fff; /* Texto en blanco */
-}
-
-/* Noche - Nublado */
-.noche-PartlyCloudy,
-.noche-Cloudy,
-.noche-Overcast {
-  background-image: url("/night-cloudy.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #fff; /* Texto en blanco */
-}
-
-/* Noche - Niebla */
-.noche-Mist,
-.noche-Fog,
-.noche-FreezingFog {
-  background-image: url("/mist.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
   color: #fff; /* Texto en blanco */
 }
 
@@ -186,8 +117,13 @@
 .noche-ModerateOrHeavySleet,
 .noche-LightRainShower,
 .noche-ModerateOrHeavyRainShower,
-.noche-TorrentialRainShower {
-  background-image: url("/noche-rain.jpg");
+.noche-TorrentialRainShower,
+.noche-ThunderyOutbreaksPossible,
+.noche-PatchyLightRainWithThunder,
+.noche-ModerateOrHeavyRainWithThunder,
+.noche-PatchyLightSnowWithThunder,
+.noche-ModerateOrHeavySnowWithThunder {
+  background-image: url("/fondos_paisajes/paisajes_Noche_tormenta.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* Fija la imagen de fondo */
@@ -210,33 +146,13 @@
 .noche-ModerateOrHeavySleetShowers,
 .noche-LightSnowShowers,
 .noche-ModerateOrHeavySnowShowers {
-  background-image: url("/snow.jpg");
+  background-image: url("/fondos_paisajes/paisajes_Noche_nieve.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* Fija la imagen de fondo */
   color: #000; /* Texto en negro */
 }
 
-/* Noche - Tormentas */
-.noche-ThunderyOutbreaksPossible,
-.noche-PatchyLightRainWithThunder,
-.noche-ModerateOrHeavyRainWithThunder {
-  background-image: url("/dia-torrentialRain.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #fff; /* Texto en blanco */
-}
-
-/* Noche - Tormentas de Nieve */
-.noche-PatchyLightSnowWithThunder,
-.noche-ModerateOrHeavySnowWithThunder {
-  background-image: url("/snow.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #fff; /* Texto en blanco */
-}
 .default-weatherDefault {
   background-color: aquamarine;
   color: #000;
