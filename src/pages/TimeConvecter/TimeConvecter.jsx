@@ -1,10 +1,26 @@
 import { useEffect } from "react";
 
-import { getTimeZones } from "../../utils/timeConverter";
+import { getTimeZones, convertirHorario } from "../../utils/timeConverter";
 function TimeConvecter() {
+  const horario_original = "2024-07-07 12:00:00";
+  const ciudad_original = "America/Argentina/ComodRivadavia";
+  const array_ciudades_nuevas = [
+    "America/Los_Angeles",
+    "Europe/London",
+    "Asia/Tokyo",
+  ];
+
   useEffect(() => {
-    getTimeZones();
+    let timeZone = getTimeZones();
+    let horariosConvertidos = convertirHorario(
+      horario_original,
+      ciudad_original,
+      array_ciudades_nuevas
+    );
+    console.log(timeZone);
+    console.log(horariosConvertidos);
   }, []);
+
   <>
     <h1>Convertor horario</h1>
     <h3>

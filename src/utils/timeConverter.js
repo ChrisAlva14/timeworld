@@ -1,12 +1,22 @@
 import moment from "moment-timezone";
 
 export function getTimeZones() {
-  console.log(moment.tz.names());
+  return moment.tz.names();
 }
 export function convertirHorario(
   horario_original,
   ciudad_original,
-  ciudad_nueva
+  array_ciudades_nuevas
 ) {
-  console.log("Convirtiendo horario");
+  let horaOriginal = moment.tz(horario_original, ciudad_original);
+  let horariosConvertidos = [];
+
+  array_ciudades_nuevas.forEach((ciudad) => {
+    let horarioConvertido = horaOriginal.clone().tz(ciudad);
+    horariosConvertidos.push({
+      ciudad: ciudad,
+      horario: horarioConvertido.format("HH:mm  DD-MM-YYYY "), // Formato de salida deseado
+    });
+  });
+  return horariosConvertidos;
 }
