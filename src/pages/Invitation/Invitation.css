@@ -1,0 +1,224 @@
+/* Invitation.css */
+
+/* General Styles */
+h1 {
+  font-size: 24px;
+}
+
+.info_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.buttons {
+  width: 100%;
+  padding-right: 20px;
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+#green {
+  background: linear-gradient(180deg, #579E0F -80%, #007922 20%);
+}
+
+#blue {
+  background: linear-gradient(180deg, #0B61B0 -80%, #04407D 20%);
+}
+
+#orange {
+  background: linear-gradient(180deg, #DB7C26 -80%, #AB5B10 20%);
+}
+
+.col {
+  flex: 1;
+  padding: 10px;
+}
+
+.div_input {
+  margin-bottom: 10px;
+}
+
+.div_input label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.div_input input,
+.div_input select,
+.div_input textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.container_cities {
+  margin-top: 10px;
+}
+
+.cityLabel {
+  background-color: #f1f1f1;
+  padding: 5px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.container_button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+.modal-container {
+  width: 90%;
+  max-width: 500px;
+  min-height: 534px;
+  padding: 30px 5px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #0B61B0 -80%, #04407D 20%);
+}
+
+.modal-content {
+  padding: 20px 0px 20px;
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  border-radius: 50px 0px 50px 0px;
+  border: 1px solid white;
+}
+
+.modal-content img {
+  width: 117px;
+  height: 66px;
+  margin-top: -40px;
+}
+
+.modal h2 {
+  font-size: 24px;
+  color: white;
+  max-width: 80%;
+  margin: 0 auto;
+  word-wrap: break-word;
+}
+
+.modal p {
+  font-size: 16px;
+  color: white;
+  max-width: 80%;
+  margin: 0 auto;
+  word-wrap: break-word;
+}
+
+.container-link {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: white;
+}
+
+.modal a {
+  color: #64D9E9;
+  text-decoration: none;
+  margin-left: 5px;
+  margin-right: 5px;
+  word-wrap: break-word;
+}
+
+.modal-times {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.modal-times div {
+  margin-bottom: 10px;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.modal-buttons button:hover {
+  background-color: #ddd;
+}
+
+.modal-content span {
+  color: white;
+  word-wrap: break-word;
+}
+
+.image-invitation {
+  position: relative;
+  width: 200px !important;
+  height: 600px !important;
+  gap: 0px;
+  opacity: 0px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .modal-container {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .modal-content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .modal h2 {
+    font-size: 20px;
+  }
+
+  .modal p {
+    font-size: 14px;
+  }
+
+  .modal a {
+    font-size: 14px;
+  }
+
+  .modal-buttons button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
