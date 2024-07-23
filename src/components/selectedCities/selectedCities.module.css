@@ -1,0 +1,73 @@
+.mainUl {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 22.4rem;
+  justify-content: center;
+  gap: 10px;
+  margin: 1.5rem auto;
+  list-style-type: none;
+}
+.mainLi {
+  padding: 10px;
+  background: linear-gradient(
+    to bottom,
+    rgba(23, 23, 23, 0.55),
+    rgba(23, 23, 23, 0.25)
+  );
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.5s;
+}
+.mainLi::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.mainLi::after {
+  content: "✖";
+
+  font-size: 1rem;
+  color: red;
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+.mainLi:hover::before {
+  transform: translateX(0);
+}
+
+.mainLi:hover::after {
+  opacity: 1;
+}
+
+.mainLi:hover {
+  color: black;
+  z-index: 3;
+}
+
+/* Estilos para pantallas con un ancho mínimo de 768px */
+@media (min-width: 768px) {
+  .mainUl {
+    max-width: 30rem;
+
+    gap: 10px;
+    margin: 1.5rem auto;
+    list-style-type: none;
+  }
+}

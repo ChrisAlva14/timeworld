@@ -1,0 +1,55 @@
+.optionsContainer {
+  width: 22.4rem;
+  height: 3.4rem;
+  padding-left: 1rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(23, 23, 23, 0.55),
+    rgba(23, 23, 23, 0.25)
+  );
+  border-radius: 10px;
+  color: white;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.options {
+  color: black;
+}
+
+/* Estilo básico para el select */
+select {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+/* Estilo para las opciones */
+option {
+  padding: 10px;
+  background-color: white;
+  color: #333;
+}
+
+/* Estilo para la opción seleccionada */
+select:focus option:checked {
+  background-color: rgba(128, 128, 128, 0.514);
+}
+
+/* Estilo al enfocar el select */
+select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+/* Estilos para pantallas con un ancho mínimo de 768px */
+@media (min-width: 768px) {
+  .optionsContainer {
+    width: 35rem;
+    height: 5rem;
+    padding-left: 1rem;
+    margin: auto 2rem;
+  }
+}
