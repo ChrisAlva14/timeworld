@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./TimeConvecter.module.css";
 import BtnPagConverter from "../../components/btn-pag-converter-cities/BtnPagConverterCities";
 import { getTimeZones, convertirHorario } from "../../utils/timeConverter";
@@ -14,14 +14,11 @@ function TimeConvecter() {
   ];
 
   useEffect(() => {
-    let timeZone = getTimeZones();
     let horariosConvertidos = convertirHorario(
       horario_original,
       ciudad_original,
       array_ciudades_nuevas
     );
-    console.log(timeZone);
-    console.log(horariosConvertidos);
   }, []);
 
   return (
@@ -36,6 +33,7 @@ function TimeConvecter() {
 
       <div className={styles.timeConverter__btnContainer}>
         <BtnPagConverter placeholderText={"Seleccione una ciudad de origen"} />
+
         <DatesInput />
         <div className={styles.timeConverter__btnCityContainer}>
           <BtnPagConverter placeholderText={"Seleccione ciudades de destino"} />

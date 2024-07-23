@@ -1,55 +1,76 @@
-.optionsContainer {
-  width: 22.4rem;
-  height: 3.4rem;
+/* Contenedor principal */
+.container {
+  position: relative;
+  width: 23rem;
+  margin: auto;
+}
+
+/* Estilo para el campo de entrada de búsqueda */
+.searchInput {
+  width: 358px;
+  height: 53px;
   padding-left: 1rem;
   background: linear-gradient(
     to bottom,
     rgba(23, 23, 23, 0.55),
     rgba(23, 23, 23, 0.25)
   );
+  border: none;
   border-radius: 10px;
   color: white;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5rem;
+  box-sizing: border-box;
 }
-.options {
-  color: black;
+.searchInput::placeholder {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
 }
 
-/* Estilo básico para el select */
-select {
-  width: 200px;
-  padding: 10px;
-  font-size: 16px;
+/* Estilo para la lista de opciones desplegable */
+.optionsList {
+  position: absolute;
+  top: 3.4rem;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-}
-
-/* Estilo para las opciones */
-option {
-  padding: 10px;
   background-color: white;
-  color: #333;
+  border-radius: 0 0 10px 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 3;
 }
 
-/* Estilo para la opción seleccionada */
-select:focus option:checked {
-  background-color: rgba(128, 128, 128, 0.514);
+/* Estilo para cada opción individual */
+.option {
+  padding: 10px;
+  cursor: pointer;
+  color: black;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
-/* Estilo al enfocar el select */
-select:focus {
-  border-color: #007bff;
-  outline: none;
+/* Estilo para la opción al pasar el ratón */
+.option:hover {
+  background-color: rgba(128, 128, 128, 0.1);
 }
-/* Estilos para pantallas con un ancho mínimo de 768px */
+
+/* Estilo para pantallas con un ancho mínimo de 768px */
 @media (min-width: 768px) {
-  .optionsContainer {
+  .container {
     width: 35rem;
+  }
+
+  .searchInput {
     height: 5rem;
-    padding-left: 1rem;
-    margin: auto 2rem;
+  }
+
+  .optionsList {
+    top: 5rem;
   }
 }

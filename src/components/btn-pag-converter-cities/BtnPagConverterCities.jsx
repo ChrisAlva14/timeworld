@@ -1,25 +1,67 @@
 import styles from "./BtnPagConverterCities.module.css";
+import { useEffect, useState } from "react";
+import { getTimeZones } from "../../utils/timeConverter";
 
-const BtnPagConverterCities = ({ placeholderText }) => {
+const BtnPagConverterCities = (props) => {
+  const [timeZone, setTimeZone] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isListVisible, setIsListVisible] = useState(false);
+
+  useEffect(() => {
+    const timeZoneValue = getTimeZones();
+    setTimeZone(timeZoneValue);
+  }, []);
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+    setIsListVisible(true);
+  };
+
+  const handleOptionClick = (city) => {
+    setSearchQuery(city);
+    setIsListVisible(false);
+  };
+
+  const handleOutsideClick = (event) => {
+    if (event.target.closest(`.${styles.container}`) === null) {
+      setIsListVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
+  const filteredCities = timeZone.filter((city) =>
+    city.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
-    <select name="from-city" id="from-city" className={styles.optionsContainer}>
-      <option className={styles.options} value="" selected>
-        {/* Al hacerlo funcional agregar valueDefault correctamente con un estado */}
-        {placeholderText}
-      </option>
-      <option className={styles.options} value="1">
-        Buenos Aires/Argentina
-      </option>
-      <option className={styles.options} value="2">
-        El cairo/Egipto
-      </option>
-      <option className={styles.options} value="3">
-        Brasilia/Brasil
-      </option>
-      <option className={styles.options} value="4">
-        Santiago/Chile
-      </option>
-    </select>
+    <div className={styles.container}>
+      <input
+        type="text"
+        placeholder={props.placeholderText}
+        value={searchQuery}
+        onChange={handleSearchChange}
+        onClick={() => setIsListVisible(true)}
+        className={styles.searchInput}
+      />
+      {isListVisible && searchQuery && (
+        <ul className={styles.optionsList}>
+          {filteredCities.map((city, index) => (
+            <li
+              key={index}
+              className={styles.option}
+              onClick={() => handleOptionClick(city)}>
+              {city}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 };
 
