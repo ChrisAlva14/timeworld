@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import styles from "./TimeConvecter.module.css";
 import BtnPagConverter from "../../components/btn-pag-converter-cities/BtnPagConverterCities";
-import { getTimeZones, convertirHorario } from "../../utils/timeConverter";
-import SelectedCities from "../../components/selectedCities/SelectedCities";
+import { convertirHorario } from "../../utils/timeConverter";
 import DatesInput from "../../components/datesInput/DatesInput";
+import CitySelectorContainer from "../../components/citySelectorContainer/CitySelectorContainer";
 function TimeConvecter() {
   const horario_original = "2024-07-07 12:00:00";
   const ciudad_original = "America/Argentina/ComodRivadavia";
@@ -35,10 +35,8 @@ function TimeConvecter() {
         <BtnPagConverter placeholderText={"Seleccione una ciudad de origen"} />
 
         <DatesInput />
-        <div className={styles.timeConverter__btnCityContainer}>
-          <BtnPagConverter placeholderText={"Seleccione ciudades de destino"} />
-          <SelectedCities />
-        </div>
+
+        <CitySelectorContainer />
       </div>
 
       <div>

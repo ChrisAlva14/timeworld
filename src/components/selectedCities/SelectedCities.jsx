@@ -1,17 +1,20 @@
+// selectedCities.jsx
 import styles from "./selectedCities.module.css";
-const selectedCities = () => {
+
+const SelectedCities = (props) => {
   return (
-    <ul className={styles.mainUl}>
-      <li className={styles.mainLi}>Caracas</li>
-      <li className={styles.mainLi}>Montevideo</li>
-      <li className={styles.mainLi}>Berlin</li>
-      <li className={styles.mainLi}>Santiago de Chile</li>
-      <li className={styles.mainLi}>Lima</li>
-      <li className={styles.mainLi}>Brasilia</li>
-      <li className={styles.mainLi}>Quito</li>
-      <li className={styles.mainLi}>Buenos Aires</li>
-    </ul>
+    <div className={styles.mainUlContainer}>
+      <ul className={styles.mainUl}>
+        {props.cities.map((city) => {
+          return (
+            <li className={styles.mainLi} key={city}>
+              {city}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 
-export default selectedCities;
+export default SelectedCities;

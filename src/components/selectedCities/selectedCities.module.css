@@ -1,12 +1,23 @@
+/* Contenedor de la lista */
+.mainUlContainer {
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 1.5rem auto;
+}
+
+/* Lista de elementos */
 .mainUl {
   display: flex;
   flex-wrap: wrap;
   max-width: 22.4rem;
   justify-content: center;
   gap: 10px;
-  margin: 1.5rem auto;
+  margin: 0;
   list-style-type: none;
+  padding: 0;
 }
+
+/* Elementos de la lista */
 .mainLi {
   padding: 10px;
   background: linear-gradient(
@@ -21,6 +32,7 @@
   overflow: hidden;
   transition: color 0.5s;
 }
+
 .mainLi::before {
   content: " ";
   position: absolute;
@@ -36,7 +48,6 @@
 
 .mainLi::after {
   content: "✖";
-
   font-size: 1rem;
   color: red;
   position: absolute;
@@ -61,13 +72,13 @@
   z-index: 3;
 }
 
-/* Estilos para pantallas con un ancho mínimo de 768px */
 @media (min-width: 768px) {
+  .mainUlContainer {
+    max-height: 150px;
+  }
+
   .mainUl {
     max-width: 30rem;
-
     gap: 10px;
-    margin: 1.5rem auto;
-    list-style-type: none;
   }
 }

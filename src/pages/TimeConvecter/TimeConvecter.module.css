@@ -58,8 +58,4 @@
     flex-direction: row;
     margin: 5rem auto;
   }
-
-  .timeConverter__btnCityContainer {
-    padding-top: 8rem;
-  }
 }
