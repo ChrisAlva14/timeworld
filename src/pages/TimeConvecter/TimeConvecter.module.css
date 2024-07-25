@@ -19,9 +19,9 @@
 }
 
 /* Contenedor para los botones */
-.timeConverter__btnContainer {
+.btnContainer {
   max-width: 1280px;
-  margin: 5rem auto 2rem auto;
+  margin: 2rem auto 2rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,12 +29,12 @@
 }
 
 /* Botón del conversor */
-.timeConverter__btn__converter {
-  position: sticky;
-  bottom: 0;
+.btn__converter {
+  position: absolute;
+  bottom: 15%;
   left: 0;
   right: 0;
-  margin: 0 auto 10.5rem auto;
+  margin: 5rem auto;
   border-radius: 10px;
   height: 60px;
   width: 199px;
@@ -45,17 +45,15 @@
   font-size: 24px;
 }
 
-/* Estilos para pantallas con un ancho mínimo de 768px */
-@media (min-width: 768px) {
-  .timeConverter__btnContainer {
-    margin: 10rem 0 0 0;
-  }
-}
-
 /* Estilos para pantallas con un ancho mínimo de 1024px */
 @media (min-width: 1024px) {
-  .timeConverter__btnContainer {
+  .btnContainer {
     flex-direction: row;
-    margin: 5rem auto;
+    margin: 5rem 10rem;
+  }
+}
+@media (min-width: 1280px) {
+  .btnContainer {
+    margin: 5rem 30rem;
   }
 }

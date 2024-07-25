@@ -1,8 +1,11 @@
 /* Contenedor de la lista */
 .mainUlContainer {
-  max-height: 400px;
+  max-height: 200px;
   overflow-y: auto;
   margin: 1.5rem auto;
+  position: absolute;
+  left: 20%;
+  right: 20%;
 }
 
 /* Lista de elementos */
@@ -33,52 +36,18 @@
   transition: color 0.5s;
 }
 
-.mainLi::before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-  z-index: 1;
-}
-
-.mainLi::after {
-  content: "✖";
-  font-size: 1rem;
-  color: red;
-  position: absolute;
-  right: 2px;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 2;
-}
-
-.mainLi:hover::before {
-  transform: translateX(0);
-}
-
-.mainLi:hover::after {
-  opacity: 1;
-}
-
-.mainLi:hover {
-  color: black;
-  z-index: 3;
-}
-
 @media (min-width: 768px) {
   .mainUlContainer {
     max-height: 150px;
   }
 
   .mainUl {
-    max-width: 30rem;
+    max-width: 22rem;
     gap: 10px;
+  }
+}
+@media (min-width: 1024px) {
+  .mainContainer {
+    margin: 0;
   }
 }

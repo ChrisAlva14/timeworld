@@ -31,7 +31,7 @@ function TimeConvecter() {
         </h3>
       </div>
 
-      <div className={styles.timeConverter__btnContainer}>
+      <div className={styles.btnContainer}>
         <BtnPagConverter placeholderText={"Seleccione una ciudad de origen"} />
 
         <DatesInput />
@@ -39,11 +39,7 @@ function TimeConvecter() {
         <CitySelectorContainer />
       </div>
 
-      <div>
-        <button className={styles.timeConverter__btn__converter}>
-          Convertir
-        </button>
-      </div>
+      <button className={styles.btn__converter}>Convertir</button>
     </div>
   );
 }

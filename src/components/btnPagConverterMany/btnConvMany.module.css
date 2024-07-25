@@ -2,7 +2,6 @@
 .container {
   position: relative;
   width: 23rem;
-  margin: auto;
 }
 
 /* Estilo para el campo de entrada de búsqueda */
@@ -62,10 +61,6 @@
 
 /* Estilo para pantallas con un ancho mínimo de 768px */
 @media (min-width: 768px) {
-  .container {
-    width: 35rem;
-  }
-
   .searchInput {
     height: 5rem;
   }
