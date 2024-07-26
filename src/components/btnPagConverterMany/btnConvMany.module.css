@@ -1,0 +1,71 @@
+/* Contenedor principal */
+.container {
+  position: relative;
+  width: 23rem;
+}
+
+/* Estilo para el campo de entrada de búsqueda */
+.searchInput {
+  width: 358px;
+  height: 53px;
+  padding-left: 1rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(23, 23, 23, 0.9),
+    rgba(23, 23, 23, 0.5)
+  );
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  box-sizing: border-box;
+}
+.searchInput::placeholder {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Estilo para la lista de opciones desplegable */
+.optionsList {
+  position: absolute;
+  top: 3.4rem;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 3;
+}
+
+/* Estilo para cada opción individual */
+.option {
+  padding: 10px;
+  cursor: pointer;
+  color: black;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* Estilo para la opción al pasar el ratón */
+.option:hover {
+  background-color: rgba(128, 128, 128, 0.1);
+}
+
+/* Estilo para pantallas con un ancho mínimo de 768px */
+@media (min-width: 768px) {
+  .searchInput {
+    height: 5rem;
+  }
+
+  .optionsList {
+    top: 5rem;
+  }
+}
