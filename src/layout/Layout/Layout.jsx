@@ -8,6 +8,7 @@ import {
 } from "../../utils/weatherBg";
 //import { Footer } from "../Footer/Footer";
 import NavBotton from "../NavBotton/NavBotton";
+import styles from "./Layout.module.css"
 
 export default function Layout({ children }) {
   const [weather, setWeather] = useState(null);
@@ -55,7 +56,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
       <NavBotton />
       {/* <footer className="footer">
         footer -El clima actual es:{" "}

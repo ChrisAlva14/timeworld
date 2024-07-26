@@ -1,9 +1,12 @@
 import { useEffect } from "react";
-import styles from "./TimeConvecter.module.css";
+
 import BtnPagConverter from "../../components/btn-pag-converter-cities/BtnPagConverterCities";
-import { convertirHorario } from "../../utils/timeConverter";
-import DatesInput from "../../components/datesInput/DatesInput";
 import CitySelectorContainer from "../../components/citySelectorContainer/CitySelectorContainer";
+import DatesInput from "../../components/datesInput/DatesInput";
+import { convertirHorario } from "../../utils/timeConverter";
+import styles from "./TimeConvecter.module.css";
+import BoxButtons from "../../components/TimeConvecter/BoxButtons/BoxButtons";
+
 function TimeConvecter() {
   const horario_original = "2024-07-07 12:00:00";
   const ciudad_original = "America/Argentina/ComodRivadavia";
@@ -23,21 +26,23 @@ function TimeConvecter() {
 
   return (
     <div className={styles.mainContainer}>
-      <div>
+      <div className={styles.headerBox}>
         <h1 className={styles.timeConverter__h1}>Convertor horario</h1>
-        <h3 className={styles.timeConverter__h3}>
+        <p className={styles.message}>
           Utiliza esta convertor para conocer el <b>horario exacto</b>
           de las ciudades que desees
-        </h3>
+        </p>
       </div>
 
-      <div className={styles.btnContainer}>
+      {/* <div className={styles.btnContainer}>
         <BtnPagConverter placeholderText={"Seleccione una ciudad de origen"} />
 
         <DatesInput />
 
         <CitySelectorContainer />
-      </div>
+      </div> */}
+
+      <BoxButtons />
 
       <button className={styles.btn__converter}>Convertir</button>
     </div>
