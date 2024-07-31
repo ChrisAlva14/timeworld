@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Navbar } from "../Navbar/Navbar";
 import {
@@ -6,6 +6,9 @@ import {
   getWeather,
   getBackgroundClass,
 } from "../../utils/weatherBg";
+//import { Footer } from "../Footer/Footer";
+import NavBotton from "../NavBotton/NavBotton";
+import styles from "./Layout.module.css"
 
 export default function Layout({ children }) {
   const [weather, setWeather] = useState(null);
@@ -52,12 +55,13 @@ export default function Layout({ children }) {
   }
   return (
     <>
-      <Navbar> </Navbar>
-      <main>{children}</main>
-      <footer className="footer">
+      <Navbar />
+      <main className={styles.main}>{children}</main>
+      <NavBotton />
+      {/* <footer className="footer">
         footer -El clima actual es:{" "}
         {`${partOfDay}-${getBackgroundClass(weather)}`}
-      </footer>
+      </footer> */}
     </>
   );
 }

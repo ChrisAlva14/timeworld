@@ -1,0 +1,48 @@
+.nb-botton{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.nb-botton-box{
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+}
+.nb-btn{
+    font-size: 14px;
+    color: #050505;
+    background-color: transparent;
+    padding: 10px 20px;
+    width: 50%;
+    margin: 0;
+    border: none;
+}
+.conv-selected{
+    border-radius: 0px 15px 15px 0px;
+    background-color: #050505;
+    color: white;
+    font-weight: 500;
+}
+.inv-selected{
+    border-radius: 15px 0px 0px 15px;
+    background-color: #050505;
+    color: white;
+    font-weight: 500;
+}
+@media (min-width: 375px) {
+    .nb-btn{
+        font-size: 16px;
+        padding: 15px 25px;
+    }
+    .conv-selected{
+        border-radius: 0px 15px 15px 0px;
+    }
+    .inv-selected{
+        border-radius: 15px 0px 0px 15px;
+    }
+}
+@media (min-width: 600px) {
+    .nb-botton{
+        display: none;
+    }
+}
