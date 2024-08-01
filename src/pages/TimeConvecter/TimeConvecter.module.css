@@ -7,7 +7,6 @@
 }
 
 .headerBox {
-  background-color: rgba(0, 0, 0, 0.183);
   margin: 1rem;
   color: white;
   margin-bottom: 70px;
@@ -51,10 +50,7 @@
   font-size: 24px;
 }
 
-
 @media (min-width: 600px) {
-
-
   /* Contenedor principal del conversor de tiempo */
   .mainContainer {
     height: 75vh;

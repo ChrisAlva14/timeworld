@@ -1,95 +1,71 @@
 .section {
-    background-color: aqua;
-    padding: 1rem;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  padding: 1rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .button_Layout {
-    width: 100%;
-    height: 53px;
-    margin: 0;
+  width: 100%;
+  height: 53px;
+  margin: 0;
 }
 
 .box_btn_layout {
-    display: flex;
-    justify-content: center;
-    border: none;
-    margin: 0;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  border: none;
+  margin: 0;
+  gap: 1rem;
 }
 
 .box_btn_layout .button_Layout {
-    align-self: stretch;
+  align-self: stretch;
 }
 
 .text_input {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-}
-
-.ul_cities {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 13px;
-    margin-top: 13px;
-    background-color: beige;
-    margin-bottom: 5px;
-    max-height: 95px; /* Establecer una altura máxima */
-    overflow-y: auto; /* Permitir el desplazamiento vertical si es necesario */
-    padding: 5px; /* Añadir algo de relleno para el contenedor */
-}
-
-.ul_cities .items {
-    display: inline-flex; /* Cambia a inline-flex */
-    background-color: #4CAF50;
-    color: white;
-    padding: 5px;
-    border: 1px solid black;
-    border-radius: 10px;
-    text-align: center;
-    box-sizing: border-box;
-    flex: none; /* Desactiva el comportamiento de flex-grow y flex-shrink */
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 @media (min-width: 600px) {
-    .section {
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-    }
+  .section {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
 
-    .box_btn_layout {
-        flex-direction: column;
-    }
+  .box_btn_layout {
+    flex-direction: column;
+  }
 
-    .button_Layout {
-        height: 123px;
-    }
+  .button_Layout {
+    height: 123px;
+  }
 
-    .box_btn_layout .button_Layout {
-        height: 56px;
-    }
-    .text_input {
-        min-width: 200px;
-    }
+  .box_btn_layout .button_Layout {
+    height: 56px;
+  }
+  .text_input {
+    min-width: 200px;
+  }
 }
 
 @media (min-width: 1000px) {
-    .text_input {
-        min-width: 400px;
-    }
+  .text_input {
+    min-width: 400px;
+  }
 }
 @media (min-width: 1200px) {
-    .text_input {
-        min-width: 474px;
-    }
+  .text_input {
+    min-width: 474px;
+  }
 }
 
 /* tablet */
-@media (min-width: 960px) {}
+@media (min-width: 960px) {
+}
 
 /* desktop */
