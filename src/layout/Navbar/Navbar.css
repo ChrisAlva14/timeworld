@@ -3,7 +3,7 @@
     background: rgba(255, 255, 255, 0.9);
     border-radius: 25rem;
     position: relative;
-    margin: 34px 10px 86px 10px;
+    margin: 0px 10px 86px 10px;
 }
 
 .navbar {
@@ -31,7 +31,6 @@
     left: 50%;
     transform: translate(-50%, -15%);
     z-index: 1;
-    
 }
 
 .active {
@@ -42,15 +41,17 @@
 }
 
 @media (min-width: 960px) {
-    .navbar{
+    .navbar {
         height: 57px;
     }
-    .navbar .nav-link{
+
+    .navbar .nav-link {
         font-size: 24px;
     }
 }
+
 @media (min-width: 1600px) {
-    .header{
+    .header {
         max-width: 1600px;
         margin-inline: auto;
     }
@@ -62,7 +63,8 @@
     .navbar .nav-link {
         display: none;
     }
-    .navbar{
+
+    .navbar {
         height: unset;
     }
 
@@ -82,6 +84,7 @@
         width: 60px;
         height: 60px;
     }
+
     .header {
         margin: 0px;
         margin-bottom: 100px;
