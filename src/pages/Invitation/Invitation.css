@@ -10,31 +10,29 @@ h1 {
   flex-wrap: wrap;
 }
 
-.buttons {
-  width: 100%;
-  padding-right: 20px;
-  display: flex;
-  justify-content: end;
-  gap: 15px;
-  margin-bottom: 10px;
+.modal{
+  box-sizing: border-box;
+  padding: 0 16px;
 }
 
-.button {
+.buttons {
+  width: 100%;
+  padding-right: 10px;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.colorButton {
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  user-select: none;
 }
 
-#green {
-  background: linear-gradient(180deg, #579E0F -80%, #007922 20%);
-}
-
-#blue {
-  background: linear-gradient(180deg, #0B61B0 -80%, #04407D 20%);
-}
-
-#orange {
-  background: linear-gradient(180deg, #DB7C26 -80%, #AB5B10 20%);
+.colorButton:hover{
+  box-shadow: 0px 0px 7px 2px #64D9E9;
 }
 
 .col {
@@ -75,49 +73,38 @@ h1 {
   text-align: center;
 }
 
-button {
-  padding: 10px 20px;
-  margin: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #ddd;
-}
-
 .modal-container {
-  width: 90%;
-  max-width: 500px;
+  width: 400px;
   min-height: 534px;
-  padding: 30px 5px;
+  padding: 30px 10px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  border-radius: 10px;
-  background: linear-gradient(180deg, #0B61B0 -80%, #04407D 20%);
+  clip-path: inset(0 round 15px);
 }
 
 .modal-content {
-  padding: 20px 0px 20px;
+  padding: 40px 0px 20px;
   width: 90%;
-  max-width: 600px;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   text-align: center;
   border-radius: 50px 0px 50px 0px;
-  border: 1px solid white;
+  border: 2px solid white;
 }
 
 .modal-content img {
-  width: 117px;
-  height: 66px;
-  margin-top: -40px;
+  width: 85px;
+  height: 45px;
+  position: absolute;
+  top: -20px;
 }
 
 .modal h2 {
-  font-size: 24px;
+  font-size: 22px;
   color: white;
   max-width: 80%;
   margin: 0 auto;
@@ -130,6 +117,7 @@ button:hover {
   max-width: 80%;
   margin: 0 auto;
   word-wrap: break-word;
+  font-weight: 400;
 }
 
 .container-link {
@@ -137,21 +125,27 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 5px;
+  gap: 3%;
 }
 
 .line {
   flex-grow: 1;
   height: 1px;
   background-color: white;
+  min-width: 7.5%;
 }
 
-.modal a {
+.container-link a {
   color: #64D9E9;
-  text-decoration: none;
-  margin-left: 5px;
-  margin-right: 5px;
   word-wrap: break-word;
+  max-width: 79%;
+  font-size: 16px;
+}
+
+.enlace{
+  font-size: 14px;
+  filter: grayscale();
+  opacity: .5;
 }
 
 .modal-times {
@@ -171,19 +165,25 @@ button:hover {
 }
 
 .modal-buttons button {
-  padding: 10px 20px;
+  padding: 8px;
   margin: 5px;
   cursor: pointer;
+  font-size: 18px;
+  transition: none;
 }
 
 .modal-buttons button:hover {
-  background-color: #ddd;
+  background-color: white;
+  color: black;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, .9));
 }
+
 
 .modal-content span {
   color: white;
   word-wrap: break-word;
 }
+
 
 .image-invitation {
   position: relative;
@@ -195,30 +195,6 @@ button:hover {
 
 /* Responsive Design */
 @media (max-width: 600px) {
-  .modal-container {
-    padding: 15px;
-    border-radius: 10px;
-  }
 
-  .modal-content {
-    width: 100%;
-    padding: 10px;
-  }
 
-  .modal h2 {
-    font-size: 20px;
-  }
-
-  .modal p {
-    font-size: 14px;
-  }
-
-  .modal a {
-    font-size: 14px;
-  }
-
-  .modal-buttons button {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
 }
