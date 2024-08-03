@@ -14,8 +14,10 @@
   background-image: url("/fondos_paisajes/paisajes_Día_soleado.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Opcional: fija la imagen de fondo */
-  color: #000; /* Texto en negro */
+  background-attachment: fixed;
+  /* Opcional: fija la imagen de fondo */
+  color: #000;
+  /* Texto en negro */
 }
 
 /* Día - Nublado */
@@ -27,8 +29,10 @@
   background-image: url("/fondos_paisajes/paisajes_Día_nublado.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #000; /* Texto en negro */
+  background-attachment: fixed;
+  /* Fija la imagen de fondo */
+  color: #000;
+  /* Texto en negro */
 }
 
 /* Día - Lluvia */
@@ -56,8 +60,10 @@
   background-image: url("/fondos_paisajes/paisajes_Día_lluvioso.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #000; /* Texto en negro */
+  background-attachment: fixed;
+  /* Fija la imagen de fondo */
+  color: #000;
+  /* Texto en negro */
 }
 
 /* Día - Nieve */
@@ -82,8 +88,10 @@
   background-image: url("/fondos_paisajes/paisajes_Día_nieve.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #000; /* Texto en negro */
+  background-attachment: fixed;
+  /* Fija la imagen de fondo */
+  color: #000;
+  /* Texto en negro */
 }
 
 /*------------------ Estilos para clima durante la noche -------------- */
@@ -98,8 +106,10 @@
   background-image: url("/fondos_paisajes/paisajes_Noche_despejada.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Opcional: fija la imagen de fondo */
-  color: #fff; /* Texto en blanco */
+  background-attachment: fixed;
+  /* Opcional: fija la imagen de fondo */
+  color: #fff;
+  /* Texto en blanco */
 }
 
 /* Noche - Lluvia */
@@ -130,8 +140,10 @@
   background-image: url("/fondos_paisajes/paisajes_Noche_tormenta.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #fff; /* Texto en blanco */
+  background-attachment: fixed;
+  /* Fija la imagen de fondo */
+  color: #fff;
+  /* Texto en blanco */
 }
 
 /* Noche - Nieve */
@@ -153,8 +165,10 @@
   background-image: url("/fondos_paisajes/paisajes_Noche_nieve.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen de fondo */
-  color: #000; /* Texto en negro */
+  background-attachment: fixed;
+  /* Fija la imagen de fondo */
+  color: #000;
+  /* Texto en negro */
 }
 
 .default-weatherDefault {
@@ -162,7 +176,23 @@
   color: #000;
 }
 
+/*NOT FOUND*/
+.not-found {
+  background-image: url("/fondos_paisajes/not_found.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* Opcional: fija la imagen de fondo */
+  color: #000;
+  /* Texto en negro */
+}
 
-@media (min-width: 600px) {} /* tablet */
-@media (min-width: 960px) {}/* desktop */
-@media (min-width: 1300px) {} /* max screen */
+@media (min-width: 600px) {}
+
+/* tablet */
+@media (min-width: 960px) {}
+
+/* desktop */
+@media (min-width: 1300px) {}
+
+/* max screen */
