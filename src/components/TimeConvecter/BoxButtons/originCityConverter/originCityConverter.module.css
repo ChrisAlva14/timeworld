@@ -1,0 +1,27 @@
+.text_input {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+@media (min-width: 600px) {
+  .text_input {
+    min-width: 200px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .text_input {
+    min-width: 400px;
+  }
+}
+@media (min-width: 1200px) {
+  .text_input {
+    min-width: 474px;
+  }
+}
+
+/* tablet */
+@media (min-width: 960px) {
+}
+
+/* desktop */

@@ -51,7 +51,7 @@ function InvitationGenerator() {
 
   return (
     <main>
-      <h1>Generar invitación </h1>
+      <h1 className="invitation_h1">Generar invitación </h1>
       <p className="info">
         Utiliza este generador para{" "}
         <span>crear una invitación para tu reunión</span> con los horarios de
