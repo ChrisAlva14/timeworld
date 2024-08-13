@@ -123,16 +123,16 @@ function InvitationGenerator() {
                   <option value="" disabled>
                     --Seleccione la ciudad--
                   </option>
-                  <option value="ARG">Argentina</option>
-                  <option value="BRA">Brasil</option>
-                  <option value="CAN">Canadá</option>
-                  <option value="CHL">Chile</option>
-                  <option value="COL">Colombia</option>
-                  <option value="ESP">España</option>
-                  <option value="MEX">México</option>
-                  <option value="PER">Perú</option>
-                  <option value="URU">Uruguay</option>
-                  <option value="VEN">Venezuela</option>
+                  <option value="Argentina">Argentina</option>
+                  <option value="Brasil">Brasil</option>
+                  <option value="Canadá">Canadá</option>
+                  <option value="Chile">Chile</option>
+                  <option value="Colombia">Colombia</option>
+                  <option value="España">España</option>
+                  <option value="México">México</option>
+                  <option value="Perú">Perú</option>
+                  <option value="Uruguay">Uruguay</option>
+                  <option value="Venezuela">Venezuela</option>
                 </select>
               </div>
               <div className="div_input">
@@ -140,16 +140,16 @@ function InvitationGenerator() {
                   <option value="" disabled>
                     --Seleccione la ciudad--
                   </option>
-                  <option value="ARG">Argentina</option>
-                  <option value="BRA">Brasil</option>
-                  <option value="CAN">Canadá</option>
-                  <option value="CHL">Chile</option>
-                  <option value="COL">Colombia</option>
-                  <option value="ESP">España</option>
-                  <option value="MEX">México</option>
-                  <option value="PER">Perú</option>
-                  <option value="URU">Uruguay</option>
-                  <option value="VEN">Venezuela</option>
+                  <option value="Argentina">Argentina</option>
+                  <option value="Brasil">Brasil</option>
+                  <option value="Canadá">Canadá</option>
+                  <option value="Chile">Chile</option>
+                  <option value="Colombia">Colombia</option>
+                  <option value="España">España</option>
+                  <option value="México">México</option>
+                  <option value="Perú">Perú</option>
+                  <option value="Uruguay">Uruguay</option>
+                  <option value="Venezuela">Venezuela</option>
                 </select>
               </div>
 

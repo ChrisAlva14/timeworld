@@ -13,10 +13,15 @@ h1 {
 .modal{
   box-sizing: border-box;
   padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 48px;
 }
 
 .buttons {
-  width: 100%;
+  width: 320px;
   padding-right: 10px;
   display: flex;
   justify-content: end;
@@ -32,7 +37,7 @@ h1 {
 }
 
 .colorButton:hover{
-  box-shadow: 0px 0px 7px 2px #64D9E9;
+  box-shadow: 0px 0px 7px 2px rgb(192, 192, 192);
 }
 
 .col {
@@ -74,9 +79,9 @@ h1 {
 }
 
 .modal-container {
-  width: 400px;
-  min-height: 534px;
-  padding: 30px 10px;
+  width: 320px;
+  min-height: 440px;
+  padding: 24px 8px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -84,7 +89,7 @@ h1 {
 }
 
 .modal-content {
-  padding: 40px 0px 20px;
+  padding: 32px 0px 120px;
   width: 90%;
   position: relative;
   display: flex;
@@ -94,13 +99,28 @@ h1 {
   text-align: center;
   border-radius: 50px 0px 50px 0px;
   border: 2px solid white;
+  border-bottom: none;
 }
 
-.modal-content img {
-  width: 85px;
-  height: 45px;
+.modal-content::before {
+  content: "";
   position: absolute;
-  top: -20px;
+  bottom: 0;
+  height: 1px;
+  background-color: white;
+  width: 15%;
+}
+
+.modal-content::before {
+  left: 0;
+}
+
+
+#card-logo {
+  width: 80px;
+  height: 42px;
+  position: absolute;
+  top: -18px;
 }
 
 .modal h2 {
@@ -136,10 +156,12 @@ h1 {
 }
 
 .container-link a {
-  color: #64D9E9;
+  color: white;
   word-wrap: break-word;
   max-width: 79%;
   font-size: 16px;
+  position: relative;
+  top: -2px;
 }
 
 .enlace{
@@ -148,53 +170,189 @@ h1 {
   opacity: .5;
 }
 
-.modal-times {
-  margin-top: 20px;
+#invitation-times {
+  list-style-type: none;
+  padding: 0px 16px;
+  width: 100%;
   text-align: left;
 }
 
-.modal-times div {
+#invitation-times li {
   margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+#invitation-times span{
+  font-size: .9rem;
+}
+
+.dotted-line{
+  flex-grow: 1;
+  box-sizing: border-box;
+  position: relative;
+  background: transparent;
+}
+
+.dotted-line::before {
+  content: '';
+  position: absolute;
+  bottom: .2rem; /* Ajusta para alinear la línea con el interior */
+  left: .5rem;
+  right: .5rem;
+  border-bottom: .125rem dotted white;
 }
 
 .modal-buttons {
-  margin-top: 20px;
+  margin: 32px 0;
   display: flex;
+  gap: 12px;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 .modal-buttons button {
-  padding: 8px;
-  margin: 5px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 21px;
+  font-weight: 700;
   transition: none;
 }
 
 .modal-buttons button:hover {
   background-color: white;
   color: black;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, .9));
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, .7));
 }
-
 
 .modal-content span {
   color: white;
   word-wrap: break-word;
 }
 
-
-.image-invitation {
-  position: relative;
-  width: 200px !important;
-  height: 600px !important;
-  gap: 0px;
-  opacity: 0px;
+.upload-img{
+  position: absolute;
+  bottom: -16px;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  overflow: hidden;
+  user-select: none;
 }
 
+.upload-img figure img{
+  object-fit: cover;
+  object-position: center;
+  max-width: 191px;
+  height: 100%;
+  max-height: 124px;
+}
+
+.upload-filter-img{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.simbolos-de-carga{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  filter: grayscale();
+  gap: 8px;
+}
+
+.simbolos-de-carga span{
+  width: 30px;
+  height: 30px;
+}
+
+.simbolos-de-carga label{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+}
+
+.simbolos-de-carga span:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.imgSelector{
+  display: flex;
+  flex-direction: column;  
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(116, 132, 172, .6);
+}
+
+.upload-filter-img span{
+  font-size: 18px;
+}
+
+.upload-filter-img input{
+  display: none;
+}
+
+
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (min-width: 600px) {
 
+  .modal{
+    margin-top: 48px;
+  }
 
+  .modal-container{
+    width: 440px;
+    min-height: 540px;
+    padding: 30px 10px;
+  }
+
+  .modal-content {
+    padding-top: 36px;
+  }
+
+  #card-logo {
+    width: 85px;
+    height: 45px;
+    top: -20px;
+  }
+
+  .buttons{
+    width: 100%;
+  }
+
+  #invitation-times{
+    padding: 0px 24px;
+  }
+
+  #invitation-times span{
+    font-size: 1.1rem;
+  }
+
+  .dotted-line::before {
+    border-bottom: .15rem dotted white;
+  }
+
+  .modal-buttons{
+    flex-direction: row;
+    gap: 16px;
+  }
 }

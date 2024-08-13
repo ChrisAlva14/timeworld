@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 export const TarjetaInkua = ({formData}) => {
 
-    const { titulo, descripcion, link, fecha, hora,cities} = formData
+    const { titulo, descripcion, link, fecha, hora, cities} = formData
+    const [ uploadImg, setUploadImg ] = useState(null)
 
+    const imgOnChange = (event) => {
 
+        const archivoSeleccionado = event.target.files[0]
+        if (archivoSeleccionado) {
+            const imgUrl = URL.createObjectURL(archivoSeleccionado)
+            setUploadImg(imgUrl)
+        }
+    }
+    
+    
   return (
     <div className="modal-content">
 
-        <img src="./logo-inkua.png" alt="logo-inkua" />
+        <img src="./logo-inkua.png" alt="logo-inkua" id='card-logo'/>
 
         <h2>{titulo} </h2>
         <p>{descripcion} </p>
@@ -19,19 +29,45 @@ export const TarjetaInkua = ({formData}) => {
                 {
                     !link ? <span className='enlace'>🔗</span>
                     :
-                    <a href={link}>{link}</a>                                
+                    <a href={link}>{link}</a>
                 }
             <div className='line'></div>
         </div>
         
-        <div className="modal-times">
-            {cities.map((city, key) => (
-                <div key={key}>
-                    <span>{city} : .............. </span>
+        <ul id="invitation-times">
+            {cities.map((city, index) => (
+                <li key={index}>
+                    <span>{city}:</span>
+                    <div className='dotted-line'></div>
                     <span>{fecha} - {hora}</span>
-                </div>
+                </li>
             ))}
-        </div>
+        </ul>
+
+        <section className='upload-img'>
+            <figure>
+                <img src={uploadImg ? uploadImg : "/card-image.png"} alt="imagen de reunion de grupo"/>
+            </figure>
+
+            <div className='upload-filter-img'>
+                {
+                    uploadImg ?
+                    <div className='simbolos-de-carga'>
+                        <span title='Remover imagen' onClick={() => setUploadImg(null)}>❎</span>          
+                        <label htmlFor="imgCarga">
+                            <span title='Cargar otra imagen'>↻</span>
+                        </label>
+                    </div>
+                        :
+                    <label htmlFor="imgCarga" className='imgSelector'>
+                        <img src="/image-selector.png" alt="" />
+                        <span>Seleccione una imagen</span>                    
+                    </label>
+                }
+
+                <input type="file" accept="image/jpeg,image/png" id="imgCarga" onChange={imgOnChange}/>    
+            </div>
+        </section>
 
     </div>
   )

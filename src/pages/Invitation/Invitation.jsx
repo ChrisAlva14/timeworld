@@ -8,7 +8,7 @@ import './Invitation.css'
 function Invitation({ formData }) {
 
     const colorStyleTpyes = {
-        lightBlue: 'rgba(106, 148, 192, 1)',
+        lightBlue: 'linear-gradient(90deg, #93ADC8 -3.59%, #6893BF 100%)',
         blue: 'linear-gradient(90deg, #0B61B0 -20%, #04407D 20%)',
         darkBlue: 'linear-gradient(90deg, #001C32 -3.59%, #003156 100%)'
     }
@@ -22,15 +22,27 @@ function Invitation({ formData }) {
 
     const handleDownload = () => {
         if (canvasRef.current) {
-          html2canvas(canvasRef.current).then((canvas) => {
-            const url = canvas.toDataURL()
-            const link = document.createElement('a')
-            link.href = url
-            link.download = 'mi_tarjeta.png'
-            document.body.appendChild(link)
-            link.click()
-            document.body.removeChild(link)
-          });
+
+            const uploadFilterImg = canvasRef.current.querySelector('.upload-filter-img');
+            if (uploadFilterImg) {
+                uploadFilterImg.style.display='none';
+            }
+
+            html2canvas(canvasRef.current).then((canvas) => {
+                const url = canvas.toDataURL()
+                const link = document.createElement('a')
+                link.href = url
+                link.download = 'mi_tarjeta.png'
+                document.body.appendChild(link)
+                link.click()
+                document.body.removeChild(link)
+                if (uploadFilterImg) {
+                    uploadFilterImg.style.display = 'flex';
+                }
+            }).catch(() => {
+                alert('Error al capturar la imagen');
+            });
+    
         }
     };
 
