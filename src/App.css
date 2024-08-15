@@ -10,6 +10,7 @@
 
 #root {
   padding-top: 34px;
+  background-color: rgba(0, 0, 0, 0.20); /* SE CAMBIÓ AL BACK-COLOR, BACKDROP-FILTER DISTORSIONA EL CODIGO*/
 }
 
 /*------------------ Estilos para clima durante el día -------------- */
