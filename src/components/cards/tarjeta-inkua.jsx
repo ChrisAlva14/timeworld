@@ -6,6 +6,10 @@ export const TarjetaInkua = ({formData}) => {
     const { titulo, descripcion, link, fecha, hora, cities} = formData
     const [ uploadImg, setUploadImg ] = useState(null)
 
+    const dateSplit = fecha.split('-')
+    const dayMonth = `${dateSplit[2]}/${dateSplit[1]}`
+
+
     const imgOnChange = (event) => {
 
         const archivoSeleccionado = event.target.files[0]
@@ -19,7 +23,7 @@ export const TarjetaInkua = ({formData}) => {
   return (
     <div className="modal-content">
 
-        <img src="./logo-inkua.png" alt="logo-inkua" id='card-logo'/>
+        {/* <img src="./logo-inkua.png" alt="logo-inkua" id='card-logo'/> */}
 
         <h2>{titulo} </h2>
         <p>{descripcion} </p>
@@ -39,7 +43,7 @@ export const TarjetaInkua = ({formData}) => {
                 <li key={index}>
                     <span>{city}:</span>
                     <div className='dotted-line'></div>
-                    <span>{fecha} - {hora}</span>
+                    <span>{dayMonth} - {hora}hs</span>
                 </li>
             ))}
         </ul>
@@ -55,7 +59,7 @@ export const TarjetaInkua = ({formData}) => {
                     <div className='simbolos-de-carga'>
                         <span title='Remover imagen' onClick={() => setUploadImg(null)}>❎</span>          
                         <label htmlFor="imgCarga">
-                            <span title='Cargar otra imagen'>↻</span>
+                            <span title='Cargar otra imagen'>✏️</span>
                         </label>
                     </div>
                         :
