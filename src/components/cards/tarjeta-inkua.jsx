@@ -57,9 +57,13 @@ export const TarjetaInkua = ({formData}) => {
                 {
                     uploadImg ?
                     <div className='simbolos-de-carga'>
-                        <span title='Remover imagen' onClick={() => setUploadImg(null)}>❎</span>          
+                        <span title='Remover imagen' onClick={() => setUploadImg(null)}>
+                            <img src="/svg_icons/crossIcon.svg" alt="icono de cruz" />
+                        </span>
                         <label htmlFor="imgCarga">
-                            <span title='Cargar otra imagen'>✏️</span>
+                            <span title='Cargar otra imagen'>
+                                <img src="/svg_icons/pencilIcon.svg" alt="icono de lapiz" />
+                            </span>
                         </label>
                     </div>
                         :

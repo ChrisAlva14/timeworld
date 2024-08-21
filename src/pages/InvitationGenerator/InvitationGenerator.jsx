@@ -78,7 +78,7 @@ function InvitationGenerator() {
   };
 
   const handleRemove = (event) => {
-    const cityRemove = event.target.textContent.split(' ')[0];
+    const cityRemove = event.target.textContent.trim();
 
     if (cities.includes(cityRemove)) {
       const updatedCities = cities.filter((city) => city !== cityRemove);
@@ -191,7 +191,8 @@ function InvitationGenerator() {
               cities.map((city, key) => {
                 return (
                   <span onClick={handleRemove} className="cityLabel" key={key}>
-                    {city} ❌
+                    {city}
+                    <img src="/public/svg_icons/crossIcon.svg" alt="" />
                   </span>
                 );
               })
