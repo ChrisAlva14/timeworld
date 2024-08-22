@@ -1,21 +1,22 @@
-import React from 'react'
+import { Link, useLocation } from 'wouter'
+
 import './Navbar.css'
+import logo from '../../assets/nav/logo-white.svg'
 
 export const Navbar = () => {
+    const [location] = useLocation();
+
     return (
         <>
             <header className='header'>
                 <nav className='navbar'>
-                    {/* PRIMER LINK */}
-                    <a href='#' className='nav-link' id='convertorHorario'>Convertor Horario</a>
+                    <Link to={'/'} className={`nav-link ${location === '/' ? 'active' : ''}`} >Convertor Horario</Link>
 
-                    <a href="#">
-                        {/* IMG */}
-                        <img src="src/assets/logoConvertor.png" alt="Logo Web" width={75} height={75} id='logotipo' className='logo' />
-                    </a>
+                    <Link to={'/'}>
+                        <img src={logo} alt="Logo Web" width={75} height={75} id='logotipo' className='logo' />
+                    </Link>
 
-                    {/* SEGUNDO LINK */}
-                    <a href='#' className='nav-link' id='generarInvitacion'>Generar Invitación</a>
+                    <Link to={'/invitacion'} className={`nav-link ${location === '/invitacion' ? 'active' : ''}`} >Generar Invitación</Link>
                 </nav>
             </header>
         </>

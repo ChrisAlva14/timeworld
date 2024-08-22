@@ -1,0 +1,337 @@
+
+.modal{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.buttons {
+  width: 290px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.colorButton {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.colorButton:hover{
+  box-shadow: 0px 0px 7px 2px rgb(192, 192, 192);
+}
+
+.container_button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.modal-container {
+  width: 290px;
+  min-height: 440px;
+  padding: 21px 21px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  clip-path: inset(0 round 15px);
+}
+
+.modal-content {
+  padding: 32px 0px 120px;
+  padding-top: 1rem;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  border-radius: 50px 0px 50px 0px;
+  border: 2px solid white;
+  border-bottom: none;
+}
+
+.modal-content::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  background-color: white;
+  width: 15%;
+}
+
+.modal-content::before {
+  left: 0;
+}
+
+/* #card-logo {
+  width: 80px;
+  height: 42px;
+  position: absolute;
+  top: -18px;
+} */
+
+.modal h2 {
+  font-size: 17px;
+  color: white;
+  margin: 0 auto;
+  word-wrap: break-word;
+  padding: 0 1.2rem;
+}
+
+.modal p {
+  font-size: 12px;
+  color: white;
+  margin: 0 auto;
+  word-wrap: break-word;
+  font-weight: 400;
+  padding: 0 1rem;
+}
+
+.container-link {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3%;
+}
+
+.line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: white;
+  min-width: 7.5%;
+}
+
+.container-link a {
+  color: white;
+  word-wrap: break-word;
+  max-width: 79%;
+  font-size: 12px;
+  position: relative;
+  top: -2px;
+}
+
+.enlace{
+  font-size: 14px;
+  filter: grayscale();
+  opacity: .5;
+}
+
+#invitation-times {
+  list-style-type: none;
+  padding: 0px 16px;
+  width: 100%;
+  text-align: left;
+  font-style: italic;
+
+}
+
+#invitation-times li {
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+#invitation-times span{
+  font-size: .9rem;
+  line-height: .9rem;
+}
+
+.dotted-line{
+  flex-grow: 1;
+  box-sizing: border-box;
+  position: relative;
+  background: transparent;
+}
+
+.dotted-line::before {
+  content: '';
+  position: absolute;
+  bottom: .2rem; /* Ajusta para alinear la línea con el interior */
+  left: .5rem;
+  right: .5rem;
+  border-bottom: .125rem dotted white;
+}
+
+.modal-content span {
+  color: white;
+  word-wrap: break-word;
+}
+
+.upload-img{
+  position: absolute;
+  bottom: -16px;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.upload-img figure img{
+  object-fit: cover;
+  object-position: center;
+  max-width: 230px;
+  height: 100%;
+  max-height: 124px;
+}
+
+.upload-filter-img{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.simbolos-de-carga{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 8px;
+}
+
+.simbolos-de-carga span{
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, .6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.simbolos-de-carga label{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+}
+
+.simbolos-de-carga span:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.imgSelector{
+  display: flex;
+  flex-direction: column;  
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(116, 132, 172, .6);
+}
+
+.upload-filter-img span{
+  font-size: 18px;
+}
+
+.upload-filter-img input{
+  display: none;
+}
+
+.modal-buttons {
+  margin: 32px 0;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.modal-buttons button {
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  transition: none;
+}
+
+.modal-buttons button:hover {
+  background-color: white;
+  color: black;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, .7));
+}
+
+
+/* Responsive Design */
+@media (min-width: 600px) {
+
+  .modal-container{
+    width: 440px;
+    min-height: 540px;
+    padding: 30px 30px;
+  }
+
+  .buttons{
+    width: 100%;
+  }
+
+  /* #card-logo {
+    width: 85px;
+    height: 45px;
+    top: -20px;
+  } */  
+
+  .modal-content {
+    padding-top: 1.2rem;
+    gap: 16px;
+  }
+
+  .modal h2 {
+    font-size: 22px;
+  }
+
+  .modal p {
+    font-size: 16px;
+  }
+
+  .container-link a {
+    max-width: 79%;
+    font-size: 16px;
+  }
+
+  #invitation-times{
+    padding: 0px 24px;
+  }
+
+  #invitation-times span{
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+  }
+
+  .dotted-line::before {
+    border-bottom: .15rem dotted white;
+  }
+
+  .modal-buttons{
+    gap: 16px;
+  }
+
+  .modal-buttons button{
+    font-size: 21px;
+
+  }
+}
