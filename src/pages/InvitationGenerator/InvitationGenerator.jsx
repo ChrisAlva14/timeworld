@@ -77,18 +77,16 @@ function InvitationGenerator() {
     }
   };
 
-  const handleRemove = (event) => {
-    const cityRemove = event.target.textContent.trim();
+  const handleRemove = (item) => {
 
-    if (cities.includes(cityRemove)) {
-      const updatedCities = cities.filter((city) => city !== cityRemove);
-      setCities(updatedCities);
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        cities: updatedCities,
-      }));
-    }
-  };
+    const updatedCities = cities.filter((city) => city !== item)
+    setCities(updatedCities)
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      cities: updatedCities,
+    }))
+    
+  }
 
   return (
     <main className="main_invitation_page">
@@ -190,9 +188,9 @@ function InvitationGenerator() {
             {cities.length > 0 ? (
               cities.map((city, key) => {
                 return (
-                  <span onClick={handleRemove} className="cityLabel" key={key}>
+                  <span onClick={() => handleRemove(city)} className="cityLabel" key={key}>
                     {city}
-                    <img src="/public/svg_icons/crossIcon.svg" alt="" />
+                    <img src="/svg_icons/crossIcon.svg" alt={city}/>
                   </span>
                 );
               })
