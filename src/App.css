@@ -10,7 +10,8 @@
 
 #root {
   padding-top: 34px;
-  background-color: rgba(0, 0, 0, 0.20); /* SE CAMBIÓ AL BACK-COLOR, BACKDROP-FILTER DISTORSIONA EL CODIGO*/
+  background-color: rgba(0, 0, 0, 0.20);
+  /* SE CAMBIÓ AL BACK-COLOR, BACKDROP-FILTER DISTORSIONA EL CODIGO*/
   height: 100%;
 }
 
@@ -189,7 +190,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  height: 100vh;
+  height: 100vh !important;
   color: #000;
 }
 
