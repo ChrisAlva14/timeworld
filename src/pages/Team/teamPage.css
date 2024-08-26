@@ -1,0 +1,85 @@
+h1 {
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    color: white;
+  }
+  
+  .container_Team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    position: relative;
+  
+  }
+  
+  .card_Team {
+    width: 15%;
+    height: 303.52px;
+    text-align: start;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px 20px 0px 20px;
+    padding: 10px;
+
+   
+  }
+  
+  .img_Team img {
+    width: 100%;
+    margin-bottom: 10px;
+    filter: drop-shadow(10px 10px 4px #3333);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+  
+  .info_Team {
+    color: white;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    display: flex ;
+    
+  }
+
+  #name{
+    font-size: 18px;
+  }
+
+  #rol{
+    color: rgba(231, 229, 229, 0.767);
+    font-size: 13px;
+  }
+  
+  .overlay_Team {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.479); 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+  }
+  
+  .card_Team:hover .overlay_Team {
+    opacity: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .card_Team {
+      width: 45%;
+    }
+  }
+  
