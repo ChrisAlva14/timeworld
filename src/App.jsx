@@ -5,6 +5,8 @@ import InvitationGenerator from "./pages/InvitationGenerator/InvitationGenerator
 import NotFound from "./pages/NotFound/NotFound";
 import "./App.css";
 import { Tutorial } from "./pages/Tutorial/Tutorial";
+import TeamPage from "./pages/Team/TeamPage";
+
 function App() {
   return (
     <>
@@ -13,6 +15,7 @@ function App() {
           <Route path="/" component={TimeConvecter} />
           <Route path="/invitacion" component={InvitationGenerator} />
           <Route path="/tutorial" component={Tutorial} />
+          <Route path="/team" component={TeamPage} />
           <Route component={NotFound} />
         </Switch>
       </Layout>

@@ -1,207 +1,224 @@
-#container{
+.main_invitation_page{
   width: 100%;
-  
   display: flex;
-  
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 100px;
-  flex-wrap: wrap;
-  padding: 25px;
+  gap: 24px;
 }
 
-
 .invitation_h1{
-
-font-family: Ubuntu;
-font-size: 34px!important;
-font-weight: 700;
-line-height: 20px;
-text-align: center;
-color: white;
-
+  font-family: Ubuntu;
+  font-size: 34px!important;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
 }
 
 .info{
+  font-family: Ubuntu;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.015em;
+  margin-top: 10px;
+  color: white;
+  padding: 0 1rem;
+}
 
-font-family: Ubuntu;
-font-size: 18px;
-font-weight: 400;
-line-height: 20px;
-letter-spacing: 0.015em;
-margin-top: 10px;
-color: white;
+#container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
 }
 
 .info_container {
-  
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
-
- 
+  margin: 32px 0px;
 }
 
-input {
+.info_container form {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 1rem;
+}
+
+.info_container form input {
   border-radius: 10px;
   height: 40px;
   border: none;
-  text-align: center;
-  background: linear-gradient(358.77deg, rgba(23, 23, 23, 0.55) 14.23%, rgba(23, 23, 23, 0.25) 118.03%);
+  background: linear-gradient(358.77deg, rgba(23, 23, 23, 0.65) 14.23%, rgba(23, 23, 23, 0.45) 118.03%);
   color: white;
-
-
-}
-input::placeholder{
-
-  color: white;
+  padding: 4px 16px;
+  font-size: 16px;
 }
 
+.info_container form input::placeholder{
+  color: white;
+}
 
-input:focus{
+.info_container form input:focus{
   outline: none;
 }
-textarea {
+
+.info_container form textarea {
   border-radius: 10px;
   height: 99px;
   border: none;
-  text-align: center;
-  padding-top: 30px;
-  background: linear-gradient(358.77deg, rgba(23, 23, 23, 0.55) 14.23%, rgba(23, 23, 23, 0.25) 118.03%);
+  padding: 10px 16px;
+  background: linear-gradient(358.77deg, rgba(23, 23, 23, 0.65) 14.23%, rgba(23, 23, 23, 0.45) 118.03%);
   color: white;
-}
-textarea::placeholder{
-
-  color: white;
+  font-size: 16px;
 }
 
-select {
+.info_container form textarea::placeholder{
+  color: white;
+}
+
+.info_container form select {
   border-radius: 10px;
   height: 40px;
   border: none;
-  text-align: center;
-  background: linear-gradient(358.77deg, rgba(23, 23, 23, 0.55) 14.23%, rgba(23, 23, 23, 0.25) 118.03%);
+  background-color: transparent; /* Asegúrate de que no haya color de fondo sólido */
+  background: linear-gradient(358.77deg, rgba(23, 23, 23, 0.65) 14.23%, rgba(23, 23, 23, 0.45) 118.03%);
+  padding: 4px 30px 4px 14px; /* Espacio a la derecha para la flecha */
+  font-size: 16px;
   color: white;
+  appearance: none;
+  position: relative;
 }
 
-select option{
+.info_container form select option{
   color: black;
+  font-size: 16px;
 }
 
+.info_container form select:focus{
+  outline: none;
+}
 
-.col {
-  width: 100%;
+.div_input, .select_input {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-
-  padding: 20px;
-}
-
-.col form {
-  display: flex;
-  flex-direction: column;
-  width: 85%;
-}
-
-#date {
   width: 95%;
-  height: 40px;
-
-  padding-left: 5px;
-  border-radius: 10px 10px 10px 10px;
 }
-
 
 .time {
   display: flex;
+  width: 95%;
   gap: 20px;
 }
 
-#hora{
-  width: 90%;
+#date {
+  width: 100%;
 }
 
-label {
-  margin-bottom: 10px;
+#time{
+  width: 100%;
 }
 
-.div_input {
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-
-  width: 95%;
+#date input{
+  text-align: center;
+  padding: 4px 8px;
 }
 
-button {
-  margin: 0 auto;
-  width: 219px;
+#time input{
+  text-align: center;
+}
 
-  padding: 10px 20px;
+.div_input input[type="date"]::-webkit-calendar-picker-indicator,
+.div_input input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.select_input ul{
+  background-color: white;
+  color: black;
+  max-height: 200px;
   border-radius: 10px;
-  border: none;
-
-  transition: all 300ms ease-in;
+  z-index: 10;
+  /* box-shadow: inset 0 0 5px 1px rgb(0, 0, 0,.5); */
 }
 
-button:hover {
-  cursor: pointer;
-  background-color: green;
+.select_input ul li{
+  padding: 2px 8px;
+}
+
+.select_input ul li:hover{
+  background-color: gray;
   color: white;
 }
 
-.container {
-  width: 100%;
-}
-
-.container_button {
-  width: 100%;
-}
-
 .container_cities{
-
+  width: 100%;
+  max-width: 440px;
   display: flex;
-  margin-top: 20px;
+  margin-top: 24px;
   gap: 15px;
   justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 1rem;
 }
 
 .cityLabel{
   background-color: white;
   padding: 5px 10px;
   border-radius: 10px;
-
   cursor: pointer;
-  transition: all 300ms ease-in-out;
+  transition: all .2s ease-in-out;
   background: linear-gradient(358.77deg, rgba(23, 23, 23, 0.55) 14.23%, rgba(23, 23, 23, 0.25) 118.03%);
   color: white;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .cityLabel:hover{
-
   background-color: red;
-  color: white;
 }
 
 
-
 #message{
+  background: linear-gradient(358.77deg, rgba(23, 23, 23, 0.55) 14.23%, rgba(23, 23, 23, 0.25) 118.03%);
   color: white;
 }
 
 
 @media (min-width: 768px) {
   #container {
-    gap: 100px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 48px;
   }
 
   .info_container {
     width: 50%;
+  }
+
+  .info_container form {
+    width: 80%;
+    min-width: 440px;
+    max-width: none;
+  }
+
+  .container_cities{
+    width: 80%;
+    min-width: 440px;
+    max-width: none;
   }
 }

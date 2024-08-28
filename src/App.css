@@ -194,7 +194,12 @@
   color: #000;
 }
 
-@media (min-width: 600px) {}
+@media (min-width: 600px) {
+
+  #root{
+    height: 100%;
+  }
+}
 
 /* tablet */
 @media (min-width: 960px) {}
