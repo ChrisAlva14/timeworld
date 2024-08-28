@@ -1,3 +1,6 @@
+.wrapper_Team{
+  height: 100vh;
+}
 h1 {
     color: white;
     margin-bottom: 20px;
@@ -76,7 +79,11 @@ h1 {
   .card_Team:hover .overlay_Team {
     opacity: 1;
   }
-  
+  @media (min-width: 600px) {
+    .wrapper_Team{
+      height: 80vh;
+    }  
+  }
   @media (max-width: 768px) {
     .card_Team {
       width: 45%;

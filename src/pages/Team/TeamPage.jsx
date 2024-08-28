@@ -1,4 +1,5 @@
 import "./teamPage.css";
+
 function TeamPage() {
   const team = [
     {
@@ -46,7 +47,7 @@ function TeamPage() {
   ];
 
   return (
-    <div>
+    <div className="wrapper_Team">
       <h1>Equipo de trabajo</h1>
       <p>
         Conoce el equipo de de voluntarios que han trabajado en el diseño y
