@@ -1,10 +1,10 @@
 import { Route, Switch } from "wouter";
-
 import Layout from "./layout/Layout/Layout";
 import TimeConvecter from "./pages/TimeConvecter/TimeConvecter";
 import InvitationGenerator from "./pages/InvitationGenerator/InvitationGenerator";
 import NotFound from "./pages/NotFound/NotFound";
 import "./App.css";
+import { Tutorial } from "./pages/Tutorial/Tutorial";
 import TeamPage from "./pages/Team/TeamPage";
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
         <Switch>
           <Route path="/" component={TimeConvecter} />
           <Route path="/invitacion" component={InvitationGenerator} />
+          <Route path="/tutorial" component={Tutorial} />
           <Route path="/team" component={TeamPage} />
           <Route component={NotFound} />
         </Switch>
@@ -21,5 +22,4 @@ function App() {
     </>
   );
 }
-
 export default App;
