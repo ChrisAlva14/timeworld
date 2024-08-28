@@ -38,7 +38,7 @@ export const Navbar = () => {
                 <nav className="circular-menu">
                     <div className="circle">
                         <Link to="/team"  > < img src="/teamLogo.png" className="link-item" alt="team" />  </Link>
-                        <Link to="#"  ><img src="/link.png" alt="team" className="link-item" />   </Link>
+                        <Link to="/tutorial"  ><img src="/link.png" alt="team" className="link-item" />   </Link>
                     </div>
                 </nav>
             </header>
