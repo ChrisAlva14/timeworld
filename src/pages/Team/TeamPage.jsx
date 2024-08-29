@@ -11,7 +11,7 @@ function TeamPage() {
     },
     {
       pic: "./1.png",
-      name: "Chirstopher Villalta",
+      name: "Christopher Villalta",
       rol: "Software Developer",
       linkedin: "#",
       info: "lorem ipsum lorem lorem ",
