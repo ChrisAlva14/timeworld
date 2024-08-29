@@ -1,28 +1,23 @@
-import { Route, Router, Switch } from "wouter";
-import { useHashLocation } from "wouter/use-hash-location"
-
+import { Route, Switch } from "wouter";
 import Layout from "./layout/Layout/Layout";
+import TimeConvecter from "./pages/TimeConvecter/TimeConvecter";
 import InvitationGenerator from "./pages/InvitationGenerator/InvitationGenerator";
 import NotFound from "./pages/NotFound/NotFound";
-import TeamPage from "./pages/Team/TeamPage";
-import TimeConvecter from "./pages/TimeConvecter/TimeConvecter";
-import { Tutorial } from "./pages/Tutorial/Tutorial";
-
 import "./App.css";
+import { Tutorial } from "./pages/Tutorial/Tutorial";
+import TeamPage from "./pages/Team/TeamPage";
 
 function App() {
   return (
     <>
       <Layout>
-        <Router hook={useHashLocation}>
-          <Switch>
-            <Route path="/" component={TimeConvecter} />
-            <Route path="/invitacion" component={InvitationGenerator} />
-            <Route path="/tutorial" component={Tutorial} />
-            <Route path="/team" component={TeamPage} />
-            <Route component={NotFound} />
-          </Switch>
-        </Router>
+        <Switch>
+          <Route path="/" component={TimeConvecter} />
+          <Route path="/invitacion" component={InvitationGenerator} />
+          <Route path="/tutorial" component={Tutorial} />
+          <Route path="/team" component={TeamPage} />
+          <Route component={NotFound} />
+        </Switch>
       </Layout>
     </>
   );
