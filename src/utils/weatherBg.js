@@ -26,7 +26,7 @@ export const getWeather = async (
   setLoadingWeather,
   setError
 ) => {
-  const url = `https://api.weatherapi.com/v1/current.json?key=${
+  const url = `http://api.weatherapi.com/v1/current.json?key=${
     import.meta.env.VITE_WEATHER_API_KEY
   }&q=${lat},${lon}`;
 
