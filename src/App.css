@@ -21,6 +21,7 @@
   background-image: url("/fondos_paisajes/paisajes_Día_soleado.svg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   background-attachment: fixed;
   /* Opcional: fija la imagen de fondo */
   color: #000;
@@ -35,6 +36,7 @@
 .dia-FreezingFog {
   background-image: url("/fondos_paisajes/paisajes_Día_nublado.svg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* Fija la imagen de fondo */
@@ -66,6 +68,7 @@
 .dia-ModerateOrHeavyRainWithThunder {
   background-image: url("/fondos_paisajes/paisajes_Día_lluvioso.svg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* Fija la imagen de fondo */
@@ -94,6 +97,7 @@
 .dia-ModerateOrHeavySnowWithThunder {
   background-image: url("/fondos_paisajes/paisajes_Día_nieve.svg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* Fija la imagen de fondo */
@@ -112,6 +116,7 @@
 .noche-Mist {
   background-image: url("/fondos_paisajes/paisajes_Noche_despejada.svg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* Opcional: fija la imagen de fondo */
@@ -146,6 +151,7 @@
 .noche-ModerateOrHeavySnowWithThunder {
   background-image: url("/fondos_paisajes/paisajes_Noche_tormenta.svg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* Fija la imagen de fondo */
@@ -171,6 +177,7 @@
 .noche-ModerateOrHeavySnowShowers {
   background-image: url("/fondos_paisajes/paisajes_Noche_nieve.svg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* Fija la imagen de fondo */
@@ -187,6 +194,7 @@
 .not-found {
   background-image: url("/fondos_paisajes/not_found.svg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;

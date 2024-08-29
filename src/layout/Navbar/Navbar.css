@@ -13,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 49px;
+    height: 0px;
     
   }
   
@@ -39,7 +39,7 @@
   }
   
   .active {
-    background-color: #111111e5;
+    background-color: #111111;
     color: white !important;
     font-weight: 300;
     border-radius: 25px;
@@ -119,10 +119,6 @@
   @media (max-width: 599px) {
     .navbar .nav-link {
       display: none;
-    }
-  
-    .navbar {
-      height: unset;
     }
   
     .navbar::after {

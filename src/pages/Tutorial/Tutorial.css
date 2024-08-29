@@ -90,6 +90,7 @@
     .faq-container {
         backdrop-filter: none;
         background: transparent;
+        padding-bottom: 41px;
     }
 
     .faq-card {
