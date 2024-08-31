@@ -8,11 +8,58 @@
 
 .button_Layout {
   width: 100%;
-  height: 53px;
   margin: 0;
+  height: 124px;
+  place-content: center;
+  background: linear-gradient(358.77deg, rgba(23, 23, 23, 0.55) 14.23%, rgba(23, 23, 23, 0.25) 118.03%);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.destination_Select{
+  width: 100%;
+
+}
+
+.button_Layout_Destination_Select{
+  width: 100%;
+  margin: 0;
+  height: 124px;
+  place-content: center;
+  background: linear-gradient(358.77deg, rgba(23, 23, 23, 0.55) 14.23%, rgba(23, 23, 23, 0.25) 118.03%);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.button_Layout_Destination_Select input, .button_Layout input{
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.button_Layout_Destination_Select input:focus, .button_Layout input:focus{
+  outline: none;
+}
+
+.button_Layout_Destination_Select ul, .button_Layout ul{
+  background-color: rgba(23, 23, 23, 0.75);
+  max-height: 200px;
+  border-radius: 10px;
+  z-index: 10;
+  color: white;
+}
+
+.button_Layout_Destination_Select li, .button_Layout li{
+  font-size: 1.2rem;
+}
+
+.button_Layout_Destination_Select li:hover, .button_Layout li:hover{
+  background-color: rgba(128, 128, 128, 0.75);
 }
 
 .box_btn_layout {
+  height: 124px;
   display: flex;
   justify-content: center;
   border: none;
@@ -24,16 +71,41 @@
   align-self: stretch;
 }
 
-.text_input {
-  height: 100%;
+.selected_Cities{
   width: 100%;
-  margin: 0;
+  max-width: 540px;
+  display: flex;
+  margin-top: 24px;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 1rem;
 }
+
+.cityLabel{
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  background: linear-gradient(358.77deg, rgba(23, 23, 23, 0.55) 14.23%, rgba(23, 23, 23, 0.25) 118.03%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1.1rem;
+}
+
+.cityLabel:hover{
+  background-color: red;
+}
+
 
 @media (min-width: 600px) {
   .section {
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
   }
 
@@ -42,26 +114,22 @@
   }
 
   .button_Layout {
-    height: 123px;
+    width: 50%;
   }
 
-  .box_btn_layout .button_Layout {
-    height: 56px;
+  .destination_Select{
+    width: 50%;
+
   }
-  .text_input {
-    min-width: 200px;
-  }
+
+
 }
 
 @media (min-width: 1000px) {
-  .text_input {
-    min-width: 400px;
-  }
+
 }
 @media (min-width: 1200px) {
-  .text_input {
-    min-width: 474px;
-  }
+
 }
 
 /* tablet */
