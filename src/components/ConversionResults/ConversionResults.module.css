@@ -1,0 +1,105 @@
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 1rem;
+}
+
+.cardsContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.equal{
+    font-size: 24px;
+}
+
+.destinationCities{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    gap: 1rem;
+}
+
+.destinationCitiesListItem{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.messagge{
+    font-size: 14px;
+    text-align: start;
+    padding: 0 8px;
+    text-wrap: pretty;
+}
+
+.actionButtonsDiv {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+  
+.actionButton {
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 21px;
+    background-color: white;
+}
+
+
+@media (min-width: 768px){
+
+    .cardsContainer{
+        flex-direction: row;
+        gap: 10%;
+    }
+
+    .destinationCities{
+        max-height: 500px;
+        padding-right: 1rem;
+    }
+
+    .destinationCities::-webkit-scrollbar {
+        width: 9px;
+    }
+    
+    .destinationCities::-webkit-scrollbar-track {
+        background: rgba(171, 171, 171, 0.7);
+        border-radius: 20px;
+    }
+    
+    .destinationCities::-webkit-scrollbar-thumb {
+        background-color: rgba(242, 242, 242, 0.9);
+        border-radius: 20px;
+    }
+    
+    .destinationCities::-webkit-scrollbar-thumb:hover {
+        filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25));
+    }
+
+    .actionButtonsDiv {
+        margin-top: 3rem;
+        gap: 1.5rem;
+      }
+
+    .actionButton{
+        font-size: 24px;
+    }
+
+    .navButtonSpan::after{
+        content: ' a convertir';
+    }
+}

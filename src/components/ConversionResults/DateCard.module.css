@@ -1,0 +1,65 @@
+.container{
+    width: 100%;
+    display: flex;
+    background: linear-gradient(358.77deg, rgba(23, 23, 23, 0.55) 14.23%, rgba(23, 23, 23, 0.25) 118.03%);
+    color: white;
+    border-radius: 15px;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.citiesData{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    font-size: 16px;
+}
+
+.timeData{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.hora{
+    font-size: 40px;
+}
+
+.fecha{
+    font-size: 14px;
+}
+
+@media (min-width: 768px){
+
+    .container{
+        flex-direction: column;
+        padding: 1rem 3rem;
+    }
+
+    .citiesData{
+        font-size: 18px;
+        flex-direction: row;
+        text-align: center;
+    }
+
+    .citiesData :first-child::after{
+        content: ',';
+    }
+
+    .citiesData :last-child{
+        margin-left: 4px;
+    }
+
+    .timeData{
+        text-align: center;
+    }
+
+    .hora{
+        font-size: 48px;
+    }
+
+    .fecha{
+        font-size: 16px;
+    }
+}
