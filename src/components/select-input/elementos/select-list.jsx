@@ -16,6 +16,21 @@ export const SelectList = ({inputValue, setInputValue, listaDisplay, setListaDis
 
     const clickItem = (item) => {
 
+        if (itemsCollected === null) {
+            selectItem(item)
+            setInputValue(item)
+            return setListaDisplay('none') 
+        }
+
+        if (itemsCollected && !Array.isArray(itemsCollected)) {
+            if (itemsCollected === item) {
+                return alert('El item ya fue seleccionado')                
+            }
+            selectItem(item)
+            setInputValue(item)
+            return setListaDisplay('none') 
+        }
+
         if (itemsCollected.some((itemCollect) => itemCollect === item)) {
             return alert('El item ya fue seleccionado')
         }
@@ -44,7 +59,7 @@ export const SelectList = ({inputValue, setInputValue, listaDisplay, setListaDis
                     onClick={() => clickItem(item)}
                     onKeyDown={(e) => {
                         if (e.key === 'Enter') {
-                            clickItem(item);
+                            clickItem(item)
                         }
                     }}
                 >
