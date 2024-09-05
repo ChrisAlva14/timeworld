@@ -3,6 +3,8 @@ import { useContext, useState } from 'react';
 import { AppContext } from '../../context/AppContext';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 
+import { isDesktop } from 'react-device-detect';
+
 import './GlobalModal.css'
 
 const GlobalModal = () => {
@@ -41,7 +43,7 @@ const GlobalModal = () => {
 
                         <div className="Gmodal-options">
                             <ToggleSwitch checked={format} setChecked={setFormat}>Formato 24 horas</ToggleSwitch>
-                            <ToggleSwitch checked={background} setChecked={setBackground}>Fondo personalizado</ToggleSwitch>
+                            <ToggleSwitch checked={background} setChecked={setBackground} disabled={!isDesktop}>Fondo personalizado</ToggleSwitch>
                             {
                                 background&&
                                 <p className='modalBGNote'>* Utilizamos la ubicación SOLO para saber el clima de tu ciudad y actualizar el fondo de pantalla.</p>
