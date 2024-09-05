@@ -1,21 +1,28 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+
+import { AppContext } from '../../context/AppContext';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
+
 import './GlobalModal.css'
 
-
 const GlobalModal = () => {
-    const [isOpen, setIsOpen] = useState(false)
+    const {
+        format24h,
+        updateFormat24h,
+        customBg,
+        updateCustomBg,
+    } = useContext(AppContext);
 
-    const [format24h, setFormat24h] = useState(false)
-    const [customBg, setCustomBg] = useState(false);
-    const [saveSetttings, setSaveSettings] = useState(false);
+    const [isOpen, setIsOpen] = useState(false)
+    const [format, setFormat] = useState(format24h)
+    const [background, setBackground] = useState(customBg)
 
 
     const handleSaveChanges = () => {
-        // Guardar las opciones seleccionadas
-        console.log("Formato 24 horas:", format24h);
-        console.log("Fondo personalizado:", customBg);
-        console.log("Guardar preferencias:", saveSetttings);
+        updateFormat24h(format)
+        updateCustomBg(background)
+
+        setIsOpen(false)
     };
 
     return (
@@ -33,9 +40,12 @@ const GlobalModal = () => {
                         </div>
 
                         <div className="Gmodal-options">
-                            <ToggleSwitch checked={format24h} setChecked={setFormat24h}>Formato 24 horas</ToggleSwitch>
-                            <ToggleSwitch checked={customBg} setChecked={setCustomBg}>Fondo personalizado</ToggleSwitch>
-                            <ToggleSwitch checked={saveSetttings} setChecked={setSaveSettings}>Guardar preferencias</ToggleSwitch>
+                            <ToggleSwitch checked={format} setChecked={setFormat}>Formato 24 horas</ToggleSwitch>
+                            <ToggleSwitch checked={background} setChecked={setBackground}>Fondo personalizado</ToggleSwitch>
+                            {
+                                background&&
+                                <p className='modalBGNote'>* Utilizamos la ubicación SOLO para saber el clima de tu ciudad y actualizar el fondo de pantalla.</p>
+                            }
                         </div>
 
                         <button className="Gsave-button" onClick={handleSaveChanges}>

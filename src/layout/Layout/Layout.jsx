@@ -1,28 +1,22 @@
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import GlobalModal from "../../components/modal/GlobalModal"
-import { getReactiveBg, setReactiveBg } from "../../utils/localstorage.util";
+import { AppContext } from "../../context/AppContext";
 import { getBackgroundClass, getLocation, getWeather } from "../../utils/weatherBg";
 import { Navbar } from "../Navbar/Navbar";
 import NavBotton from "../NavBotton/NavBotton";
 import styles from "./Layout.module.css"
 
 export default function Layout({ children }) {
+    const { customBg } = useContext(AppContext);
+
     const [weather, setWeather] = useState(null);
     const [partOfDay, setPartOfDay] = useState(null);
     const [error, setError] = useState(null)
     const [loadingLocation, setLoadingLocation] = useState(true); // Estado para indicar si se está cargando la ubicación
     const [loadingWeather, setLoadingWeather] = useState(true); // Estado para indicar si se está cargando el clima
     const [coords, setCoords] = useState({ latitude: null, longitude: null });
-    const [customExperience, setCustomExperience] = useState(() => getReactiveBg())// Estado para el background personalizado
-
-
-
-    const handleBtn = (value) => {
-        setReactiveBg(value)
-        setCustomExperience(value)
-    }
 
     // Obtener la posición actual del usuario si el navegador lo permite
     const getDevicePosition = () => {
@@ -53,10 +47,10 @@ export default function Layout({ children }) {
 
 
     useEffect(() => {
-        if (customExperience) {
+        if (customBg) {
             getDevicePosition();
         }
-    }, [customExperience]);
+    }, [customBg]);
     
     useEffect(() => {
         if (coords.latitude !== null && coords.longitude !== null) {
@@ -76,11 +70,6 @@ export default function Layout({ children }) {
         <>
             <Navbar />
             <main className={styles.main}>{children}</main>
-            {customExperience ?
-                <button onClick={() => handleBtn(false)}>desactivar</button>
-                :
-                <button onClick={() => handleBtn(true)}>activar</button>
-            }
             <GlobalModal  />
             <NavBotton />
         </>
