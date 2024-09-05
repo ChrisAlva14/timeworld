@@ -3,6 +3,7 @@ import styles from "./BoxButtons.module.css";
 import DateInput from "./dateInput/DateInput";
 import { getTimeZones } from "../../../utils/timeConverter";
 import { useEffect, useState } from "react";
+import { formatCityList } from "../../../utils/formatCityList";
 
 function BoxButtons({
   cityOfOrigin,
@@ -15,6 +16,9 @@ function BoxButtons({
   const [list, setList] = useState([]);
   useEffect(() => {
     const timezones = getTimeZones();
+    const formattedTimezones = formatCityList(timezones);
+    console.log(formattedTimezones);
+
     setList(timezones);
   }, []);
 
