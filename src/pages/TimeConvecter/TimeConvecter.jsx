@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 
-import BtnPagConverter from "../../components/btn-pag-converter-cities/BtnPagConverterCities";
-import CitySelectorContainer from "../../components/citySelectorContainer/CitySelectorContainer";
-import DatesInput from "../../components/datesInput/DatesInput";
 import { convertirHorario } from "../../utils/timeConverter";
 import styles from "./TimeConvecter.module.css";
 import BoxButtons from "../../components/TimeConvecter/BoxButtons/BoxButtons";
@@ -13,20 +10,27 @@ function TimeConvecter() {
   const [cityOfOrigin, setCityOfOrigin] = useState(null);
   const [selectedCities, setSelectedCities] = useState([]);
   const [dateInput, setDateInput] = useState("");
-  const horario_original = "2024-07-07 12:00:00";
+  {
+    /*const [convertedCities, setConvertedCities] = useState([]);*/
+  }
 
   const setBox = (value) => {
     setBoxShow(value);
   };
 
   const handleConverter = () => {
-    setBox("RESULTS");
-    let horariosConvertidos = convertirHorario(
+    {
+      /* let horariosConvertidos = convertirHorario(
       dateInput,
       cityOfOrigin,
       selectedCities
     );
-    console.log(horariosConvertidos);
+
+    setConvertedCities(horariosConvertidos);
+    console.log(convertedCities);
+*/
+    }
+    setBox("RESULTS");
   };
 
   return (
@@ -65,7 +69,12 @@ function TimeConvecter() {
 
       {boxShow === "RESULTS" && (
         <>
-          <ConversionResults setBox={setBox} />
+          <ConversionResults
+            setBox={setBox}
+            cityOfOrigin={cityOfOrigin}
+            selectedCities={selectedCities}
+            dateInput={dateInput}
+          />
         </>
       )}
     </div>
