@@ -49,7 +49,7 @@ export const Tutorial = () => {
                         puedes revisar este video, donde te explicamos paso a paso el funcionamiento de la aplicación.
                     </p>
                     <div className="video-placeholder">
-                        <lite-youtube videoid="LII8Nfu1sOE"></lite-youtube>
+                        <lite-youtube className="youtube-video" videoid="LII8Nfu1sOE"></lite-youtube>
                     </div>
                     <section className="faq-section">
                         <h3 className="faq-title">Preguntas Frecuentes</h3>
