@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
 import './Tutorial.css';
-import '@justinribeiro/lite-youtube/lite-youtube.js';
+import '@justinribeiro/lite-youtube';
 
 export const Tutorial = () => {
     const [activeQuestion, setActiveQuestion] = useState(null);
