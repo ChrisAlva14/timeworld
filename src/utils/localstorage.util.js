@@ -11,8 +11,20 @@ const getReactiveBg = ()=>{
     return false
 }
 
+const setTimeFormat = (value)=> {
+    localStorage.setItem("TwentyFourFormat", value);
+}
+const getTimeFormat = ()=>{
+    const value = localStorage.getItem("TwentyFourFormat");
+    if(value=="true"){
+        return true
+    }
+    return false
+}
 
 export {
     setReactiveBg,
-    getReactiveBg
+    getReactiveBg,
+    setTimeFormat,
+    getTimeFormat,
 }
