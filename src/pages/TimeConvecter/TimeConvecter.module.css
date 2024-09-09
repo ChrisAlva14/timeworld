@@ -8,6 +8,10 @@
   gap: 1rem;
 }
 
+.mainContainer::-webkit-scrollbar{
+  display: none;
+}
+
 .headerBox {
   margin: 1rem;
   color: white;
