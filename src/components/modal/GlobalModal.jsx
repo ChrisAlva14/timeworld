@@ -7,7 +7,16 @@ import { isDesktop } from 'react-device-detect';
 
 import './GlobalModal.css'
 
+
+
+
+// eslint-disable-next-line react/prop-types
 const GlobalModal = () => {
+
+    const {isOpen,setIsOpen}=useContext(AppContext)
+
+
+
     const {
         format24h,
         updateFormat24h,
@@ -15,7 +24,7 @@ const GlobalModal = () => {
         updateCustomBg,
     } = useContext(AppContext);
 
-    const [isOpen, setIsOpen] = useState(false)
+    
     const [format, setFormat] = useState(format24h)
     const [background, setBackground] = useState(customBg)
 
@@ -29,7 +38,7 @@ const GlobalModal = () => {
 
     return (
         <>
-            <button onClick={() => setIsOpen(true)}>Abrir Modal</button>
+           
 
             {isOpen &&
                 <div className="Gmodal-overlay" onClick={() => setIsOpen(false)}>
