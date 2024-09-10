@@ -2,6 +2,14 @@ import { useEffect, useState } from "react";
 import styles from "./ConversionResults.module.css";
 import { DateCard } from "./DateCard";
 import { convertirHorario } from "../../utils/timeConverter";
+import {
+  getRegionFromCityCountry,
+  getRegionsFromCityCountryArray,
+} from "../../utils/getRegionCountry";
+import {
+  getCityCountryDateTime,
+  getArrayCityCountryDateTime,
+} from "../../utils/getCityInfo";
 
 export const ConversionResults = ({
   setBox,
@@ -9,40 +17,24 @@ export const ConversionResults = ({
   selectedCities,
   dateInput,
 }) => {
-  let horariosConvertidos;
+  let horariosConvertidos = [];
+  let region = getRegionFromCityCountry(cityOfOrigin);
+  let regionesDestino = getRegionsFromCityCountryArray(selectedCities);
+  console.log(dateInput);
+
   const [convertedCities, setConvertedCities] = useState([]);
   useEffect(() => {
-    horariosConvertidos = convertirHorario(
-      dateInput,
-      cityOfOrigin,
-      selectedCities
-    );
+    horariosConvertidos = convertirHorario(dateInput, region, regionesDestino);
     setConvertedCities(horariosConvertidos);
   }, []);
   console.log(convertedCities);
 
-  const ciudadOrigen = {
-    ciudad: "Ciudad origen",
-    pais: "País",
-    hora: "00:00",
-    fecha: "15 de Abril",
-  };
+  const ciudadOrigen = getCityCountryDateTime(cityOfOrigin, dateInput);
 
-  const ciudadesDestino = [
-    {
-      ciudad: "Ciudad destino",
-      pais: "País",
-      hora: "03:00",
-      fecha: "15 de Abril",
-    },
-    {
-      ciudad: "Ciudad destino",
-      pais: "País",
-      hora: "03:00",
-      fecha: "15 de Abril",
-    },
-  ];
-
+  const ciudadesDestino = getArrayCityCountryDateTime(
+    selectedCities,
+    convertedCities
+  );
   return (
     <div className={styles.container}>
       <section className={styles.cardsContainer}>
@@ -71,8 +63,8 @@ export const ConversionResults = ({
                 fecha={item.fecha}
               />
               <small className={styles.messagge}>
-                La hora en ciudad origen, país es 7hs menos que en ciudad
-                destino 1, país
+                La hora en {`${item.ciudad}, ${item.pais}`} es 7hs menos que en
+                ciudad destino 1, país
               </small>
             </li>
           ))}
