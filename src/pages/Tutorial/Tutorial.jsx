@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
 import './Tutorial.css';
+import '@justinribeiro/lite-youtube';
 
 export const Tutorial = () => {
     const [activeQuestion, setActiveQuestion] = useState(null);
@@ -48,7 +49,7 @@ export const Tutorial = () => {
                         puedes revisar este video, donde te explicamos paso a paso el funcionamiento de la aplicación.
                     </p>
                     <div className="video-placeholder">
-                        <span>Video Placeholder</span>
+                        <lite-youtube className="youtube-video" videoid="LII8Nfu1sOE"></lite-youtube>
                     </div>
                     <section className="faq-section">
                         <h3 className="faq-title">Preguntas Frecuentes</h3>
