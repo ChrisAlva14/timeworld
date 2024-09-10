@@ -10,7 +10,7 @@ import {
   getCityCountryDateTime,
   getArrayCityCountryDateTime,
 } from "../../utils/getCityInfo";
-
+import hourDifference from "../../utils/hourDifferece";
 export const ConversionResults = ({
   setBox,
   cityOfOrigin,
@@ -20,14 +20,12 @@ export const ConversionResults = ({
   let horariosConvertidos = [];
   let region = getRegionFromCityCountry(cityOfOrigin);
   let regionesDestino = getRegionsFromCityCountryArray(selectedCities);
-  console.log(dateInput);
 
   const [convertedCities, setConvertedCities] = useState([]);
   useEffect(() => {
     horariosConvertidos = convertirHorario(dateInput, region, regionesDestino);
     setConvertedCities(horariosConvertidos);
   }, []);
-  console.log(convertedCities);
 
   const ciudadOrigen = getCityCountryDateTime(cityOfOrigin, dateInput);
 
@@ -63,8 +61,9 @@ export const ConversionResults = ({
                 fecha={item.fecha}
               />
               <small className={styles.messagge}>
-                La hora en {`${item.ciudad}, ${item.pais}`} es 7hs menos que en
-                ciudad destino 1, país
+                La hora en {`${item.ciudad}, ${item.pais}`} es{" "}
+                {hourDifference(item.hora, ciudadOrigen.hora)} hs menos que en{" "}
+                {`${ciudadOrigen.ciudad}, ${ciudadOrigen.pais}`}
               </small>
             </li>
           ))}
