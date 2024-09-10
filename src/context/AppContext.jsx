@@ -8,6 +8,9 @@ const AppProvider = ({ children }) => {
     const [format24h, setFormat24h] = useState(getTimeFormat);
     const [customBg, setCustomBg] = useState(getReactiveBg);
 
+/* abre el modal */
+    const [isOpen, setIsOpen] = useState(false)
+
     const updateCustomBg =(value)=>{
         setReactiveBg(value)//actualiza el local storage
         setCustomBg(value)//actualiza el estado del contexto
@@ -26,6 +29,8 @@ const AppProvider = ({ children }) => {
                 updateFormat24h,
                 customBg,
                 updateCustomBg,
+                isOpen,
+                setIsOpen
             }}
         >
             {children}
