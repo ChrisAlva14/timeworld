@@ -1,40 +1,37 @@
 import { useEffect, useState } from "react";
 
-import BtnPagConverter from "../../components/btn-pag-converter-cities/BtnPagConverterCities";
-import CitySelectorContainer from "../../components/citySelectorContainer/CitySelectorContainer";
-import DatesInput from "../../components/datesInput/DatesInput";
 import { convertirHorario } from "../../utils/timeConverter";
 import styles from "./TimeConvecter.module.css";
 import BoxButtons from "../../components/TimeConvecter/BoxButtons/BoxButtons";
 import { ConversionResults } from "../../components/ConversionResults/ConversionResults";
 
 function TimeConvecter() {
-
-  const [boxShow, setBoxShow] = useState('CONVERSOR')
-  const [cityOfOrigin, setCityOfOrigin] = useState(null)
-  const [selectedCities, setSelectedCities] = useState([])
-
-  const horario_original = "2024-07-07 12:00:00";
-  const ciudad_original = "America/Argentina/ComodRivadavia";
-  const array_ciudades_nuevas = [
-    "America/Los_Angeles",
-    "Europe/London",
-    "Asia/Tokyo",
-  ];
-
-
-  useEffect(() => {
-    let horariosConvertidos = convertirHorario(
-      horario_original,
-      ciudad_original,
-      array_ciudades_nuevas
-    );
-  }, []);
-
-  const setBox = (value) => {
-    setBoxShow(value)
+  const [boxShow, setBoxShow] = useState("CONVERSOR");
+  const [cityOfOrigin, setCityOfOrigin] = useState(null);
+  const [selectedCities, setSelectedCities] = useState([]);
+  const [dateInput, setDateInput] = useState("");
+  {
+    /*const [convertedCities, setConvertedCities] = useState([]);*/
   }
 
+  const setBox = (value) => {
+    setBoxShow(value);
+  };
+
+  const handleConverter = () => {
+    {
+      /* let horariosConvertidos = convertirHorario(
+      dateInput,
+      cityOfOrigin,
+      selectedCities
+    );
+
+    setConvertedCities(horariosConvertidos);
+    console.log(convertedCities);
+*/
+    }
+    setBox("RESULTS");
+  };
 
   return (
     <div className={styles.mainContainer}>
@@ -54,32 +51,32 @@ function TimeConvecter() {
         <CitySelectorContainer />
       </div> */}
 
-      {
-        boxShow === 'CONVERSOR' &&
+      {boxShow === "CONVERSOR" && (
         <>
           <BoxButtons
             cityOfOrigin={cityOfOrigin}
             setCityOfOrigin={setCityOfOrigin}
             selectedCities={selectedCities}
             setSelectedCities={setSelectedCities}
+            dateInput={dateInput}
+            setDateInput={setDateInput}
           />
-          <button
-            className={styles.btn__converter}
-            onClick={() => setBox('RESULTS')}
-          >Convertir</button>        
+          <button className={styles.btn__converter} onClick={handleConverter}>
+            Convertir
+          </button>
         </>
-      }
+      )}
 
-      {
-        boxShow === 'RESULTS' &&
+      {boxShow === "RESULTS" && (
         <>
           <ConversionResults
             setBox={setBox}
-          />     
+            cityOfOrigin={cityOfOrigin}
+            selectedCities={selectedCities}
+            dateInput={dateInput}
+          />
         </>
-      }
-
-
+      )}
     </div>
   );
 }
