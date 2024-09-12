@@ -8,6 +8,9 @@ const AppProvider = ({ children }) => {
     const [format24h, setFormat24h] = useState(getTimeFormat);
     const [customBg, setCustomBg] = useState(getReactiveBg);
 
+    const [selectedCities, setSelectedCities] = useState([])
+    const [originCity, setOriginCity] = useState('')
+
 /* abre el modal */
     const [isOpen, setIsOpen] = useState(false)
 
@@ -20,6 +23,17 @@ const AppProvider = ({ children }) => {
         setTimeFormat(value)
         setFormat24h(value)
     }
+    const addCity = (newCity)=>{
+        setSelectedCities([...selectedCities, newCity ])
+    }
+    const removeCity = (item)=>{
+        const updatedCities = selectedCities.filter((city) => city !== item);
+        setSelectedCities(updatedCities);
+    }
+
+
+
+
 
 
     return (
@@ -30,7 +44,12 @@ const AppProvider = ({ children }) => {
                 customBg,
                 updateCustomBg,
                 isOpen,
-                setIsOpen
+                setIsOpen,
+                originCity,
+                setOriginCity,
+                addCity,
+                removeCity,
+                selectedCities,
             }}
         >
             {children}

@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
+import { ConversionResults } from "../../components/ConversionResults/ConversionResults";
+import BoxButtons from "../../components/TimeConvecter/BoxButtons/BoxButtons";
+import { AppContext } from "../../context/AppContext";
 import { convertirHorario } from "../../utils/timeConverter";
 import styles from "./TimeConvecter.module.css";
-import BoxButtons from "../../components/TimeConvecter/BoxButtons/BoxButtons";
-import { ConversionResults } from "../../components/ConversionResults/ConversionResults";
 
 function TimeConvecter() {
+  const {originCity, selectedCities, getCitiesSelected}= useContext(AppContext)
+
   const [boxShow, setBoxShow] = useState("CONVERSOR");
-  const [cityOfOrigin, setCityOfOrigin] = useState(null);
-  const [selectedCities, setSelectedCities] = useState([]);
+
   const [dateInput, setDateInput] = useState("");
   {
     /*const [convertedCities, setConvertedCities] = useState([]);*/
@@ -54,10 +56,8 @@ function TimeConvecter() {
       {boxShow === "CONVERSOR" && (
         <>
           <BoxButtons
-            cityOfOrigin={cityOfOrigin}
-            setCityOfOrigin={setCityOfOrigin}
+            cityOfOrigin={originCity}
             selectedCities={selectedCities}
-            setSelectedCities={setSelectedCities}
             dateInput={dateInput}
             setDateInput={setDateInput}
           />
@@ -71,7 +71,7 @@ function TimeConvecter() {
         <>
           <ConversionResults
             setBox={setBox}
-            cityOfOrigin={cityOfOrigin}
+            cityOfOrigin={originCity}
             selectedCities={selectedCities}
             dateInput={dateInput}
           />
