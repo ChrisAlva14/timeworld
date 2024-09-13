@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
 export const SelectList = ({inputValue, setInputValue, listaDisplay, setListaDisplay, contentList, selectRef, itemsRef, selectItem, itemsCollected, emptyMessage}) => {
-    console.log('itemscollected:',itemsCollected)
 
     const [itemsList, setItemsList] = useState(contentList)
 
@@ -32,9 +31,9 @@ export const SelectList = ({inputValue, setInputValue, listaDisplay, setListaDis
             return setListaDisplay('none') 
         }
 
-        /* if (itemsCollected?.some((itemCollect) => itemCollect === item)) {
+        if (itemsCollected?.some((itemCollect) => itemCollect === item)) {
             return alert('El item ya fue seleccionado')
-        } */
+        }
 
         selectItem(item)
         setInputValue('')

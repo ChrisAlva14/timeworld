@@ -298,12 +298,14 @@ const cities = [
 
 // obtiene "Buenos Aires, Argentina" y devuelve "Buenos Aires"
 function getCityName(valor) {
-    const partes = valor.split(', ');
+    
+    const partes = valor.split(',');
     return partes[0];
 }
 
 // me devuelve la referencia dependiendo de la ciudad("Oporto, Portugal") recibida por parametro
 const getCityReference = (city) => {
+
     const cityName = getCityName(city)
 
     for (const region in data) {

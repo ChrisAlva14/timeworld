@@ -11,19 +11,20 @@ import {
   getArrayCityCountryDateTime,
 } from "../../utils/getCityInfo";
 import hourDifference from "../../utils/hourDifferece";
+
 export const ConversionResults = ({
   setBox,
   cityOfOrigin,
   selectedCities,
   dateInput,
 }) => {
+
   let horariosConvertidos = [];
-  let region = getRegionFromCityCountry(cityOfOrigin);
-  let regionesDestino = getRegionsFromCityCountryArray(selectedCities);
 
   const [convertedCities, setConvertedCities] = useState([]);
+
   useEffect(() => {
-    horariosConvertidos = convertirHorario(dateInput, region, regionesDestino);
+    horariosConvertidos = convertirHorario(dateInput, cityOfOrigin, selectedCities);
     setConvertedCities(horariosConvertidos);
   }, []);
 

@@ -9,15 +9,12 @@ import styles from "./BoxButtons.module.css";
 import DateInput from "./dateInput/DateInput";
 
 function BoxButtons({
-  cityOfOrigin,
+  originCity,
   selectedCities,
   setDateInput,
   dateInput,
 }) {
-  const {setOriginCity, addCity, removeCity, originCity}=useContext(AppContext)
-
-  console.log('selectedCities', selectedCities)
-
+  const {setOriginCity, addCity, removeCity}=useContext(AppContext)
 
   useEffect(() => {
     const timezones = getTimeZones();

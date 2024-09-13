@@ -9,7 +9,7 @@ const AppProvider = ({ children }) => {
     const [customBg, setCustomBg] = useState(getReactiveBg);
 
     const [selectedCities, setSelectedCities] = useState([])
-    const [originCity, setOriginCity] = useState('')
+    const [originCity, setOriginCity] = useState(null)
 
 /* abre el modal */
     const [isOpen, setIsOpen] = useState(false)

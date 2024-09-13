@@ -7,10 +7,9 @@ import { convertirHorario } from "../../utils/timeConverter";
 import styles from "./TimeConvecter.module.css";
 
 function TimeConvecter() {
-  const {originCity, selectedCities, getCitiesSelected}= useContext(AppContext)
+  const {originCity, selectedCities}= useContext(AppContext)
 
   const [boxShow, setBoxShow] = useState("CONVERSOR");
-
   const [dateInput, setDateInput] = useState("");
   {
     /*const [convertedCities, setConvertedCities] = useState([]);*/
@@ -56,7 +55,7 @@ function TimeConvecter() {
       {boxShow === "CONVERSOR" && (
         <>
           <BoxButtons
-            cityOfOrigin={originCity}
+            originCity={originCity}
             selectedCities={selectedCities}
             dateInput={dateInput}
             setDateInput={setDateInput}
