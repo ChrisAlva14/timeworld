@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 import { getReactiveBg, getTimeFormat, setReactiveBg, setTimeFormat } from '../utils/localstorage.util';
 
@@ -10,6 +10,10 @@ const AppProvider = ({ children }) => {
 
     const [selectedCities, setSelectedCities] = useState([])
     const [originCity, setOriginCity] = useState(null)
+
+    const [convertAvailable, setConvertAvailable] = useState(false)
+    const [resetButtonAvailable, setResetButtonAvailable] = useState(false)
+
 
 /* abre el modal */
     const [isOpen, setIsOpen] = useState(false)
@@ -31,8 +35,28 @@ const AppProvider = ({ children }) => {
         setSelectedCities(updatedCities);
     }
 
+    const switchOnResetButton = () => {
+        setResetButtonAvailable(true)
+    }
 
+    const switchOffResetButton = () => {
+        setResetButtonAvailable(false)
+    }
 
+    const resetValues = () => {
+        setSelectedCities([])
+        setOriginCity(null)
+    }
+
+    useEffect(() => {
+
+        if (selectedCities.length > 0 && originCity) {
+            setConvertAvailable(true)
+        } else{
+            setConvertAvailable(false)
+        }
+
+    }, [selectedCities, originCity])
 
 
 
@@ -50,6 +74,11 @@ const AppProvider = ({ children }) => {
                 addCity,
                 removeCity,
                 selectedCities,
+                convertAvailable,
+                resetButtonAvailable,
+                switchOnResetButton,
+                switchOffResetButton,
+                resetValues,
             }}
         >
             {children}

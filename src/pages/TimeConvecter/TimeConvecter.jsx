@@ -5,9 +5,10 @@ import BoxButtons from "../../components/TimeConvecter/BoxButtons/BoxButtons";
 import { AppContext } from "../../context/AppContext";
 import { convertirHorario } from "../../utils/timeConverter";
 import styles from "./TimeConvecter.module.css";
+import { ResetButton } from "../../components/buttons/ResetButton";
 
 function TimeConvecter() {
-  const {originCity, selectedCities}= useContext(AppContext)
+  const {originCity, selectedCities, convertAvailable, resetButtonAvailable}= useContext(AppContext)
 
   const [boxShow, setBoxShow] = useState("CONVERSOR");
   const [dateInput, setDateInput] = useState("");
@@ -31,6 +32,7 @@ function TimeConvecter() {
     console.log(convertedCities);
 */
     }
+
     setBox("RESULTS");
   };
 
@@ -60,9 +62,23 @@ function TimeConvecter() {
             dateInput={dateInput}
             setDateInput={setDateInput}
           />
-          <button className={styles.btn__converter} onClick={handleConverter}>
-            Convertir
-          </button>
+          <div>
+            <button 
+              className={styles.btn__converter} 
+              onClick={handleConverter}
+              disabled={!convertAvailable}
+            >
+              Convertir
+            </button>
+
+            {
+              resetButtonAvailable &&
+              <ResetButton />
+            }
+
+         
+          </div>
+
         </>
       )}
 
@@ -70,8 +86,6 @@ function TimeConvecter() {
         <>
           <ConversionResults
             setBox={setBox}
-            cityOfOrigin={originCity}
-            selectedCities={selectedCities}
             dateInput={dateInput}
           />
         </>
