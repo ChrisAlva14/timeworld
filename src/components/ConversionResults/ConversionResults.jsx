@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "./ConversionResults.module.css";
 import { DateCard } from "./DateCard";
 import { convertirHorario } from "../../utils/timeConverter";
@@ -11,28 +11,37 @@ import {
   getArrayCityCountryDateTime,
 } from "../../utils/getCityInfo";
 import hourDifference from "../../utils/hourDifferece";
-export const ConversionResults = ({
-  setBox,
-  cityOfOrigin,
-  selectedCities,
-  dateInput,
-}) => {
+import { AppContext } from "../../context/AppContext";
+
+export const ConversionResults = ({ setBox, dateInput }) => {
+  const { originCity, selectedCities, switchOnResetButton } =
+    useContext(AppContext);
+
   let horariosConvertidos = [];
-  let region = getRegionFromCityCountry(cityOfOrigin);
-  let regionesDestino = getRegionsFromCityCountryArray(selectedCities);
 
   const [convertedCities, setConvertedCities] = useState([]);
+
   useEffect(() => {
-    horariosConvertidos = convertirHorario(dateInput, region, regionesDestino);
+    horariosConvertidos = convertirHorario(
+      dateInput,
+      originCity,
+      selectedCities
+    );
     setConvertedCities(horariosConvertidos);
   }, []);
 
-  const ciudadOrigen = getCityCountryDateTime(cityOfOrigin, dateInput);
+  const ciudadOrigen = getCityCountryDateTime(originCity, dateInput);
 
   const ciudadesDestino = getArrayCityCountryDateTime(
     selectedCities,
     convertedCities
   );
+
+  const HandleClickVolver = () => {
+    switchOnResetButton();
+    setBox("CONVERSOR");
+  };
+
   return (
     <div className={styles.container}>
       <section className={styles.cardsContainer}>
@@ -61,9 +70,10 @@ export const ConversionResults = ({
                 fecha={item.fecha}
               />
               <small className={styles.messagge}>
-                La hora en {`${item.ciudad}, ${item.pais}`} es{" "}
-                {hourDifference(item.hora, ciudadOrigen.hora)} hs menos que en{" "}
-                {`${ciudadOrigen.ciudad}, ${ciudadOrigen.pais}`}
+                {`${item.ciudad}, ${item.pais} tiene ${hourDifference(
+                  item.hora,
+                  ciudadOrigen.hora
+                )} de diferencia horaria`}
               </small>
             </li>
           ))}
@@ -73,7 +83,7 @@ export const ConversionResults = ({
       <div className={styles.actionButtonsDiv}>
         <button
           className={styles.actionButton}
-          onClick={() => setBox("CONVERSOR")}>
+          onClick={() => HandleClickVolver()}>
           <span style={{ fontWeight: "700" }} className={styles.navButtonSpan}>
             Volver
           </span>

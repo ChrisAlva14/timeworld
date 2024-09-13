@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
+import { ConversionResults } from "../../components/ConversionResults/ConversionResults";
+import BoxButtons from "../../components/TimeConvecter/BoxButtons/BoxButtons";
+import { AppContext } from "../../context/AppContext";
 import { convertirHorario } from "../../utils/timeConverter";
 import styles from "./TimeConvecter.module.css";
-import BoxButtons from "../../components/TimeConvecter/BoxButtons/BoxButtons";
-import { ConversionResults } from "../../components/ConversionResults/ConversionResults";
+import { ResetButton } from "../../components/buttons/ResetButton";
 
 function TimeConvecter() {
+  const {originCity, selectedCities, convertAvailable, resetButtonAvailable}= useContext(AppContext)
+
   const [boxShow, setBoxShow] = useState("CONVERSOR");
-  const [cityOfOrigin, setCityOfOrigin] = useState(null);
-  const [selectedCities, setSelectedCities] = useState([]);
   const [dateInput, setDateInput] = useState("");
   {
     /*const [convertedCities, setConvertedCities] = useState([]);*/
@@ -30,6 +32,7 @@ function TimeConvecter() {
     console.log(convertedCities);
 */
     }
+
     setBox("RESULTS");
   };
 
@@ -54,16 +57,28 @@ function TimeConvecter() {
       {boxShow === "CONVERSOR" && (
         <>
           <BoxButtons
-            cityOfOrigin={cityOfOrigin}
-            setCityOfOrigin={setCityOfOrigin}
+            originCity={originCity}
             selectedCities={selectedCities}
-            setSelectedCities={setSelectedCities}
             dateInput={dateInput}
             setDateInput={setDateInput}
           />
-          <button className={styles.btn__converter} onClick={handleConverter}>
-            Convertir
-          </button>
+          <div>
+            <button 
+              className={styles.btn__converter} 
+              onClick={handleConverter}
+              disabled={!convertAvailable}
+            >
+              Convertir
+            </button>
+
+            {
+              resetButtonAvailable &&
+              <ResetButton />
+            }
+
+         
+          </div>
+
         </>
       )}
 
@@ -71,8 +86,6 @@ function TimeConvecter() {
         <>
           <ConversionResults
             setBox={setBox}
-            cityOfOrigin={cityOfOrigin}
-            selectedCities={selectedCities}
             dateInput={dateInput}
           />
         </>
