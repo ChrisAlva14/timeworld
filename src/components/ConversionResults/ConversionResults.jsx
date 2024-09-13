@@ -13,19 +13,20 @@ import {
 import hourDifference from "../../utils/hourDifferece";
 import { AppContext } from "../../context/AppContext";
 
-export const ConversionResults = ({
-  setBox,
-  dateInput,
-}) => {
-
-  const {originCity, selectedCities, switchOnResetButton}= useContext(AppContext)
+export const ConversionResults = ({ setBox, dateInput }) => {
+  const { originCity, selectedCities, switchOnResetButton } =
+    useContext(AppContext);
 
   let horariosConvertidos = [];
 
   const [convertedCities, setConvertedCities] = useState([]);
 
   useEffect(() => {
-    horariosConvertidos = convertirHorario(dateInput, originCity, selectedCities);
+    horariosConvertidos = convertirHorario(
+      dateInput,
+      originCity,
+      selectedCities
+    );
     setConvertedCities(horariosConvertidos);
   }, []);
 
@@ -37,12 +38,9 @@ export const ConversionResults = ({
   );
 
   const HandleClickVolver = () => {
-
-    switchOnResetButton()
-    setBox("CONVERSOR")
-  }
-
-
+    switchOnResetButton();
+    setBox("CONVERSOR");
+  };
 
   return (
     <div className={styles.container}>
@@ -72,9 +70,10 @@ export const ConversionResults = ({
                 fecha={item.fecha}
               />
               <small className={styles.messagge}>
-                La hora en {`${item.ciudad}, ${item.pais}`} es{" "}
-                {hourDifference(item.hora, ciudadOrigen.hora)} hs menos que en{" "}
-                {`${ciudadOrigen.ciudad}, ${ciudadOrigen.pais}`}
+                {`${item.ciudad}, ${item.pais} tiene ${hourDifference(
+                  item.hora,
+                  ciudadOrigen.hora
+                )} de diferencia horaria`}
               </small>
             </li>
           ))}
