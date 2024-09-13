@@ -1,71 +1,67 @@
+import { useContext, useEffect, useState } from "react";
+
+import { AppContext } from "../../../context/AppContext";
+import { cities } from "../../../utils/api.cities"
+import cityCountryMapping from "../../../utils/cityCountryMapping";
+import { getTimeZones } from "../../../utils/timeConverter";
 import SelectComponent from "../../select-input/select-component";
 import styles from "./BoxButtons.module.css";
 import DateInput from "./dateInput/DateInput";
 
-const list = [
-  "Argentina", "Brasil", "Canadá", "Chile", 
-  "Colombia", "España", "México", "Perú", 
-  "Uruguay", "Venezuela", "El Salvador"
-]
+function BoxButtons({
+  originCity,
+  selectedCities,
+  setDateInput,
+  dateInput,
+}) {
+  const {setOriginCity, addCity, removeCity}=useContext(AppContext)
 
-function BoxButtons({ cityOfOrigin, setCityOfOrigin, selectedCities, setSelectedCities }) {
+  useEffect(() => {
+    const timezones = getTimeZones();
+  }, []);
 
-  const selectCityOfOrigin = (item) => {
-    setCityOfOrigin(item)
-  }
-
-  const selectItem = (item) => {
-    setSelectedCities([...selectedCities, item])
-  }
-
-  const handleRemove = (item) => {
-    const updatedCities = selectedCities.filter((city) => city !== item)
-    setSelectedCities(updatedCities)
-  }
-  
 
   return (
     <section className={styles.section}>
       <div className={styles.button_Layout}>
         <SelectComponent
-          contentList={list}
-          itemsCollected={cityOfOrigin}
-          emptyMessage='No se encontraton resultados...' 
-          placeHolder='Seleccione una ciudad de origen'
-          selectItem={selectCityOfOrigin}
+          contentList={cities}
+          itemsCollected={originCity}
+          emptyMessage="No se encontraton resultados..."
+          placeHolder="Seleccione una ciudad de origen"
+          selectItem={setOriginCity}
         />
       </div>
 
       <div className={styles.box_btn_layout}>
-        <DateInput />
+        <DateInput setDateInput={setDateInput} dateInput={dateInput} />
       </div>
 
       <div className={styles.destination_Select}>
         <div className={styles.button_Layout_Destination_Select}>
           <SelectComponent
-            contentList={list}
+            contentList={cities}
             itemsCollected={selectedCities}
-            emptyMessage='No se encontraton resultados...' 
-            placeHolder='Seleccione las ciudades invitadas'
-            selectItem={selectItem}
+            emptyMessage="No se encontraton resultados..."
+            placeHolder="Seleccione las ciudades invitadas"
+            selectItem={addCity}
           />
-        </div>             
+        </div>
         <div className={styles.selected_Cities}>
-          {selectedCities.length > 0 && (
-            selectedCities.map((city, key) => {
+          {selectedCities?.length > 0 &&
+            selectedCities.map((city) => {
               return (
-                <span onClick={() => handleRemove(city)} className={styles.cityLabel} key={key}>
+                <span
+                  onClick={() =>removeCity(city)}
+                  className={styles.cityLabel}
+                  key={city}>
                   {city}
-                  <img src="/svg_icons/crossIcon.svg" alt={city}/>
+                  <img src="/svg_icons/crossIcon.svg" alt={city} />
                 </span>
               );
-            })
-          )
-          }
+            })}
         </div>
       </div>
-
-
     </section>
   );
 }

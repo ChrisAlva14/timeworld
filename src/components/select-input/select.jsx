@@ -15,6 +15,18 @@ const Select = ({contentList, itemsCollected, emptyMessage, placeHolder, selectI
     }
 
     useEffect(() => {
+
+        if (itemsCollected === null) {
+            setInputValue('')
+        }
+    }, [itemsCollected])
+
+    useEffect(() => {
+
+        if (itemsCollected && !Array.isArray(itemsCollected)) {
+            setInputValue(itemsCollected)
+        }
+
         function clickOut(event) {
             if (selectRef.current && !selectRef.current.contains(event.target)) {
                 setListaDisplay("none");
