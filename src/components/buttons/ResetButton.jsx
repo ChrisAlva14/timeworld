@@ -34,13 +34,13 @@ export const ResetButton = () => {
                     </div>
 
                     <div className="Bmodal-options">
-                        <p className='BQuestion'>¿Deseas reiniciar todos lo valores?</p>
+                        <p className='BQuestion'>¿Deseas borrar todos lo valores selecionados?</p>
                     </div>
 
                     <button className="Bsave-button"
                         onClick={handlerConfirm}
                     >
-                        Aceptar
+                        Reiniciar
                     </button>
                     <button className="Bcancel-button"
                         onClick={() => setIsOpen(false)}

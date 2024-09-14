@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'wouter';
 import './Navbar.css';
-import logo from '../../assets/nav/logo-white.svg';
+import logo from '../../assets/nav/LogoW.svg';
 import { useEffect } from 'react';
 
 

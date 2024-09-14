@@ -9,7 +9,7 @@
 .button_Layout {
   width: 100%;
   margin: 0;
-  height: 124px;
+  height: 53px;
   place-content: center;
   background: linear-gradient(358.77deg, rgba(23, 23, 23, 0.55) 14.23%, rgba(23, 23, 23, 0.25) 118.03%);
   border-radius: 10px;
@@ -18,13 +18,12 @@
 
 .destination_Select{
   width: 100%;
-
 }
 
 .button_Layout_Destination_Select{
   width: 100%;
   margin: 0;
-  height: 124px;
+  height: 53px;
   place-content: center;
   background: linear-gradient(358.77deg, rgba(23, 23, 23, 0.55) 14.23%, rgba(23, 23, 23, 0.25) 118.03%);
   border-radius: 10px;
@@ -35,7 +34,7 @@
   background: transparent;
   color: white;
   border: none;
-  font-size: 1.2rem;
+  font-size: 14px;
 }
 
 .button_Layout_Destination_Select input:focus, .button_Layout input:focus{
@@ -43,7 +42,7 @@
 }
 
 .button_Layout_Destination_Select ul, .button_Layout ul{
-  background-color: rgba(23, 23, 23, 0.75);
+  background: linear-gradient(0deg, rgba(23,23,23,0.5424370431766457) 11%, rgba(83,83,83,1) 93%);
   max-height: 200px;
   border-radius: 10px;
   z-index: 10;
@@ -55,11 +54,10 @@
 }
 
 .button_Layout_Destination_Select li:hover, .button_Layout li:hover{
-  background-color: rgba(128, 128, 128, 0.75);
+  background-color: #111111;
 }
 
 .box_btn_layout {
-  height: 124px;
   display: flex;
   justify-content: center;
   border: none;
@@ -94,7 +92,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-size: 1.1rem;
+  font-size: 14px;
 }
 
 .cityLabel:hover{
@@ -108,8 +106,17 @@
     align-items: flex-start;
     flex-direction: row;
   }
-
+  .button_Layout_Destination_Select input, .button_Layout input{
+    font-size: 16px;
+  }
+  .button_Layout {
+    height: 124px;
+  }
+  .button_Layout_Destination_Select{
+    height: 124px;
+  }
   .box_btn_layout {
+    height: 124px;
     flex-direction: column;
   }
 
@@ -119,17 +126,18 @@
 
   .destination_Select{
     width: 50%;
-
   }
 
-
+  .selected_Cities{
+    max-height: 155px;
+    overflow-y: scroll;
+  }
 }
 
 @media (min-width: 1000px) {
-
-}
-@media (min-width: 1200px) {
-
+  .button_Layout_Destination_Select input, .button_Layout input{
+    font-size: 1.2rem;
+  }
 }
 
 /* tablet */
