@@ -31,7 +31,7 @@ export const SelectList = ({inputValue, setInputValue, listaDisplay, setListaDis
             return setListaDisplay('none') 
         }
 
-        if (itemsCollected.some((itemCollect) => itemCollect === item)) {
+        if (itemsCollected?.some((itemCollect) => itemCollect === item)) {
             return alert('El item ya fue seleccionado')
         }
 

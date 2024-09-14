@@ -1,76 +1,97 @@
-import React from 'react'
-import styles from './ConversionResults.module.css'
-import { DateCard } from './DateCard'
+import { useContext, useEffect, useState } from "react";
+import styles from "./ConversionResults.module.css";
+import { DateCard } from "./DateCard";
+import { convertirHorario } from "../../utils/timeConverter";
+import {
+  getRegionFromCityCountry,
+  getRegionsFromCityCountryArray,
+} from "../../utils/getRegionCountry";
+import {
+  getCityCountryDateTime,
+  getArrayCityCountryDateTime,
+} from "../../utils/getCityInfo";
+import hourDifference from "../../utils/hourDifferece";
+import { AppContext } from "../../context/AppContext";
 
-export const ConversionResults = ({setBox}) => {
+export const ConversionResults = ({ setBox, dateInput }) => {
+  const { originCity, selectedCities, switchOnResetButton } =
+    useContext(AppContext);
 
-    const ciudadOrigen = {
-        ciudad: 'Ciudad origen',
-        pais: 'País',
-        hora: '00:00',
-        fecha: '15 de Abril'
-    }
+  let horariosConvertidos = [];
 
-    const ciudadesDestino = [
-        {
-            ciudad: 'Ciudad destino',
-            pais: 'País',
-            hora: '03:00',
-            fecha: '15 de Abril'
-        },
-        {
-            ciudad: 'Ciudad destino',
-            pais: 'País',
-            hora: '03:00',
-            fecha: '15 de Abril'
-        }
-    ]
+  const [convertedCities, setConvertedCities] = useState([]);
 
+  useEffect(() => {
+    horariosConvertidos = convertirHorario(
+      dateInput,
+      originCity,
+      selectedCities
+    );
+    setConvertedCities(horariosConvertidos);
+  }, []);
+
+  const ciudadOrigen = getCityCountryDateTime(originCity, dateInput);
+
+  const ciudadesDestino = getArrayCityCountryDateTime(
+    selectedCities,
+    convertedCities
+  );
+
+  const HandleClickVolver = () => {
+    switchOnResetButton();
+    setBox("CONVERSOR");
+  };
 
   return (
     <div className={styles.container}>
-        <section className={styles.cardsContainer}>
-            <DateCard 
-                ciudad={ciudadOrigen.ciudad}
-                pais={ciudadOrigen.pais}
-                hora={ciudadOrigen.hora}
-                fecha={ciudadOrigen.fecha}
-            />
+      <section className={styles.cardsContainer}>
+        <DateCard
+          ciudad={ciudadOrigen.ciudad}
+          pais={ciudadOrigen.pais}
+          hora={ciudadOrigen.hora}
+          fecha={ciudadOrigen.fecha}
+        />
 
-            <span className={styles.equal}>=</span>
+        <span className={styles.equal}>=</span>
 
-            <ul className={styles.destinationCities}
-                style={ciudadesDestino.length > 3 ? {overflowY: 'scroll'} : {paddingRight: '0'}}
-            >
-                {
-                    ciudadesDestino.map((item, index) => (
-                        <li key={index} className={styles.destinationCitiesListItem}>
-                            <DateCard 
-                                ciudad={item.ciudad}
-                                pais={item.pais}
-                                hora={item.hora}
-                                fecha={item.fecha}
-                            />
-                            <small className={styles.messagge}>La hora en ciudad origen, país es 7hs menos que en ciudad destino 1, país</small>
-                        </li>
-                    ))
-                }
-            </ul>
-        </section>
+        <ul
+          className={styles.destinationCities}
+          style={
+            ciudadesDestino.length > 3
+              ? { overflowY: "scroll" }
+              : { paddingRight: "0" }
+          }>
+          {ciudadesDestino.map((item, index) => (
+            <li key={index} className={styles.destinationCitiesListItem}>
+              <DateCard
+                ciudad={item.ciudad}
+                pais={item.pais}
+                hora={item.hora}
+                fecha={item.fecha}
+              />
+              <small className={styles.messagge}>
+                {`${item.ciudad}, ${item.pais} tiene ${hourDifference(
+                  item.hora,
+                  ciudadOrigen.hora
+                )} de diferencia horaria`}
+              </small>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-        <div className={styles.actionButtonsDiv}>
-            <button
-                className={styles.actionButton}
-                onClick={() => setBox('CONVERSOR')}
-            >
-                <span style={{fontWeight: '700'}}
-                    className={styles.navButtonSpan}>Volver</span>
-            </button>
-            <button className={styles.actionButton}>
-                <span style={{fontWeight: '700'}}>Copiar Datos</span>
-            </button>
-        </div>
-
+      <div className={styles.actionButtonsDiv}>
+        <button
+          className={styles.actionButton}
+          onClick={() => HandleClickVolver()}>
+          <span style={{ fontWeight: "700" }} className={styles.navButtonSpan}>
+            Volver
+          </span>
+        </button>
+        <button className={styles.actionButton}>
+          <span style={{ fontWeight: "700" }}>Copiar Datos</span>
+        </button>
+      </div>
     </div>
-  )
-}
+  );
+};

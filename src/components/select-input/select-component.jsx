@@ -1,10 +1,11 @@
 import React from 'react'
+
 import Select from './select'
 
 const SelectComponent = ({contentList, itemsCollected, emptyMessage, placeHolder, selectItem}) => {
 
 
-  const contentListOptimized = Array.from(new Set(contentList)).sort((a, b) => {
+  /* const contentListOptimized = Array.from(new Set(contentList)).sort((a, b) => {
     const getWordsAndNumbers = (str) => {
         return str.split(/\s+/).map(word => {
             const num = parseInt(word.match(/\d+/)?.[0], 10)
@@ -35,12 +36,13 @@ const SelectComponent = ({contentList, itemsCollected, emptyMessage, placeHolder
     }
 
     return 0
-  })
+  }) */
+
 
 
   return ( 
       <Select
-        contentList={contentListOptimized}
+        contentList={contentList}
         itemsCollected={itemsCollected}
         emptyMessage={emptyMessage}
         placeHolder={placeHolder}
