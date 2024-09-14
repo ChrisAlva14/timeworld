@@ -28,7 +28,7 @@ function BoxButtons({
           contentList={cities}
           itemsCollected={originCity}
           emptyMessage="No se encontraton resultados..."
-          placeHolder="Seleccione una ciudad de origen"
+          placeHolder="Ciudad de origen"
           selectItem={setOriginCity}
         />
       </div>
@@ -43,7 +43,7 @@ function BoxButtons({
             contentList={cities}
             itemsCollected={selectedCities}
             emptyMessage="No se encontraton resultados..."
-            placeHolder="Seleccione las ciudades invitadas"
+            placeHolder="Ciudades a convertir"
             selectItem={addCity}
           />
         </div>

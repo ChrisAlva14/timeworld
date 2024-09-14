@@ -23,7 +23,7 @@ const data ={
     "CentroAmerica": [
         { pais: "Belice", referencia: "America/Belize", ciudades: ["Belice", "San Ignacio", "Orange Walk", "Belmopan"] },
         { pais: "Costa Rica", referencia: "America/Costa_Rica", ciudades: ["San José", "Alajuela", "Cartago", "Limón"] },
-        { pais: "El Salvador", referencia: "America/El_Salvador", ciudades: ["San Salvador", "Santa Ana", "San Miguel", "Soyapango"] },
+        { pais: "El Salvador", referencia: "America/El_Salvador", ciudades: ["San Salvador", "Sonsonate", "San Miguel", "Soyapango"] },
         { pais: "Guatemala", referencia: "America/Guatemala", ciudades: ["Ciudad de Guatemala", "Quetzaltenango", "Escuintla", "Cobán"] },
         { pais: "Honduras", referencia: "America/Tegucigalpa", ciudades: ["Tegucigalpa", "San Pedro Sula", "La Ceiba", "Choluteca"] },
         { pais: "Nicaragua", referencia: "America/Managua", ciudades: ["Managua", "León", "Granada", "Masaya"] },
@@ -212,7 +212,7 @@ const cities = [
     "Montevideo, Uruguay", "Punta del Este, Uruguay", "Caracas, Venezuela", "Maracaibo, Venezuela", "Valencia, Venezuela",
     "Barquisimeto, Venezuela", "Belice, Belice", "San Ignacio, Belice", "Orange Walk, Belice", "Belmopan, Belice",
     "San José, Costa Rica", "Alajuela, Costa Rica", "Cartago, Costa Rica", "Limón, Costa Rica", "San Salvador, El Salvador",
-    "Santa Ana, El Salvador", "San Miguel, El Salvador", "Soyapango, El Salvador", "Ciudad de Guatemala, Guatemala",
+    "Sonsonate, El Salvador", "San Miguel, El Salvador", "Soyapango, El Salvador", "Ciudad de Guatemala, Guatemala",
     "Quetzaltenango, Guatemala", "Escuintla, Guatemala", "Cobán, Guatemala", "Tegucigalpa, Honduras", "San Pedro Sula, Honduras",
     "La Ceiba, Honduras", "Choluteca, Honduras", "Managua, Nicaragua", "León, Nicaragua", "Granada, Nicaragua", "Masaya, Nicaragua",
     "Ciudad de Panamá, Panamá", "Colón, Panamá", "David, Panamá", "Santiago, Panamá", "La Habana, Cuba", "Santiago de Cuba, Cuba",

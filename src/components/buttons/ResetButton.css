@@ -55,7 +55,9 @@
 }
 
 .BQuestion{
+    padding: 2rem;
     color: black;
+    font-size: 14px;
 }
 
 .BmodalBGNote{
@@ -70,7 +72,6 @@
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 20px;
 }
 
 .Bcancel-button{
@@ -80,7 +81,6 @@
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 20px;
     margin-left: 20px;
 }
 
@@ -90,4 +90,10 @@
 
 .Bcancel-button:hover{
     background-color: rgb(172, 0, 0);
+}
+
+@media (min-width: 600px) {
+    .BQuestion{
+        font-size: 16px;
+    }
 }

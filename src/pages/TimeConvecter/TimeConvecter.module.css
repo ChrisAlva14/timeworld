@@ -13,9 +13,9 @@
 }
 
 .headerBox {
-  margin: 1rem;
+  margin: 0rem 1rem;
   color: white;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
 }
 
 /* Estilo para el título principal */
@@ -55,7 +55,13 @@
   font-weight: 700;
   font-size: 24px;
 }
-
+@media (min-width: 390px) {
+  .headerBox {
+    margin: 1rem 1rem;
+    color: white;
+    margin-bottom: 40px;
+  }
+}
 @media (min-width: 600px) {
   /* Contenedor principal del conversor de tiempo */
   .mainContainer {
@@ -66,9 +72,14 @@
     align-items: center;
     gap: 3rem;
   }
+  .headerBox {
+    margin: 1rem 1rem;
+    color: white;
+    margin-bottom: 45px;
+  }
   .timeConverter__h1 {
     font-size: 36px;
-    margin-bottom: unset;
+    margin-bottom: 28px;
   }
   .message {
     font-size: 18px;
@@ -80,6 +91,9 @@
 
 /* Estilos para pantallas con un ancho mínimo de 1024px */
 @media (min-width: 1024px) {
+  .headerBox {
+    margin-bottom: 70px;
+  }
   .btnContainer {
     flex-direction: row;
     margin: 5rem 10rem;

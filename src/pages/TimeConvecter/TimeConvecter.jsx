@@ -41,7 +41,7 @@ function TimeConvecter() {
       <div className={styles.headerBox}>
         <h1 className={styles.timeConverter__h1}>Convertor horario</h1>
         <p className={styles.message}>
-          Utiliza esta convertor para conocer el <b>horario exacto</b>
+          Utiliza esta convertor para conocer el <b>horario exacto </b>
           de las ciudades que desees
         </p>
       </div>
