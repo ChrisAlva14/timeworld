@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
 import './Tutorial.css';
 import '@justinribeiro/lite-youtube';
-
 export const Tutorial = () => {
     const [activeQuestion, setActiveQuestion] = useState(null);
-
+    const [videoId, setVideoId] = useState('hfsD4ZT5mAw'); // Por defecto, el video de escritorio
     const faqData = [
         {
             question: "¿Por qué la app me pide compartir mi ubicación?",
@@ -32,11 +31,25 @@ export const Tutorial = () => {
             answer: "Sí, la aplicación es completamente gratuita."
         }
     ];
-
+    // useEffect para cambiar el videoId basado en el tamaño de la pantalla
+    useEffect(() => {
+        const updateVideoId = () => {
+            if (window.innerWidth <= 768) {
+                setVideoId('hfsD4ZT5mAw'); // Video para móvil
+            } else {
+                setVideoId('y7Ci_H9bYEk'); // Video para escritorio
+            }
+        };
+        // Llama a la función al montar el componente
+        updateVideoId();
+        // Escucha cambios en el tamaño de la ventana
+        window.addEventListener('resize', updateVideoId);
+        // Limpia el event listener cuando se desmonta el componente
+        return () => window.removeEventListener('resize', updateVideoId);
+    }, []);
     const toggleQuestion = (index) => {
         setActiveQuestion(prev => prev === index ? null : index);
     };
-
     return (
         <div className="container">
             <div className="card">
@@ -49,7 +62,7 @@ export const Tutorial = () => {
                         puedes revisar este video, donde te explicamos paso a paso el funcionamiento de la aplicación.
                     </p>
                     <div className="video-placeholder">
-                        <lite-youtube className="youtube-video" videoid="LII8Nfu1sOE"></lite-youtube>
+                        <lite-youtube className="youtube-video" videoid={videoId}></lite-youtube>
                     </div>
                     <section className="faq-section">
                         <h3 className="faq-title">Preguntas Frecuentes</h3>
