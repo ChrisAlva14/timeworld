@@ -48,7 +48,7 @@ export const Navbar = () => {
                 <nav className="circular-menu">
                     <div className="circle">
                         <Link to="/team"  > < img src="/teamLogo.png" className="link-item" alt="team" />  </Link>
-                        <a onClick={() => setIsOpen(true)}  ><img src="/link.png" alt="team" className="link-item" />   </a>
+                        <a id='modal' onClick={() => setIsOpen(true)}  ><img src="/logoModal.png" alt="team" className="link-item" />   </a>
                         <Link to="/tutorial"  ><img src="/link.png" alt="team" className="link-item" />   </Link>
                        
                        

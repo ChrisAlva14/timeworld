@@ -6,7 +6,7 @@ function TeamPage() {
       pic: "./2.png",
       name: "Valeria Luzardo",
       rol: "UX/UI designer",
-      linkedin: "#",
+      linkedin: " https://www.linkedin.com/in/valeria-luzardo-b993261bb/",
       info: "lorem ipsum lorem lorem ",
     },
     {
@@ -19,22 +19,22 @@ function TeamPage() {
     {
       pic: "./3.png",
       name: "Exequiel Schiavo",
-      rol: "Frontend Developer",
-      linkedin: "#",
+      rol: "Software Developer",
+      linkedin: "www.linkedin.com/in/exequiel-schiavo/",
       info: "lorem ipsum lorem lorem ",
     },
     {
-      pic: "./logo-inkua.png",
+      pic: "./4.png",
       name: "Carlos Garay",
       rol: "Software Developer",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/garaycarlos/",
       info: "lorem ipsum lorem lorem ",
     },
     {
-      pic: "./logo-inkua.png",
+      pic: "./5.png",
       name: "facundo Elorz",
       rol: "Software Developer",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/facundo-elorz/",
       info: "lorem ipsum lorem lorem ",
     },
     {
@@ -69,7 +69,7 @@ function TeamPage() {
                 </div>
 
                 <div>
-                  <a href="#">  <img src="/linkedin.png" alt="linkedin" /></a>
+                  <a href={p.linkedin} target="_blank">  <img src="/linkedin.png" alt="linkedin" /></a>
                 </div>
               </div>
 
