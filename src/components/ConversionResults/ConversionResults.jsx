@@ -42,9 +42,7 @@ export const ConversionResults = ({ setBox, dateInput }) => {
     const formattedData = ciudadesDestino
       .map(
         (item, index) =>
-          `País de destino ${index + 1}: ${item.ciudad}, ${item.pais} - ${
-            item.hora
-          } ${item.fecha}`
+          ` ${item.ciudad}, ${item.pais} - ${item.hora}h ${item.fecha}`
       )
       .join("\n");
 
