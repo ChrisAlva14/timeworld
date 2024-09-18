@@ -117,6 +117,7 @@
 
 @media (min-width: 300px) {
   .mainContainer {
-    height: 79vh;
+    min-height: 79vh;
+    height: 100%;
   }
 }
