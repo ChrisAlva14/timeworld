@@ -29,6 +29,7 @@ h1 {
     overflow: hidden;
     border-radius: 0px 20px 0px 20px;
     padding: 10px;
+   
 
    
   }
@@ -38,6 +39,9 @@ h1 {
     margin-bottom: 10px;
     filter: drop-shadow(10px 10px 4px #3333);
     mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
   }
   
   .info_Team {
