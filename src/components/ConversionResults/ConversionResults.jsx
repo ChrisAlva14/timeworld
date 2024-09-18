@@ -3,15 +3,12 @@ import styles from "./ConversionResults.module.css";
 import { DateCard } from "./DateCard";
 import { convertirHorario } from "../../utils/timeConverter";
 import {
-  getRegionFromCityCountry,
-  getRegionsFromCityCountryArray,
-} from "../../utils/getRegionCountry";
-import {
   getCityCountryDateTime,
   getArrayCityCountryDateTime,
 } from "../../utils/getCityInfo";
 import hourDifference from "../../utils/hourDifferece";
 import { AppContext } from "../../context/AppContext";
+import Swal from "sweetalert2";
 
 export const ConversionResults = ({ setBox, dateInput }) => {
   const { originCity, selectedCities, switchOnResetButton } =
@@ -40,6 +37,29 @@ export const ConversionResults = ({ setBox, dateInput }) => {
   const HandleClickVolver = () => {
     switchOnResetButton();
     setBox("CONVERSOR");
+  };
+  const handleCopyData = () => {
+    const formattedData = ciudadesDestino
+      .map(
+        (item, index) =>
+          ` ${item.ciudad}, ${item.pais} - ${item.hora}h ${item.fecha}`
+      )
+      .join("\n");
+
+    navigator.clipboard
+      .writeText(formattedData)
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "¡Datos copiados!",
+          text: "Los datos han sido copiados al portapapeles exitosamente.",
+          confirmButtonText: "Entendido",
+          timer: 3000,
+        });
+      })
+      .catch((err) => {
+        console.error("Error al copiar los datos: ", err);
+      });
   };
 
   return (
@@ -88,7 +108,7 @@ export const ConversionResults = ({ setBox, dateInput }) => {
             Volver
           </span>
         </button>
-        <button className={styles.actionButton}>
+        <button className={styles.actionButton} onClick={handleCopyData}>
           <span style={{ fontWeight: "700" }}>Copiar Datos</span>
         </button>
       </div>

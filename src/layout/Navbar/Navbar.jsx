@@ -1,20 +1,14 @@
+import { useContext, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
-import './Navbar.css';
+
 import logo from '../../assets/nav/LogoW.svg';
-import { useEffect } from 'react';
-
-
-import { useContext } from 'react';
-
 import { AppContext } from '../../context/AppContext';
+
+import './Navbar.css';
 
 export const Navbar = () => {
     const [location] = useLocation();
-
-
     const { setIsOpen}= useContext(AppContext)
-
-   
 
     useEffect(() => {
         const logoElement = document.querySelector('.logo');
@@ -47,11 +41,9 @@ export const Navbar = () => {
 
                 <nav className="circular-menu">
                     <div className="circle">
-                        <Link to="/team"  > < img src="/teamLogo.png" className="link-item" alt="team" />  </Link>
-                        <a onClick={() => setIsOpen(true)}  ><img src="/link.png" alt="team" className="link-item" />   </a>
-                        <Link to="/tutorial"  ><img src="/link.png" alt="team" className="link-item" />   </Link>
-                       
-                       
+                        <Link to="/team"  > < img src="/teamLogo2.png" className="link-item" alt="team" />  </Link>
+                        <a id='modal' onClick={() => setIsOpen(true)}  ><img src="/logoModal2.png" alt="config" className="link-item" />   </a>
+                        <Link to="/tutorial"  ><img src="/link2.png" alt="tutorial" className="link-item" />   </Link>
                     </div>
                 </nav>
             </header>
