@@ -48,7 +48,7 @@ function TeamPage() {
 
   return (
     <div className="wrapper_Team">
-      <h1>Equipo de trabajo</h1>
+      <h1 className="teamTitle">Equipo de trabajo</h1>
       <p>
         Conoce el equipo de de voluntarios que han trabajado en el diseño y
         desarrollo de esta aplicación web
