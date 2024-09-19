@@ -1,20 +1,7 @@
 import React, { useEffect, useState } from "react";
+
+import { getDate, getHour } from "../../../../utils/dateHelper";
 import styles from "./dateInput.module.css";
-
-function getDate() {
-  const ahora = new Date()
-  const anio = ahora.getFullYear()
-  const mes = (ahora.getMonth() + 1).toString().padStart(2, '0')
-  const dia = ahora.getDate().toString().padStart(2, '0')
-  return `${anio}-${mes}-${dia}`
-}
-
-function getHour() {
-  const ahora = new Date()
-  const horas = ahora.getHours().toString().padStart(2, '0')
-  const minutos = ahora.getMinutes().toString().padStart(2, '0')
-  return `${horas}:${minutos}`
-}
 
 const DateInput = ({ setDateInput, dateInput }) => {
   const [date, setDate] = useState(getDate);

@@ -1,11 +1,15 @@
-import { useRef, useState } from 'react'
-import { TarjetaInkua } from '../../components/cards/tarjeta-inkua'
-import ColorButton from '../../components/buttons/color-button'
 import html2canvas from 'html2canvas'
+import { useEffect, useRef, useState } from 'react'
+
+import ColorButton from '../../components/buttons/color-button'
+import { TarjetaInkua } from '../../components/cards/tarjeta-inkua'
+import { getHourConverted } from '../../utils/timeConverter'
+
 import './Invitation.css'
 
-
 function Invitation({ formData }) {
+    const [dataConverted, setDataConverted] = useState(formData)
+
 
     const colorStyleTpyes = {
         lightBlue: 'linear-gradient(90deg, #93ADC8 -3.59%, #6893BF 100%)',
@@ -61,6 +65,30 @@ function Invitation({ formData }) {
         }
     };
 
+    const formatDateTime = (date, time) => {
+        if (date && time) {
+          const dateTime = `${date} ${time}:00`;
+          return dateTime 
+        }
+      };
+
+    useEffect(()=>{
+        if(formData.cities.length > 0 ){
+            let citiesConverted = []
+
+            const date = formatDateTime(formData.fecha, formData.hora)
+            
+            formData.cities.forEach(item => {
+                citiesConverted.push(
+                    {
+                        city: item,
+                        date: (getHourConverted(date, formData.ciudadOrigen, item)),
+                    }
+                )
+            });
+            setDataConverted({...dataConverted, cities:citiesConverted})
+        }
+    },[formData])
 
     return (
         <div className="modal">
@@ -75,7 +103,7 @@ function Invitation({ formData }) {
                 className='modal-container'
                 style={{background: bgColor}}
             >
-                <TarjetaInkua formData={formData}/>
+                <TarjetaInkua formData={dataConverted}/>
             </article>
 
             <div className="modal-buttons">

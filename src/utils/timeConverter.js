@@ -1,4 +1,9 @@
 import moment from "moment-timezone";
+
+import 'moment/locale/es';
+
+moment.locale('es');
+
 import { getCityReference } from "./api.cities";
 
 export function getTimeZones() {
@@ -20,3 +25,18 @@ export function convertirHorario(
     horario: horaOriginal.clone().tz(ciudad).format("HH:mm DD-MM-YYYY"),
   }));
 }
+export function getHourConverted(
+  horario_original,
+  ciudad_original,
+  ciudadDestino
+) {
+
+  const referenciaOrigen = getCityReference(ciudad_original)
+  const horaOriginal = moment.tz(horario_original, referenciaOrigen);
+  const refCiudadDestino = getCityReference(ciudadDestino)
+    return ` ${horaOriginal.clone().tz(refCiudadDestino).format("DD MMM - HH:mm")}`
+ 
+}
+
+
+

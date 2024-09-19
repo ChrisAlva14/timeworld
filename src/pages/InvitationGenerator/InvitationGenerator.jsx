@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import Invitation from "../Invitation/Invitation";
+
 import SelectComponent from "../../components/select-input/select-component"
+import { cities as cityList } from "../../utils/api.cities";
+import { getDate, getHour } from "../../utils/dateHelper";
+import Invitation from "../Invitation/Invitation";
+
 import "./InvitationGenerator.css";
 
-const lista = [
-  "Argentina", "Brasil", "Canadá", "Chile", 
-  "Colombia", "España", "México", "Perú", 
-  "Uruguay", "Venezuela"
-]
+const lista = cityList
 
 function InvitationGenerator() {
 
@@ -15,19 +15,28 @@ function InvitationGenerator() {
     titulo: "",
     descripcion: "",
     link: "",
-    fecha: "",
-    hora: "",
+    fecha: (getDate()),
+    hora: (getHour()),
     ciudadOrigen: "",
     cities: [],
   });
 
+  // cities Collected
   const [cities, setCities] = useState([]);
+  // origin citiy
+  const [city, setCity] = useState(null);
 
   const dateRef = useRef(null);
   const timeRef = useRef(null);
 
   const selectItem = (item) => {
     setCities([...cities, item])
+  }
+  const selectOrigin = (item) => {
+    setCity(item)
+    setFormData({
+      ...formData, ciudadOrigen:item
+    })
   }
 
   useEffect(() => {
@@ -45,6 +54,7 @@ function InvitationGenerator() {
       [id]: value,
     }));
   };
+
 
 
   useEffect(() => {
@@ -152,30 +162,18 @@ function InvitationGenerator() {
             </div>
 
             <div className="div_input">
-              <select
-                id="ciudadOrigen"
-                value={formData.ciudadOrigen}
-                onChange={handleInputChange}
-              >
-                <option value="" disabled>
-                  Seleccione una ciudad de origen
-                </option>
-                <option value="Argentina">Argentina</option>
-                <option value="Brasil">Brasil</option>
-                <option value="Canadá">Canadá</option>
-                <option value="Chile">Chile</option>
-                <option value="Colombia">Colombia</option>
-                <option value="España">España</option>
-                <option value="México">México</option>
-                <option value="Perú">Perú</option>
-                <option value="Uruguay">Uruguay</option>
-                <option value="Venezuela">Venezuela</option>
-              </select>
+            <SelectComponent 
+                contentList={cityList}         
+                itemsCollected={city}
+                emptyMessage='No se encontraton resultados...' 
+                placeHolder='Seleccione las ciudades invitadas'
+                selectItem={selectOrigin}
+              />
             </div>
 
             <div className="select_input">
               <SelectComponent 
-                contentList={lista}         
+                contentList={cityList}         
                 itemsCollected={cities}
                 emptyMessage='No se encontraton resultados...' 
                 placeHolder='Seleccione las ciudades invitadas'

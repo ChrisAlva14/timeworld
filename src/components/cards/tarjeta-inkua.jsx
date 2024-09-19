@@ -1,8 +1,24 @@
+import countries from 'i18n-iso-countries';
+import esLocale from 'i18n-iso-countries/langs/es.json';
 import React, { useState } from 'react'
 
+countries.registerLocale(esLocale);
+
+function obtenerBandera(lugar) {
+    console.log(lugar)
+    const partes = lugar.split(', ');
+    const pais = partes[1].trim();
+    if(pais==="EEUU"){
+        return ", USA"
+    }
+    const codigoPais = countries.getAlpha3Code(pais, 'es');
+    if(codigoPais){
+        return ", "+ codigoPais
+    }
+    return ""
+}
 
 export const TarjetaInkua = ({formData}) => {
-
     const { titulo, descripcion, link, fecha, hora, cities} = formData
     const [ uploadImg, setUploadImg ] = useState(null)
 
@@ -39,11 +55,11 @@ export const TarjetaInkua = ({formData}) => {
         </div>
         
         <ul id="invitation-times">
-            {cities.map((city, index) => (
+            {cities.map((item, index) => (
                 <li key={index}>
-                    <span>{city}:</span>
+                    <span>{`${item.city.split(', ')[0]}${obtenerBandera(item.city)}`}:</span>
                     <div className='dotted-line'></div>
-                    <span>{dayMonth} - {hora}hs</span>
+                    <span>{item.date}hs</span>
                 </li>
             ))}
         </ul>
