@@ -15,6 +15,7 @@ This project was developed using React as the framework.
 Dependencies used in the project:
 | Dependencies | Version | Description |
 | ------ | ------ | ------ |
+| @justinribeiro/lite-youtube | ^1.5.0 | Library for embedding YouTube videos in a lightweight and optimized way. |
 | axios | ^1.7.5 | Promise-based HTTP client for the browser and Node.js. |
 | conversor-v2 | file: | Custom local module for handling time zone conversions. |
 | dotenv | ^16.4.5 | Loads environment variables from a `.env` file into `process.env`. |
@@ -23,7 +24,9 @@ Dependencies used in the project:
 | moment | ^2.30.1 | Library for parsing, validating, manipulating, and displaying dates in JavaScript. |
 | moment-timezone | ^0.5.45 | Adds support for timezone data to Moment.js, allowing conversions between time zones. |
 | react | ^18.3.1 | JavaScript library for building user interfaces. |
+| react-device-detect | ^2.2.3 | Detects the user's device type in React applications. |
 | react-dom | ^18.3.1 | React package for working with the DOM. |
+| sweetalert2 | ^11.14.0 | Library for creating customizable modals and alerts in web applications. |
 | wouter | ^3.2.1 | Minimalist routing solution for React with hooks support. |
 
 ## Installation Steps:
@@ -56,10 +59,10 @@ The project's code is licensed under GNU General Public License.
 ## Project Development:
 This project was developed following agile methodology principles, with a team organized by roles:
 - Technical Leader: Manuel Florez, [linkedin](https://www.linkedin.com/in/manuel14mds/), [GitHub Profile](https://github.com/manuel14mds)
-- Graphic/UX/UI Designer: Valeria Luzardo, [linkedin](#), [Behance](#)
-- Software Developer: Christopher Villalta, [linkedin](#), [GitHub Profile](https://github.com/ChrisAlva14)
-- Software Developer: Exequiel Schiavo, [linkedin](#), [GitHub Profile](https://github.com/Exeq10)
-- Software Developer: Carlos Garay, [linkedin](#), [GitHub Profile](https://github.com/mauriGaray)
+- Graphic/UX/UI Designer: Valeria Luzardo, [linkedin](https://www.linkedin.com/in/valeria-luzardo-b993261bb/), [Behance](https://www.behance.net/valerialuzardo1)
+- Software Developer: Christopher Villalta, [linkedin](https://www.linkedin.com/in/chrisvillalta/), [GitHub Profile](https://github.com/ChrisAlva14)
+- Software Developer: Exequiel Schiavo, [linkedin](www.linkedin.com/in/exequiel-schiavo/), [GitHub Profile](https://github.com/Exeq10)
+- Software Developer: Carlos Garay, [linkedin](https://www.linkedin.com/in/garaycarlos/), [GitHub Profile](https://github.com/mauriGaray)
 - Software Developer: Facundo Elorz, [linkedin](https://www.linkedin.com/in/facundo-elorz/), [GitHub Profile](https://github.com/githubfacu)
 
 > Thank you for taking the time to read through this README. We hope that this project will be helpful and beneficial for your needs. Your support and interest mean a lot to us, and we’re excited to see how this project might contribute to the great work being done. If you have any questions or need further assistance, please don't hesitate to reach out.

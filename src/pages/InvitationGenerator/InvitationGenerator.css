@@ -134,10 +134,12 @@
 #date input{
   text-align: center;
   padding: 4px 8px;
+  font-size: 14px;
 }
 
 #time input{
   text-align: center;
+  font-size: 14px;
 }
 
 .div_input input[type="date"]::-webkit-calendar-picker-indicator,
@@ -146,16 +148,15 @@
 }
 
 .select_input ul{
-  background-color: white;
-  color: black;
+  background: linear-gradient(0deg, rgba(23,23,23,0.5424370431766457) 11%, rgba(83,83,83,1) 93%);
   max-height: 200px;
   border-radius: 10px;
   z-index: 10;
+  color: white;
 }
 
 .select_input ul li:hover{
-  background-color: rgb(102, 102, 102);
-  color: white;
+  background-color: #111111;
 }
 
 .container_cities{
@@ -193,6 +194,15 @@
   color: white;
 }
 
+@media (min-width: 600px) {
+
+  #time input{
+    font-size: 16px;
+  }
+  #date input{
+    font-size: 16px;
+  }
+}
 
 @media (min-width: 768px) {
   #container {
