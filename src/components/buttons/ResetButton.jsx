@@ -37,12 +37,12 @@ export const ResetButton = () => {
                         <p className='BQuestion'>¿Deseas borrar todos lo valores selecionados?</p>
                     </div>
 
-                    <button className="Bsave-button"
+                    <button className="Bcancel-button"
                         onClick={handlerConfirm}
                     >
                         Reiniciar
                     </button>
-                    <button className="Bcancel-button"
+                    <button className="Bcancel-btn"
                         onClick={() => setIsOpen(false)}
                     >
                         Cancelar

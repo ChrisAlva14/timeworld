@@ -79,6 +79,12 @@ p {
 .card_Team:hover .overlay_Team {
     opacity: 1;
 }
+.link-edin{
+    margin-top: 30px;
+}
+.link-edin:hover{
+    transform: scale(1.2);
+}
 
 @media (min-width: 600px) {
     .wrapper_Team {

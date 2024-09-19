@@ -38,7 +38,7 @@ export const TarjetaInkua = ({ formData }) => {
             <div className='container-link'>
                 <div className='line'></div>
                 {
-                    !link ? <span className='enlace'>🔗</span>
+                    !link ? <span className='enlace invitationCardLink'>🔗</span>
                         :
                         <a href={link} className='invitationCardLink'>{link}</a>
                 }

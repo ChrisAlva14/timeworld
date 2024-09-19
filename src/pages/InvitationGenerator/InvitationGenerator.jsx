@@ -7,8 +7,6 @@ import Invitation from "../Invitation/Invitation";
 
 import "./InvitationGenerator.css";
 
-const lista = cityList
-
 function InvitationGenerator() {
 
   const [formData, setFormData] = useState({
@@ -40,7 +38,6 @@ function InvitationGenerator() {
   }
 
   useEffect(() => {
-    
     setFormData((prevFormData) => ({
       ...prevFormData,
       cities: cities,
@@ -166,7 +163,7 @@ function InvitationGenerator() {
                 contentList={cityList}         
                 itemsCollected={city}
                 emptyMessage='No se encontraton resultados...' 
-                placeHolder='Seleccione las ciudades invitadas'
+                placeHolder='Seleccione ciudad origen'
                 selectItem={selectOrigin}
               />
             </div>

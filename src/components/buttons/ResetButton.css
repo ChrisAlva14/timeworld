@@ -65,27 +65,29 @@
     font-size: 12px;
 }
 
-.Bsave-button {
-    background-color: #111111;
-    color: white;
+.Bcancel-btn {
+    background-color: #ffff;
+    color: #5e5e5e;
     padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.Bcancel-button{
-    background-color: rgb(198, 0, 0);
-    color: white;
-    padding: 10px;
-    border: none;
+    border: 2px thin #5e5e5e;
     cursor: pointer;
     border-radius: 5px;
     margin-left: 20px;
 }
 
-.Bsave-button:hover {
-    background-color: #333;
+.Bcancel-button{
+    background-color: #c60000;
+    border: 2px solid #c60000;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.Bcancel-btn:hover {
+    color: #ffff;
+    background-color: #8a8a8a;
 }
 
 .Bcancel-button:hover{
