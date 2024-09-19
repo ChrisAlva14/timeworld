@@ -186,3 +186,7 @@
 .faq-section::-webkit-scrollbar {
     display: none;
 }
+
+.faq-card-content{
+    margin-top: 15px;
+}

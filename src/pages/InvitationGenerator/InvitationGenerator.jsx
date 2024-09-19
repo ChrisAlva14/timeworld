@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import SelectComponent from "../../components/select-input/select-component"
+import SelectComponent from "../../components/select-input/select-component";
 import { cities as cityList } from "../../utils/api.cities";
 import { getDate, getHour } from "../../utils/dateHelper";
 import Invitation from "../Invitation/Invitation";
@@ -8,13 +8,12 @@ import Invitation from "../Invitation/Invitation";
 import "./InvitationGenerator.css";
 
 function InvitationGenerator() {
-
   const [formData, setFormData] = useState({
     titulo: "",
     descripcion: "",
     link: "",
-    fecha: (getDate()),
-    hora: (getHour()),
+    fecha: getDate(),
+    hora: getHour(),
     ciudadOrigen: "",
     cities: [],
   });
@@ -28,21 +27,22 @@ function InvitationGenerator() {
   const timeRef = useRef(null);
 
   const selectItem = (item) => {
-    setCities([...cities, item])
-  }
+    setCities([...cities, item]);
+  };
   const selectOrigin = (item) => {
-    setCity(item)
+    setCity(item);
     setFormData({
-      ...formData, ciudadOrigen:item
-    })
-  }
+      ...formData,
+      ciudadOrigen: item,
+    });
+  };
 
   useEffect(() => {
     setFormData((prevFormData) => ({
       ...prevFormData,
       cities: cities,
     }));
-  }, [cities])
+  }, [cities]);
 
   const handleInputChange = (event) => {
     const { id, value } = event.target;
@@ -52,22 +52,20 @@ function InvitationGenerator() {
     }));
   };
 
-
-
   useEffect(() => {
     if (dateRef.current) {
-      dateRef.current.addEventListener('click', handleDateClick);
+      dateRef.current.addEventListener("click", handleDateClick);
     }
     if (timeRef.current) {
-      timeRef.current.addEventListener('click', handleTimeClick);
+      timeRef.current.addEventListener("click", handleTimeClick);
     }
-    
+
     return () => {
       if (dateRef.current) {
-        dateRef.current.removeEventListener('click', handleDateClick);
+        dateRef.current.removeEventListener("click", handleDateClick);
       }
       if (timeRef.current) {
-        timeRef.current.removeEventListener('click', handleTimeClick);
+        timeRef.current.removeEventListener("click", handleTimeClick);
       }
     };
   }, []);
@@ -85,15 +83,13 @@ function InvitationGenerator() {
   };
 
   const handleRemove = (item) => {
-
-    const updatedCities = cities.filter((city) => city !== item)
-    setCities(updatedCities)
+    const updatedCities = cities.filter((city) => city !== item);
+    setCities(updatedCities);
     setFormData((prevFormData) => ({
       ...prevFormData,
       cities: updatedCities,
-    }))
-    
-  }
+    }));
+  };
 
   return (
     <main className="main_invitation_page">
@@ -114,6 +110,7 @@ function InvitationGenerator() {
                 placeholder="Un título para la invitación"
                 value={formData.titulo}
                 onChange={handleInputChange}
+                maxLength={50}
               />
             </div>
 
@@ -123,7 +120,7 @@ function InvitationGenerator() {
                 placeholder="Descripción breve del evento"
                 value={formData.descripcion}
                 onChange={handleInputChange}
-              ></textarea>
+                maxLength={150}></textarea>
             </div>
 
             <div className="div_input">
@@ -159,8 +156,8 @@ function InvitationGenerator() {
             </div>
 
             <div className="select_input">
-            <SelectComponent 
-                contentList={cityList}         
+              <SelectComponent
+                contentList={cityList}
                 itemsCollected={city}
                 emptyMessage='No se encontraton resultados...' 
                 placeHolder='Seleccione ciudad origen'
@@ -169,11 +166,11 @@ function InvitationGenerator() {
             </div>
 
             <div className="select_input">
-              <SelectComponent 
-                contentList={cityList}         
+              <SelectComponent
+                contentList={cityList}
                 itemsCollected={cities}
-                emptyMessage='No se encontraton resultados...' 
-                placeHolder='Seleccione las ciudades invitadas'
+                emptyMessage="No se encontraton resultados..."
+                placeHolder="Seleccione las ciudades invitadas"
                 selectItem={selectItem}
               />
             </div>
@@ -183,9 +180,12 @@ function InvitationGenerator() {
             {cities.length > 0 ? (
               cities.map((city, key) => {
                 return (
-                  <span onClick={() => handleRemove(city)} className="cityLabel" key={key}>
+                  <span
+                    onClick={() => handleRemove(city)}
+                    className="cityLabel"
+                    key={key}>
                     {city}
-                    <img src="/svg_icons/crossIcon.svg" alt={city}/>
+                    <img src="/svg_icons/crossIcon.svg" alt={city} />
                   </span>
                 );
               })
@@ -193,7 +193,6 @@ function InvitationGenerator() {
               <p id="message">No hay ciudades seleccionadas</p>
             )}
           </div>
-
         </div>
         {<Invitation formData={formData} />}
       </section>

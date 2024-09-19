@@ -14,7 +14,7 @@ function TeamPage() {
             name: "Christopher Villalta",
             rol: "Software Developer",
             linkedin: "https://www.linkedin.com/in/chrisvillalta/",
-            info: "lorem ipsum lorem lorem ",
+            info: "I'm a passionate Software Developer based in Sonsonate, El Salvador",
         },
         {
             pic: "./3.png",
