@@ -161,7 +161,7 @@ function InvitationGenerator() {
               </div>
             </div>
 
-            <div className="div_input">
+            <div className="select_input">
             <SelectComponent 
                 contentList={cityList}         
                 itemsCollected={city}

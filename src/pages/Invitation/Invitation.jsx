@@ -3,13 +3,13 @@ import { useEffect, useRef, useState } from 'react'
 
 import ColorButton from '../../components/buttons/color-button'
 import { TarjetaInkua } from '../../components/cards/tarjeta-inkua'
+import { copyText } from '../../utils/invitationCard'
 import { getHourConverted } from '../../utils/timeConverter'
 
 import './Invitation.css'
 
 function Invitation({ formData }) {
     const [dataConverted, setDataConverted] = useState(formData)
-
 
     const colorStyleTpyes = {
         lightBlue: 'linear-gradient(90deg, #93ADC8 -3.59%, #6893BF 100%)',
@@ -29,7 +29,7 @@ function Invitation({ formData }) {
 
             const uploadFilterImg = canvasRef.current.querySelector('.upload-filter-img');
             if (uploadFilterImg) {
-                uploadFilterImg.style.display='none';
+                uploadFilterImg.style.display = 'none';
             }
 
             html2canvas(canvasRef.current).then((canvas) => {
@@ -46,38 +46,25 @@ function Invitation({ formData }) {
             }).catch(() => {
                 alert('Error al capturar la imagen');
             });
-    
+
         }
     };
 
     const handleCopyText = () => {
-        const contentElement = document.querySelector('.modal-container');
-        if (contentElement) {
-            const textToCopy = contentElement.textContent.trim();
-            navigator.clipboard.writeText(textToCopy)
-                .then(() => {
-                    alert('Texto copiado al portapapeles');
-                })
-                .catch((err) => {
-                    console.error('Error al copiar el texto: ', err);
-                    alert('Error al intentar copiar el texto')
-                });
-        }
+        copyText()
     };
 
     const formatDateTime = (date, time) => {
         if (date && time) {
-          const dateTime = `${date} ${time}:00`;
-          return dateTime 
+            const dateTime = `${date} ${time}:00`;
+            return dateTime
         }
-      };
+    };
 
-    useEffect(()=>{
-        if(formData.cities.length > 0 ){
+    useEffect(() => {
+        if (formData.cities.length > 0) {
             let citiesConverted = []
-
             const date = formatDateTime(formData.fecha, formData.hora)
-            
             formData.cities.forEach(item => {
                 citiesConverted.push(
                     {
@@ -86,24 +73,26 @@ function Invitation({ formData }) {
                     }
                 )
             });
-            setDataConverted({...dataConverted, cities:citiesConverted})
+            setDataConverted({ ...formData, cities: citiesConverted })
+        } else {
+            setDataConverted(formData)
         }
-    },[formData])
+    }, [formData])
 
     return (
         <div className="modal">
             <div className='buttons'>
-                <ColorButton color={colorStyleTpyes.lightBlue} changeColor={changeColor}/>
-                <ColorButton color={colorStyleTpyes.blue} changeColor={changeColor}/>
-                <ColorButton color={colorStyleTpyes.darkBlue} styles={{border: '2px solid white'}} changeColor={changeColor}/>
+                <ColorButton color={colorStyleTpyes.lightBlue} changeColor={changeColor} />
+                <ColorButton color={colorStyleTpyes.blue} changeColor={changeColor} />
+                <ColorButton color={colorStyleTpyes.darkBlue} styles={{ border: '2px solid white' }} changeColor={changeColor} />
             </div>
 
             <article
-                ref={canvasRef} 
+                ref={canvasRef}
                 className='modal-container'
-                style={{background: bgColor}}
+                style={{ background: bgColor }}
             >
-                <TarjetaInkua formData={dataConverted}/>
+                <TarjetaInkua formData={dataConverted} />
             </article>
 
             <div className="modal-buttons">
