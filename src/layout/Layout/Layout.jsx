@@ -62,7 +62,7 @@ export default function Layout({ children }) {
         if (partOfDay && weather) {
             updateBackground();
         }else{
-            document.documentElement.className = 'dia-Sunny';
+            document.documentElement.className = 'default-weatherDefault';
         }
     }, [partOfDay, weather]);
 

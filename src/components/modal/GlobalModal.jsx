@@ -1,21 +1,13 @@
 import { useContext, useState } from 'react';
+import { isDesktop } from 'react-device-detect';
 
 import { AppContext } from '../../context/AppContext';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 
-import { isDesktop } from 'react-device-detect';
-
 import './GlobalModal.css'
 
-
-
-
-// eslint-disable-next-line react/prop-types
 const GlobalModal = () => {
-
     const {isOpen,setIsOpen}=useContext(AppContext)
-
-
 
     const {
         format24h,
@@ -28,7 +20,6 @@ const GlobalModal = () => {
     const [format, setFormat] = useState(format24h)
     const [background, setBackground] = useState(customBg)
 
-
     const handleSaveChanges = () => {
         updateFormat24h(format)
         updateCustomBg(background)
@@ -38,8 +29,6 @@ const GlobalModal = () => {
 
     return (
         <>
-           
-
             {isOpen &&
                 <div className="Gmodal-overlay" onClick={() => setIsOpen(false)}>
                     <div className="Gmodal-content" onClick={(e) => e.stopPropagation()}>
@@ -51,7 +40,7 @@ const GlobalModal = () => {
                         </div>
 
                         <div className="Gmodal-options">
-                            <ToggleSwitch checked={format} setChecked={setFormat}>Formato 24 horas</ToggleSwitch>
+                            {/* <ToggleSwitch checked={format} setChecked={setFormat}>Formato 24 horas</ToggleSwitch> */}
                             <ToggleSwitch checked={background} setChecked={setBackground} disabled={!isDesktop}>Fondo personalizado</ToggleSwitch>
                             {
                                 background&&

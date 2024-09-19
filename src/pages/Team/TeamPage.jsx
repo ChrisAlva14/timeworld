@@ -14,35 +14,35 @@ function TeamPage() {
             name: "Christopher Villalta",
             rol: "Software Developer",
             linkedin: "https://www.linkedin.com/in/chrisvillalta/",
-            info: "lorem ipsum lorem lorem ",
+            info: "I'm a passionate Software Developer based in Sonsonate, El Salvador",
         },
         {
             pic: "./3.png",
             name: "Exequiel Schiavo",
             rol: "Software Developer",
             linkedin: "www.linkedin.com/in/exequiel-schiavo/",
-            info: "lorem ipsum lorem lorem ",
+            info: "Disfruto crear soluciones que transformen el día a día.",
         },
         {
             pic: "./4.png",
             name: "Carlos Garay",
             rol: "Software Developer",
             linkedin: "https://www.linkedin.com/in/garaycarlos/",
-            info: "lorem ipsum lorem lorem ",
+            info: "Plata y miedo nunca tuvimos",
         },
         {
             pic: "./5.png",
             name: "facundo Elorz",
             rol: "Software Developer",
             linkedin: "https://www.linkedin.com/in/facundo-elorz/",
-            info: "lorem ipsum lorem lorem ",
+            info: "Robinson Crusoe y lo atropellaron",
         },
         {
             pic: "./6.png",
             name: "Manuel Florez",
             rol: "Software Developer",
             linkedin: "https://www.linkedin.com/in/manuel14mds/",
-            info: "lorem ipsum lorem lorem ",
+            info: "Hola, ¿está Agustín? No, estoy incomodín",
         },
     ];
 
@@ -75,7 +75,7 @@ function TeamPage() {
 
                             <div className="overlay_Team">
                                 <p>{p.info} </p>
-                                <a href={p.linkedin} target="_blank" rel="noreferrer">  <img src="/linkedin.png" alt="linkedin profile" /></a>
+                                <a href={p.linkedin} target="_blank" rel="noreferrer" className="link-edin">  <img src="/linkedin.png" alt="linkedin profile" /></a>
                             </div>
 
                         </div>
