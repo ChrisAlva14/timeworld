@@ -193,10 +193,20 @@
 }
 
 .default-weatherDefault {
-  background-color: aquamarine;
-  color: #000;
+  background-color: #1c3661;
+  background-image: url("./svg_icons/inkuALogo4.svg");
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: top right;
 }
 
+@media (min-width: 600px) {
+  .default-weatherDefault {
+    background-image: url("./svg_icons/inkuALogo4.svg");
+    background-size: 300px;
+    background-position: bottom right;
+  }
+}
 /*NOT FOUND*/
 .not-found {
   /* background-image: url("/fondos_paisajes/not_found.svg"); */
