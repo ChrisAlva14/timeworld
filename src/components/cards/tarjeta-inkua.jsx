@@ -10,11 +10,21 @@ function obtenerBandera(lugar) {
     if (pais === "EEUU") {
         return ", USA"
     }
+    if (pais === "Rusia (Asia)") {
+        return ", SVU"
+    }
     const codigoPais = countries.getAlpha3Code(pais, 'es');
     if (codigoPais) {
         return ", " + codigoPais
     }
-    return ""
+    else{
+        const palabras = pais.split(' ');
+        if (palabras.length > 1) {
+            return `, ${palabras[0].slice(0, 2).toUpperCase()}${palabras[1].charAt(0).toUpperCase()}`;
+        } else {
+            return `, ${pais.slice(0, 3).toUpperCase()}`;
+        }   
+    }
 }
 
 export const TarjetaInkua = ({ formData }) => {
