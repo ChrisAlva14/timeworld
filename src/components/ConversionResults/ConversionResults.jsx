@@ -91,9 +91,9 @@ export const ConversionResults = ({ setBox, dateInput }) => {
               />
               <small className={styles.messagge}>
                 {`${item.ciudad}, ${item.pais} tiene ${hourDifference(
-                  item.hora,
-                  ciudadOrigen.hora
-                )} de diferencia horaria`}
+                  item.hora, item.fecha,
+                  ciudadOrigen.hora, ciudadOrigen.fecha
+                )}`}
               </small>
             </li>
           ))}

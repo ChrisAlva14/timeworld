@@ -79,6 +79,11 @@ p {
 .card_Team:hover .overlay_Team {
     opacity: 1;
 }
+
+.overlay_Team_description{
+    text-wrap: pretty;
+}
+
 .link-edin{
     margin-top: 30px;
 }
