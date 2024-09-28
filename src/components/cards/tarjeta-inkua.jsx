@@ -17,7 +17,7 @@ function obtenerBandera(lugar) {
     if (codigoPais) {
         return ", " + codigoPais
     }
-return ''
+    return ''
 }
 
 export const TarjetaInkua = ({ formData }) => {

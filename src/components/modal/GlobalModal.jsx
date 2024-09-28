@@ -7,7 +7,7 @@ import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 import './GlobalModal.css'
 
 const GlobalModal = () => {
-    const {isOpen,setIsOpen}=useContext(AppContext)
+    const { isOpen, setIsOpen } = useContext(AppContext)
 
     const {
         format24h,
@@ -16,7 +16,7 @@ const GlobalModal = () => {
         updateCustomBg,
     } = useContext(AppContext);
 
-    
+
     const [format, setFormat] = useState(format24h)
     const [background, setBackground] = useState(customBg)
 
@@ -43,7 +43,7 @@ const GlobalModal = () => {
                             {/* <ToggleSwitch checked={format} setChecked={setFormat}>Formato 24 horas</ToggleSwitch> */}
                             <ToggleSwitch checked={background} setChecked={setBackground} disabled={!isDesktop}>Fondo personalizado</ToggleSwitch>
                             {
-                                background&&
+                                background &&
                                 <p className='modalBGNote'>* Utilizamos la ubicación SOLO para saber el clima de tu ciudad y actualizar el fondo de pantalla.</p>
                             }
                         </div>

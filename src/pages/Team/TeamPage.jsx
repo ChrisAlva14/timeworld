@@ -20,7 +20,7 @@ function TeamPage() {
             pic: "./3.png",
             name: "Exequiel Schiavo",
             rol: "Software Developer",
-            linkedin: "www.linkedin.com/in/exequiel-schiavo/",
+            linkedin: "https://www.linkedin.com/in/exequiel-schiavo/",
             info: "Disfruto crear soluciones que transformen el día a día.",
         },
         {

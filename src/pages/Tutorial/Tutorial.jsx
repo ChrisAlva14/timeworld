@@ -1,7 +1,9 @@
-import { useState, useEffect } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
+import { useEffect, useState } from 'react';
+
 import './Tutorial.css';
 import '@justinribeiro/lite-youtube';
+
 export const Tutorial = () => {
     const [activeQuestion, setActiveQuestion] = useState(null);
     const [videoId, setVideoId] = useState('hfsD4ZT5mAw'); // Por defecto, el video de escritorio

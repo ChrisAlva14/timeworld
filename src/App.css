@@ -1,32 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
 }
 
 #root {
-  padding-top: 34px;
-  background-color: rgba(0, 0, 0, 0.20);
-  /* SE CAMBIÓ AL BACK-COLOR, BACKDROP-FILTER DISTORSIONA EL CODIGO*/
-  height: 100%;
+    padding-top: 34px;
+    background-color: rgba(0, 0, 0, 0.20);
+    height: 100%;
 }
 
 /*------------------ Estilos para clima durante el día -------------- */
 /* Día - Soleado */
 .dia-Sunny {
-  /* background-image: url("/fondos_paisajes/paisajes_Día_soleado.svg"); */
-  background-image: url("/fondos_paisajes/imgs/diaDespejado.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  /* Opcional: fija la imagen de fondo */
-  color: #000;
-  /* Texto en negro */
+    background-image: url("/fondos_paisajes/imgs/diaDespejado.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #000;
 }
 
 /* Día - Nublado */
@@ -35,15 +31,12 @@
 .dia-Overcast .dia-Mist,
 .dia-Fog,
 .dia-FreezingFog {
-  /* background-image: url("/fondos_paisajes/paisajes_Día_nublado.svg"); */
-  background-image: url("/fondos_paisajes/imgs/diaNublado.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  /* Fija la imagen de fondo */
-  color: #000;
-  /* Texto en negro */
+    background-image: url("/fondos_paisajes/imgs/diaNublado.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #000;
 }
 
 /* Día - Lluvia */
@@ -68,15 +61,12 @@
 .dia-ThunderyOutbreaksPossible,
 .dia-PatchyLightRainWithThunder,
 .dia-ModerateOrHeavyRainWithThunder {
-  /* background-image: url("/fondos_paisajes/paisajes_Día_lluvioso.svg"); */
-  background-image: url("/fondos_paisajes/imgs/diaLLuvioso.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  /* Fija la imagen de fondo */
-  color: #000;
-  /* Texto en negro */
+    background-image: url("/fondos_paisajes/imgs/diaLLuvioso.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #000;
 }
 
 /* Día - Nieve */
@@ -98,15 +88,12 @@
 .dia-ModerateOrHeavySnowShowers,
 .dia-PatchyLightSnowWithThunder,
 .dia-ModerateOrHeavySnowWithThunder {
-  /* background-image: url("/fondos_paisajes/paisajes_Día_nieve.svg"); */
-  background-image: url("/fondos_paisajes/imgs/diaNevado.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  /* Fija la imagen de fondo */
-  color: #000;
-  /* Texto en negro */
+    background-image: url("/fondos_paisajes/imgs/diaNevado.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #000;
 }
 
 /*------------------ Estilos para clima durante la noche -------------- */
@@ -118,15 +105,12 @@
 .noche-Fog,
 .noche-FreezingFog,
 .noche-Mist {
-  /* background-image: url("/fondos_paisajes/paisajes_Noche_despejada.svg"); */
-  background-image: url("/fondos_paisajes/imgs/nocheDespejada.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  /* Opcional: fija la imagen de fondo */
-  color: #fff;
-  /* Texto en blanco */
+    background-image: url("/fondos_paisajes/imgs/nocheDespejada.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
 }
 
 /* Noche - Lluvia */
@@ -154,15 +138,12 @@
 .noche-ModerateOrHeavyRainWithThunder,
 .noche-PatchyLightSnowWithThunder,
 .noche-ModerateOrHeavySnowWithThunder {
-  /* background-image: url("/fondos_paisajes/paisajes_Noche_tormenta.svg"); */
-  background-image: url("/fondos_paisajes/imgs/nocheTormenta.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  /* Fija la imagen de fondo */
-  color: #fff;
-  /* Texto en blanco */
+    background-image: url("/fondos_paisajes/imgs/nocheTormenta.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
 }
 
 /* Noche - Nieve */
@@ -181,50 +162,45 @@
 .noche-ModerateOrHeavySleetShowers,
 .noche-LightSnowShowers,
 .noche-ModerateOrHeavySnowShowers {
-  /* background-image: url("/fondos_paisajes/paisajes_Noche_nieve.svg"); */
-  background-image: url("/fondos_paisajes/imgs/nocheNevado.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  /* Fija la imagen de fondo */
-  color: #000;
-  /* Texto en negro */
+    background-image: url("/fondos_paisajes/imgs/nocheNevado.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #000;
 }
 
 .default-weatherDefault {
-  background-color: #1c3661;
-  background-image: url("./svg_icons/inkuALogo4.svg");
-  background-size: 100px;
-  background-repeat: no-repeat;
-  background-position: top right;
+    background-color: #1c3661;
+    background-image: url("/svg_icons/inkuALogo4.svg");
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: top right;
 }
 
 @media (min-width: 600px) {
-  .default-weatherDefault {
-    background-image: url("./svg_icons/inkuALogo4.svg");
-    background-size: 300px;
-    background-position: bottom right;
-  }
+    .default-weatherDefault {
+        background-image: url("/svg_icons/inkuALogo4.svg");
+        background-size: 300px;
+        background-position: bottom right;
+    }
 }
-/*NOT FOUND*/
+
 .not-found {
-  /* background-image: url("/fondos_paisajes/not_found.svg"); */
-  background-image: url("/fondos_paisajes/imgs/notFound.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  height: 100vh !important;
-  color: #000;
+    background-image: url("/fondos_paisajes/imgs/notFound.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh !important;
+    color: #000;
 }
 
 @media (min-width: 600px) {
-
-  #root{
-    height: 100%;
-  }
+    #root {
+        height: 100%;
+    }
 }
 
 /* tablet */

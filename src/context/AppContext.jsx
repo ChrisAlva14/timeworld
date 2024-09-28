@@ -15,22 +15,22 @@ const AppProvider = ({ children }) => {
     const [resetButtonAvailable, setResetButtonAvailable] = useState(false)
 
 
-/* abre el modal */
+    /* abre el modal */
     const [isOpen, setIsOpen] = useState(false)
 
-    const updateCustomBg =(value)=>{
+    const updateCustomBg = (value) => {
         setReactiveBg(value)//actualiza el local storage
         setCustomBg(value)//actualiza el estado del contexto
     }
 
-    const updateFormat24h = (value) =>{
+    const updateFormat24h = (value) => {
         setTimeFormat(value)
         setFormat24h(value)
     }
-    const addCity = (newCity)=>{
-        setSelectedCities([...selectedCities, newCity ])
+    const addCity = (newCity) => {
+        setSelectedCities([...selectedCities, newCity])
     }
-    const removeCity = (item)=>{
+    const removeCity = (item) => {
         const updatedCities = selectedCities.filter((city) => city !== item);
         setSelectedCities(updatedCities);
     }
@@ -52,7 +52,7 @@ const AppProvider = ({ children }) => {
 
         if (selectedCities.length > 0 && originCity) {
             setConvertAvailable(true)
-        } else{
+        } else {
             setConvertAvailable(false)
         }
 
