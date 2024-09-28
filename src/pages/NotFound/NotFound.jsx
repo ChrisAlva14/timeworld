@@ -1,7 +1,8 @@
-import './NotFound.css'
-
 import { useEffect } from 'react';
+
+import './NotFound.css'
 import './NotFound.css';
+
 function NotFound() {
 
     useEffect(() => {

@@ -10,11 +10,14 @@ function obtenerBandera(lugar) {
     if (pais === "EEUU") {
         return ", USA"
     }
+    if (pais === "Rusia (Asia)") {
+        return ", RUS"
+    }
     const codigoPais = countries.getAlpha3Code(pais, 'es');
     if (codigoPais) {
         return ", " + codigoPais
     }
-    return ""
+    return ''
 }
 
 export const TarjetaInkua = ({ formData }) => {

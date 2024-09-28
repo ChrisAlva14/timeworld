@@ -7,7 +7,7 @@ function TeamPage() {
             name: "Valeria Luzardo",
             rol: "UX/UI designer",
             linkedin: " https://www.linkedin.com/in/valeria-luzardo-b993261bb/",
-            info: "lorem ipsum lorem lorem ",
+            info: "La empatía es my passion <3",
         },
         {
             pic: "./1.png",
@@ -20,7 +20,7 @@ function TeamPage() {
             pic: "./3.png",
             name: "Exequiel Schiavo",
             rol: "Software Developer",
-            linkedin: "www.linkedin.com/in/exequiel-schiavo/",
+            linkedin: "https://www.linkedin.com/in/exequiel-schiavo/",
             info: "Disfruto crear soluciones que transformen el día a día.",
         },
         {
@@ -74,7 +74,7 @@ function TeamPage() {
                             </div>
 
                             <div className="overlay_Team">
-                                <p>{p.info} </p>
+                                <p className="overlay_Team_description">{p.info} </p>
                                 <a href={p.linkedin} target="_blank" rel="noreferrer" className="link-edin">  <img src="/linkedin.png" alt="linkedin profile" /></a>
                             </div>
 

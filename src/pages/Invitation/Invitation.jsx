@@ -82,8 +82,8 @@ function Invitation({ formData }) {
     return (
         <div className="modal">
             <div className='buttons'>
-                <ColorButton color={colorStyleTpyes.lightBlue} changeColor={changeColor} />
-                <ColorButton color={colorStyleTpyes.blue} changeColor={changeColor} />
+                <ColorButton color={colorStyleTpyes.lightBlue} styles={{ border: '2px solid white' }} changeColor={changeColor} />
+                <ColorButton color={colorStyleTpyes.blue} styles={{ border: '2px solid white' }} changeColor={changeColor} />
                 <ColorButton color={colorStyleTpyes.darkBlue} styles={{ border: '2px solid white' }} changeColor={changeColor} />
             </div>
 

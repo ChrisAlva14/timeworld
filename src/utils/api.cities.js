@@ -17,7 +17,7 @@ const data ={
         { pais: "Perú", referencia: "America/Lima", ciudades: ["Lima", "Arequipa", "Iquitos", "Cusco"] },
         { pais: "Surinam", referencia: "America/Cayenne", ciudades: ["Paramaribo"] },
         { pais: "Uruguay", referencia: "America/Montevideo", ciudades: ["Montevideo", "Punta del Este"] },
-        { pais: "Venezuela", referencia: "America/Caracas", ciudades: ["Caracas", "Maracaibo", "Valencia", "Barquisimeto"] }
+        { pais: "Venezuela", referencia: "America/Caracas", ciudades: ["Caracas", "Maracaibo", "Barquisimeto"] }
     ],
 
     "CentroAmerica": [
@@ -209,7 +209,7 @@ const cities = [
     "Punta Arenas, Chile", "Bogotá, Colombia", "Medellín, Colombia", "Cali, Colombia", "Barranquilla, Colombia",
     "Quito, Ecuador", "Guayaquil, Ecuador", "Cayenne, Guayana", "Georgetown, Guyana", "Asunción, Paraguay", "Encarnación, Paraguay",
     "Ciudad del Este, Paraguay", "Lima, Perú", "Arequipa, Perú", "Iquitos, Perú", "Cusco, Perú", "Paramaribo, Surinam",
-    "Montevideo, Uruguay", "Punta del Este, Uruguay", "Caracas, Venezuela", "Maracaibo, Venezuela", "Valencia, Venezuela",
+    "Montevideo, Uruguay", "Punta del Este, Uruguay", "Caracas, Venezuela", "Maracaibo, Venezuela",
     "Barquisimeto, Venezuela", "Belice, Belice", "San Ignacio, Belice", "Orange Walk, Belice", "Belmopan, Belice",
     "San José, Costa Rica", "Alajuela, Costa Rica", "Cartago, Costa Rica", "Limón, Costa Rica", "San Salvador, El Salvador",
     "Sonsonate, El Salvador", "San Miguel, El Salvador", "Soyapango, El Salvador", "Ciudad de Guatemala, Guatemala",

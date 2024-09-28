@@ -11,20 +11,20 @@ import { Tutorial } from "./pages/Tutorial/Tutorial";
 import "./App.css";
 
 function App() {
-  return (
-    <>
-    <AppProvider>
-      <Layout>
-        <Switch>
-          <Route path="/" component={TimeConvecter} />
-          <Route path="/invitacion" component={InvitationGenerator} />
-          <Route path="/tutorial" component={Tutorial} />
-          <Route path="/team" component={TeamPage} />
-          <Route component={NotFound} />
-        </Switch>
-      </Layout>
-    </AppProvider>
-    </>
-  );
+    return (
+        <>
+            <AppProvider>
+                <Layout>
+                    <Switch>
+                        <Route path="/" component={TimeConvecter} />
+                        <Route path="/invitacion" component={InvitationGenerator} />
+                        <Route path="/tutorial" component={Tutorial} />
+                        <Route path="/team" component={TeamPage} />
+                        <Route component={NotFound} />
+                    </Switch>
+                </Layout>
+            </AppProvider>
+        </>
+    );
 }
 export default App;

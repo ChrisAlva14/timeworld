@@ -37,9 +37,9 @@ export default function Layout({ children }) {
 
     // Establecer la clase de fondo en el nivel del documento una vez que se tenga el clima
     const updateBackground = () => {
-        if(error){
+        if (error) {
             alert("No se ha podido actualizar el background")
-        }else{
+        } else {
             const bgClass = `${partOfDay}-${getBackgroundClass(weather)}`;
             document.documentElement.className = bgClass;
         }
@@ -51,17 +51,17 @@ export default function Layout({ children }) {
             getDevicePosition();
         }
     }, [customBg]);
-    
+
     useEffect(() => {
         if (coords.latitude !== null && coords.longitude !== null) {
             getWeatherPosition();
         }
     }, [coords]);
-    
+
     useEffect(() => {
         if (partOfDay && weather) {
             updateBackground();
-        }else{
+        } else {
             document.documentElement.className = 'default-weatherDefault';
         }
     }, [partOfDay, weather]);
@@ -70,7 +70,7 @@ export default function Layout({ children }) {
         <>
             <Navbar />
             <main className={styles.main}>{children}</main>
-            <GlobalModal  />
+            <GlobalModal />
             <NavBotton />
         </>
     );
